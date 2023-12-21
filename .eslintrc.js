@@ -14,7 +14,7 @@ module.exports = {
     // allow reassigning param
     'no-param-reassign': [2, { props: false }],
     'linebreak-style': ['error', 'unix'],
-    'max-len': ['error', { 'code': 500 }],
+    'max-len': ['error', { code: 500 }],
     'import/extensions': ['error', {
       js: 'always',
     }],
