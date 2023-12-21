@@ -5,7 +5,7 @@ export default function decorate(block) {
   const metaData = parentBlock.dataset;
 
   const {
-    backgroundColor, backgroundHide, textColor, underlinedInclinedTextColor, textAlignVertical, imageAlign, paddingTop, paddingBottom, marginTop, marginBottom, imageCover, 
+    backgroundColor, backgroundHide, textColor, underlinedInclinedTextColor, textAlignVertical, imageAlign, paddingTop, paddingBottom, marginTop, marginBottom, imageCover,
   } = metaData;
   const [richTextEl, pictureEl] = [...block.children];
 
