@@ -20,9 +20,9 @@
   --text-color: #000;
 
   /* fonts */
-  --body-font-family: Lato
+  --body-font-family: 'Lato'
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: Lato;
+  --fixed-font-family: 'Lato';
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -160,10 +160,10 @@ a.button:any-link, button {
   position: relative;
 }
 
-a.button:any-link:after, button:after {
+a.button:any-link::after, button::after {
   content: '';
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-top: 22px solid transparent;
   border-bottom: 22px solid transparent;
   border-left: 9px solid var(--link-color);
@@ -178,7 +178,7 @@ a.button:hover, a.button:focus, button:hover, button:focus  {
   cursor: pointer;
 }
 
-a.button:hover:any-link:after, button:hover:after {
+a.button:hover:any-link::after, button:hover::after {
   border-left: 9px solid var(--link-hover-color);;
 }
 

@@ -8,7 +8,6 @@
 }
 
 .section.banner-container.section .banner h1, .section.banner-container.section .banner h2 {
-  font-family: Lato;
   font-size: 50px;
   line-height: 1;
   color: #783384;
@@ -17,7 +16,6 @@
 
 .section.banner-container.section .banner p {
   text-align: left;
-  font-family: Lato;
   font-size: 20px;
   font-weight: 400;
   color: #363636;
@@ -25,10 +23,7 @@
 
 .section.banner-container.section .banner .carousel-caption {
   position: absolute;
-  right: 0;
-  left: 4rem;
-  bottom: 0;
-  top: 4rem;
+  inset: 4rem 4rem 0 0;
 }
 
 .carousel-indicators li {
