@@ -12,17 +12,17 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --link-color: #783384;
+  --link-hover-color: #8a4196;
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
+  --body-font-family: 'Lato'
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --fixed-font-family: 'Lato';
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -146,7 +146,7 @@ a.button:any-link, button {
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 5px 17px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -155,14 +155,31 @@ a.button:any-link, button {
   background-color: var(--link-color);
   margin: 16px 0;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: inital;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  position: relative;
+}
+
+a.button:any-link::after, button::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 9px solid var(--link-color);
+  display: inline-block;
+  position: absolute;
+  right: -11px;
+  top: -1px;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
   background-color: var(--link-hover-color);
   cursor: pointer;
+}
+
+a.button:hover:any-link::after, button:hover::after {
+  border-left: 9px solid var(--link-hover-color);;
 }
 
 button:disabled, button:disabled:hover {

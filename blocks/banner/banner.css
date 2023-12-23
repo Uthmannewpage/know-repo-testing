@@ -1,0 +1,71 @@
+.section.banner-container.section {
+  color: black;
+  padding: 0;
+}
+
+.section.banner-container.section .banner img {
+  width: 100%;
+}
+
+.section.banner-container.section .banner h1, .section.banner-container.section .banner h2 {
+  font-size: 50px;
+  line-height: 1;
+  color: #783384;
+  text-align: left;
+}
+
+.section.banner-container.section .banner p {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+  color: #363636;
+}
+
+.section.banner-container.section .banner .carousel-caption {
+  position: absolute;
+  inset: 4rem 4rem 0 0;
+}
+
+.carousel-indicators li {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #fff;
+  border: solid 1px #000;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #646464;
+}
+
+@media (width >= 768px) {
+  .section.banner-container.section .banner h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (width >= 991px) {
+  .section.banner-container.section .banner h1 {
+    font-size: var(--heading-font-size-xl);
+    line-height: var(--heading-font-size-xl);
+    text-align: left;
+  }
+
+  .section.banner-container.section .banner.button-container {
+    display: block;
+  }
+
+  .section.banner-container.section .banner img {
+    width: initial;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .section.banner-container.section .banner h1 {
+    margin-top: 1em;
+  }
+}
