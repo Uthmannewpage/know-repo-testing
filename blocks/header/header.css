@@ -35,6 +35,7 @@ header ul.language-dropdown li.nav-item a.nav-link{
   color: var(--color-primary);
   text-align: left;
   min-width: 0;
+  font-size: 18px;
 }
 header ul.language-dropdown li.nav-item ul.dropdown-menu {
   min-width: 0;
