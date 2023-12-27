@@ -91,7 +91,12 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
+
+h1 {
+  font-size: var(--heading-font-size-s)!important;
+  line-height: 23px;
+  margin-top: var(--heading-font-size-s);
+}
 h2 { font-size: var(--heading-font-size-xl) }
 h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
@@ -255,12 +260,6 @@ main .section {
   background: url('../images/video-bg.png') no-repeat center bottom transparent;
   background-size: 100% auto;
   padding: 2rem;
-}
-
-h1 {
-  font-size: var(--heading-font-size-s)!important;
-  line-height: 23px;
-  margin-top: var(--heading-font-size-s);
 }
 
 p, ul li, table {
