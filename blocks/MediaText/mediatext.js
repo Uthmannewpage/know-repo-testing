@@ -1,6 +1,6 @@
 function updateContentBlock(mediaType, mediaSrc, textContent, textPosition) {
-  const mediaContainer = document.getElementById('content-media');
-  const textContainer = document.getElementById('content-text');
+  const mediaContainer = document.querySelector('.content-media');
+  const textContainer = document.querySelector('.content-text');
 
   // Clear existing content
   mediaContainer.innerHTML = '';
@@ -41,9 +41,4 @@ export default function decorate(block) {
     text,
     position,
   );
-  //   [...block.children].forEach((row) => {
-  //     [...row.children].forEach((col) => {
-
-  //     });
-  //   });
 }
