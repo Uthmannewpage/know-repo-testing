@@ -58,6 +58,8 @@
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;
+    --paragraph-font-size-l: 20px;
+    --paragraph-font-size-s: 16px;
   }
 }
 
@@ -249,9 +251,43 @@ main .section {
   padding: 64px 16px;
 }
 
+.grey-gradient {
+  background: url('../images/video-bg.png') no-repeat center bottom transparent;
+  background-size: 100% auto;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: var(--heading-font-size-s)!important;
+  line-height: 23px;
+  margin-top: var(--heading-font-size-s);
+}
+
+p, ul li, table {
+  font-size: var(--paragraph-font-size-s)!important;
+}
+
+.hide-img-mobile .img-box img{
+  display: none;
+}
+
 @media (width >= 600px) {
   main .section {
     padding: 64px 32px;
+  }
+
+  .hide-img-mobile .img-box img{
+    display: block;
+  }
+
+  h1 {
+    font-size: var(--heading-font-size-xl)!important;
+    line-height: 1.13;
+    letter-spacing: -0.2px;
+  }
+
+  p, ul li, table {
+    font-size: var(--paragraph-font-size-l)!important;;
   }
 }
 
