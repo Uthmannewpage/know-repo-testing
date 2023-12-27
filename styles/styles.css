@@ -19,6 +19,14 @@
   --highlight-background-color: #ccc;
   --text-color: #000;
 
+  --color-primary: #783384;
+  --color-warning: #f2c107;
+  --color-success: #45b274;
+  --color-info: #4ebce8;
+  --color-gray: #d6d2ca;
+  
+  
+
   /* fonts */
   --body-font-family: 'Lato'
   --heading-font-family: var(--body-font-family);
@@ -39,6 +47,8 @@
 
   /* nav height */
   --nav-height: 64px;
+
+  --border-radius: 4px;
 
 }
 
@@ -265,4 +275,19 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+/* Common css */
+.text-primary{
+  color: var(--color-primary) !important;
+}
+
+
+.border-primary{
+  border-color: var(--color-primary) !important;
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 100% !important;
+  }
 }
