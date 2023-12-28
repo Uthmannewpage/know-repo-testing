@@ -35,6 +35,7 @@ export default function decorate(block) {
   const {
     type, imagePath, text, position,
   } = block.dataset;
+  console.log(block.dataset);
   updateContentBlock(
     type,
     imagePath,
