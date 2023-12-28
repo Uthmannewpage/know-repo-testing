@@ -91,7 +91,6 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-
 h1 {
   font-size: var(--heading-font-size-s)!important;
   line-height: 23px;
@@ -138,12 +137,36 @@ main pre {
 
 a:any-link {
   color: var(--link-color);
-  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
   color: var(--link-hover-color);
+}
+
+.section[data-align = 'center'] {
+  text-align: center;
+}
+
+.section[data-align = 'right'] {
+  text-align: right;
+}
+
+.section[data-font = 'roboto'] {
+  font-family: roboto-slab, serif;
+}
+
+.section[data-type = 'purple'] .default-content-wrapper {
+  background: #783384;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0 35px 0;
+}
+
+.section[data-type = 'purple'] .default-content-wrapper a {
+  color: #fff;
+  margin-top: 1rem;
+  display: inline-block;
 }
 
 /* buttons */
@@ -263,7 +286,7 @@ main .section {
 }
 
 p, ul li, table {
-  font-size: var(--paragraph-font-size-s)!important;
+  font-size: var(--paragraph-font-size-s);
 }
 
 .hide-img-mobile .img-box img{
@@ -286,7 +309,7 @@ p, ul li, table {
   }
 
   p, ul li, table {
-    font-size: var(--paragraph-font-size-l)!important;;
+    font-size: var(--paragraph-font-size-l);
   }
 }
 

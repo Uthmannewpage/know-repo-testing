@@ -1,6 +1,4 @@
 export default function decorate(block) {
-  /* const parentBlockStyle = block.closest('.section').style;
-  const blockStyle = block.style; */
   const allPossibleTables = ['or-options'];
   const tables = block.querySelectorAll('table');
   const parentBlock = block.closest('.section');
@@ -14,33 +12,27 @@ export default function decorate(block) {
 
   if (type === 'carousel') {
     block.innerHTML = `
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        ${bannerItems.length && bannerItems.map((_, index) => `
-          <li data-target="#myCarousel" data-slide-to="${index}" ${index === 0 ? 'class="active"' : ''}></li>
-        `).join('')}
-      </ol>
-      <div class="carousel-inner">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      ${bannerItems.length && bannerItems.map((_, index) => `
+        <li data-bs-target="#myCarousel" data-bs-slide-to="${index}" ${index === 0 ? 'class="active"' : ''}></li>
+      `).join('')}
+    </ol>
+    <div class="carousel-inner">
       ${bannerItems.length && bannerItems.map((slide, index) => {
-    const [content, image] = [...slide.children];
-    return `<div class="carousel-item ${index === 0 ? 'active' : ''}">
-        <img class="d-block w-100" src="${image.querySelector('img').getAttribute('src').split('?')[0]}" alt="Slide">
-        <div class="carousel-caption d-none d-md-block rows col-xs-12 col-sm-7 col-md-5 col-lg-5">
-          ${content.innerHTML}
-        </div>
-      </div>`;
-  }).join('')}
+        const [content, image] = [...slide.children];
+        return `<div class="carousel-item ${index === 0 ? 'active' : ''}">
+          <img src="${image.querySelector('img').getAttribute('src').split('?')[0]}" class="d-block w-100" alt="Slide">
+          <div class="carousel-caption d-block rows col-5 col-md-5">
+            ${content.innerHTML}
+          </div>
+        </div>`;
+      }).join('')}
     </div>
-      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>`;
+  </div>`;
   } else {
+    block.classList.add('ps-0', 'ps-md-5', 'py-md-5', 'py-3');
+
     const [contentLeft, contentRight, contentImage] = bannerItems;
     if (imageCover === 'background') {
       block.style.background = `url(${contentImage.querySelector('img').getAttribute('src').split('?')[0]}) no-repeat top / cover transparent`;
@@ -74,11 +66,11 @@ export default function decorate(block) {
     block.innerHTML = `
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-xs-12 col-sm-12${leftContentClasses} ps-4">
+          <div class="col-xs-11 col-sm-11${leftContentClasses} ps-4">
             ${contentLeft.innerHTML}
           </div>
 
-          <div class="col-xs-12 col-sm-12${rightContentClasses} text-right img-box">
+          <div class="col-xs-11 col-sm-11${rightContentClasses} text-right img-box">
             ${video ? `<video controls>
               <source src="${video}" type="application/x-mpegURL">
               Your browser does not support the video tag.
