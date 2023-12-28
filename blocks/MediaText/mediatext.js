@@ -37,7 +37,7 @@ export default function decorate(block) {
   } = metadata;
 
   const cols = [...block.firstElementChild.children];
-  block.firstElementChild.classList.add(`columns-${cols.length}-cols`);
+  block.firstElementChild.classList.add(`columns-media-${cols.length}-cols`);
   const contentMedia = cols[0];
   const contentText = cols[1];
   updateContentBlock(
