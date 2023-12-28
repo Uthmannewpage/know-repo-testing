@@ -30,11 +30,12 @@ function updateContentBlock(mediaType, mediaSrc, textContent, textPosition, medi
 }
 
 export default function decorate(block) {
+    const metadata = block.closest('.section').dataset;
   const {
     type, imagePath, text, position,
-  } = block.dataset;
-  const footerMeta = getMetadata('mediatext');
-  console.log(footerMeta);
+  } = metadata;
+
+  console.log(metadata);
   const contentMedia = block.children[0].children[0];
   const contentText = block.children[0].children[1];
   console.log(block.dataset);
