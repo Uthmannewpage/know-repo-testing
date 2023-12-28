@@ -1,4 +1,3 @@
-import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import { getLocalizedResourceUrl } from '../../scripts/utils.js';
 
@@ -7,7 +6,6 @@ import { getLocalizedResourceUrl } from '../../scripts/utils.js';
  * @param {Element} block The footer block element
  */
 export default async function decorate(block) {
-  const footerMeta = getMetadata('footer');
   block.textContent = '';
 
   // load footer fragment
@@ -21,7 +19,7 @@ export default async function decorate(block) {
   // create language selector
   const languageSelector = footer.querySelector('ul:last-of-type');
   const selectElement = document.createElement('select');
-  languageSelector.querySelectorAll('li').forEach(li => {
+  languageSelector.querySelectorAll('li').forEach((li) => {
     const optionElement = document.createElement('option');
 
     optionElement.value = li.textContent.trim().toLowerCase();
@@ -32,9 +30,8 @@ export default async function decorate(block) {
 
   languageSelector.parentNode.replaceChild(selectElement, languageSelector);
 
-  selectElement.addEventListener('change', function () {
-    const selectedValue = this.value;
-    console.log('Selected lnguage:', selectedValue);
+  selectElement.addEventListener('change', () => {
+    // const selectedValue = this.value;
   });
 
   block.append(footer);

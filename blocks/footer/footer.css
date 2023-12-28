@@ -13,15 +13,13 @@ footer ul li, footer p {
 }
 
 footer select {
-  background: transparent;
   border: 0;
-  padding: 0;
   margin: 1rem 0 0;
   color: var(--link-color);
   font-weight: bold;
   height: 30px;
   padding: 5px 22px;
-  background: url('../../images/icons/icon-global.png') no-repeat left center;
+  background: url('../../images/icons/icon-global.png') no-repeat left center transparent;
   background-size: 16px;
   position: relative;
 }
@@ -54,13 +52,13 @@ footer .section:nth-of-type(1) div.default-content-wrapper {
   color: var(--link-color);
 }
 
-footer .section:nth-of-type(1) div.default-content-wrapper ul:nth-of-type(1) {
-  visibility: hidden;
-}
-
 footer .section:nth-of-type(1) ul {
   margin: 1rem 0;
   padding: 0;
+}
+
+footer .section:nth-of-type(1) div.default-content-wrapper ul:nth-of-type(1) {
+  visibility: hidden;
 }
 
 footer .section:nth-of-type(1) ul li {
@@ -73,14 +71,6 @@ footer .section:nth-of-type(2) div.default-content-wrapper {
   justify-content: start;
 }
 
-footer .section:nth-of-type(2) div.default-content-wrapper p:nth-of-type(1) {
-  margin-right: 2rem;
-}
-
-footer .section:nth-of-type(2) div.default-content-wrapper p:nth-of-type(2) {
-  width: 70%;
-}
-
 footer .footer {
   max-width: 1200px;
   margin: auto;
@@ -88,6 +78,14 @@ footer .footer {
 
 footer .footer p {
   margin: 0;
+}
+
+footer .section:nth-of-type(2) div.default-content-wrapper p:nth-of-type(1) {
+  margin-right: 2rem;
+}
+
+footer .section:nth-of-type(2) div.default-content-wrapper p:nth-of-type(2) {
+  width: 70%;
 }
 
 @media screen and (width <= 768px) {
@@ -109,6 +107,6 @@ footer .footer p {
 
   footer select {
     float: right;
-    margin-top: 0px;
+    margin-top: 0;
   }
 }

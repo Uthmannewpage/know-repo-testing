@@ -20,14 +20,14 @@ export default function decorate(block) {
     </ol>
     <div class="carousel-inner">
       ${bannerItems.length && bannerItems.map((slide, index) => {
-        const [content, image] = [...slide.children];
-        return `<div class="carousel-item ${index === 0 ? 'active' : ''}">
-          <img src="${image.querySelector('img').getAttribute('src').split('?')[0]}" class="d-block w-100" alt="Slide">
-          <div class="carousel-caption d-block rows col-5 col-md-5">
-            ${content.innerHTML}
-          </div>
-        </div>`;
-      }).join('')}
+    const [content, image] = [...slide.children];
+    return `<div class="carousel-item ${index === 0 ? 'active' : ''}">
+      <img src="${image.querySelector('img').getAttribute('src').split('?')[0]}" class="d-block w-100" alt="Slide">
+      <div class="carousel-caption d-block rows col-5 col-md-5">
+        ${content.innerHTML}
+      </div>
+    </div>`;
+  }).join('')}
     </div>
   </div>`;
   } else {
