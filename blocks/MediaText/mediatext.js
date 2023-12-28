@@ -1,3 +1,5 @@
+import { getMetadata } from '../../scripts/aem.js';
+
 // eslint-disable-next-line max-len
 function updateContentBlock(mediaType, mediaSrc, textContent, textPosition, mediaContainer, textContainer) {
   // Clear existing content
@@ -31,7 +33,8 @@ export default function decorate(block) {
   const {
     type, imagePath, text, position,
   } = block.dataset;
-  console.log(block.children[0].children);
+  const footerMeta = getMetadata('mediatext');
+  console.log(footerMeta);
   const contentMedia = block.children[0].children[0];
   const contentText = block.children[0].children[1];
   console.log(block.dataset);
