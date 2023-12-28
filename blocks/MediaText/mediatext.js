@@ -32,7 +32,7 @@ function updateContentBlock(mediaType, mediaSrc, textContent, textPosition, medi
 export default function decorate(block) {
     const metadata = block.closest('.section').dataset;
   const {
-    type, imagePath, text, position,
+    type, imagepath, text, position,
   } = metadata;
 
   console.log(metadata);
@@ -41,7 +41,7 @@ export default function decorate(block) {
   console.log(block.dataset);
   updateContentBlock(
     type,
-    imagePath,
+    imagepath,
     text,
     position,
     contentMedia,
