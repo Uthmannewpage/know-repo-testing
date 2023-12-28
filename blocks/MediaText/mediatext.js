@@ -1,6 +1,12 @@
-
 // eslint-disable-next-line max-len
-function updateContentBlock(mediaType, mediaSrc, textContent, textPosition, mediaContainer, textContainer) {
+function updateContentBlock(
+  mediaType,
+  mediaSrc,
+  textContent,
+  textPosition,
+  mediaContainer,
+  textContainer,
+) {
   // Clear existing content
   mediaContainer.innerHTML = '';
   textContainer.innerHTML = '';
