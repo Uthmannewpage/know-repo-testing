@@ -98,7 +98,7 @@ function setNavBar(block, sectionList) {
 						${sectionList['navbar-brand'].picture.innerHTML || ''}
 					</a>
 					<button class="ms-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
+						<div class="navbar-icon"></div>
 					</button>
 			</div>
 			<div class="d-lg-none p-0">
@@ -106,6 +106,8 @@ function setNavBar(block, sectionList) {
 			</div>
       ${generateTopNavigation(sectionList['navbar-top'])}
       ${generateMainMenu(sectionList['navbar-main'])}
+      ${generateCollapseMenu(sectionList)}
+      
       </div>
 			
     </div>
@@ -149,7 +151,7 @@ function getMetadataStyleProps(section) {
 }
 function generateTopNavigation(section) {
   return `
-  <div class="col-lg-10 p-0 collapse navbar-collapse" id="navbarSupportedContent" ${getMetadataStyleProps(section)}>
+  <div class="col-lg-10 p-0 collapse navbar-collapse" id="" ${getMetadataStyleProps(section)}>
       
   <ul class="language-dropdown navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
     ${section
@@ -197,12 +199,61 @@ function generateTopNavigation(section) {
 </div>
   `;
 }
+function generateCollapseMenu(sections) {
+  const menu = sections['navbar-main'];
+  const topMenu = sections['navbar-top'];
+  return `
+  <div class="mobile-view col-lg-12 p-0 collapse navbar-collapse d-none" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex w-100 gap-1 justify-content-strech">
+  <li class="nav-item border-bottom border-1  p-0 w-100 disabled"><a class="nav-link p-3 mb-1" aria-current="page" href="/">&nbsp;</a></li>
+  <li class="nav-item border-bottom border-1  p-0 w-100 active"><a class="nav-link p-3 mb-1" aria-current="page" href="/">Home</a></li>
+  ${menu
+    .map(
+      (item, index) => `${
+        !item.children
+          ? `<li class="nav-item border-bottom border-1  p-0 w-100">
+      <a class="nav-link p-3 mb-1" aria-current="page" href="${item.link}">${
+  item.text ? item.text : item.picture.innerHTML
+}</a>
+      </li>`
+          : ''
+      }
+    ${
+  item.children
+    ? `<li class="nav-item border-bottom border-1 p-0 dropdown">
+        <a class="nav-link p-3 mb-1 dropdown-toggle" href="#" id="${
+  item.children[0].text
+}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        ${item.text}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="${item.children[0].text.trim()}">
+        
+          ${item.children
+    .map(
+      (subMenu) => `<li class="w-100" ><a class="dropdown-item text-start" href="${subMenu.link}">${subMenu.text}</a></li>`,
+    )
+    .join('')}
+        </ul>
+      </li>`
+    : ''
+}
+      `,
+    )
+    .join('')}
+    <li class="nav-item border-bottom border-1  p-0 w-100"><a class="nav-link p-3 mb-1" aria-current="page" href="/">${topMenu[0].text}</a></li>
+  </ul>
+    <div class="nav-bottom">
+      <a class="nav-link  text-primary">Visite el sitio en español</a >
+    </div>
+  </div>
+  `;
+}
 function generateMainMenu(menu) {
   const borderColors = menu.dataset.menuBorderColors
     .split(',')
     .map((color) => color.trim());
   return `
-  <div class="col-lg-12 p-0 collapse navbar-collapse" id="navbarSupportedContent" ${getMetadataStyleProps(menu)}>
+  <div class="col-lg-12 p-0 collapse navbar-collapse" id="" ${getMetadataStyleProps(menu)}>
   <ul class="bottom-navbar navbar-nav me-auto mb-2 mb-lg-0 d-flex w-100 text-center gap-1 justify-content-strech">
   ${menu
     .map(
