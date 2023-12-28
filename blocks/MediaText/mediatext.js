@@ -29,8 +29,6 @@ function updateContentBlock(mediaType, mediaSrc, textContent, textPosition) {
   }
 }
 
-// Example usage:
-
 export default function decorate(block) {
   const {
     type, imagePath, text, position,
