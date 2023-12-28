@@ -1,11 +1,9 @@
-function updateContentBlock(mediaType, mediaSrc, textContent, textPosition) {
-  const mediaContainer = document.querySelector('.content-media');
-  const textContainer = document.querySelector('.content-text');
-
+// eslint-disable-next-line max-len
+function updateContentBlock(mediaType, mediaSrc, textContent, textPosition, mediaContainer, textContainer) {
   // Clear existing content
   mediaContainer.innerHTML = '';
   textContainer.innerHTML = '';
-
+    console.log(mediaType);
   // Set the media content
   if (mediaType === 'image') {
     const image = document.createElement('img');
@@ -33,11 +31,16 @@ export default function decorate(block) {
   const {
     type, imagePath, text, position,
   } = block.dataset;
+  console.log(block.children[0].children);
+  const contentMedia = block.children[0].children[0];
+  const contentText = block.children[0].children[1];
   console.log(block.dataset);
   updateContentBlock(
     type,
     imagePath,
     text,
     position,
+    contentMedia,
+    contentText,
   );
 }
