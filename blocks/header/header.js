@@ -1,9 +1,6 @@
+/* eslint-disable no-tabs */
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-
-// media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
-
 
 function parseListToJson(ulElement) {
   function parseListItem(li) {
@@ -28,6 +25,7 @@ function parseListToJson(ulElement) {
 
     const sublist = li.querySelector('ul');
     if (sublist) {
+      // eslint-disable-next-line no-use-before-define
       item.children = parseList(sublist);
     }
 
