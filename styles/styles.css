@@ -50,6 +50,7 @@
   --nav-height: 64px;
 
   --border-radius: 4px;
+ }
 
 @media (width >= 900px) {
   :root {
