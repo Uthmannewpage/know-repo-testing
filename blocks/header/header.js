@@ -4,52 +4,6 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
-/**
- * decorates the header, mainly the nav
- * @param {Element} block The header block element
- */
-export default async function decorate(block) {
-  // load nav as fragment
-  const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta).pathname : '/en/nav';
-  const fragment = await loadFragment(navPath);
-
-  // decorate nav DOM
-  const nav = document.createElement('nav');
-  nav.id = 'nav';
-  // nav.classList = 'navbar navbar-expand-lg navbar-light bg-light';
-
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
-
-  const sectionList = {};
-  [...nav.children].forEach((section) => {
-    const classList = [...section.classList];
-    const firstClass = classList.shift();
-    const currentSection = classList.shift();
-    sectionList[currentSection] = {};
-    if (currentSection === 'navbar-brand') {
-      const brand = section.querySelector('.default-content-wrapper p a');
-      const url = brand.getAttribute('href');
-      const picture = brand.querySelector('picture');
-      sectionList[currentSection] = {
-        url,
-        picture,
-      };
-    }
-    if (currentSection === 'navbar-top') {
-      const nav = section.querySelector('.default-content-wrapper ul');
-      sectionList[currentSection] = parseListToJson(nav);
-    }
-    if (currentSection === 'navbar-main') {
-      const nav = section.querySelector('.default-content-wrapper ul');
-      sectionList[currentSection] = parseListToJson(nav);
-    }
-    sectionList[currentSection].dataset = section.dataset;
-  });
-  console.log(nav, sectionList);
-
-  setNavBar(block, sectionList);
-}
 
 function parseListToJson(ulElement) {
   function parseListItem(li) {
@@ -85,37 +39,6 @@ function parseListToJson(ulElement) {
   }
 
   return parseList(ulElement);
-}
-
-function setNavBar(block, sectionList) {
-  const header = `
-  <div class="">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container">
-      <div class="row w-100 p-0 m-0">
-			<div class="d-flex col-sm-12 col-lg-2 p-0">
-					<a class="navbar-brand" href="${sectionList['navbar-brand'].url}" ${getMetadataStyleProps(sectionList['navbar-brand'])}>
-						${sectionList['navbar-brand'].picture.innerHTML || ''}
-					</a>
-					<button class="ms-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<div class="navbar-icon"></div>
-					</button>
-			</div>
-			<div class="d-lg-none p-0">
-			<a class="nav-link p-0 m-0 text-primary fw-bold" href="${sectionList['navbar-top'][0].text}">${sectionList['navbar-top'][0].text} <i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i> </a>
-			</div>
-      ${generateTopNavigation(sectionList['navbar-top'])}
-      ${generateMainMenu(sectionList['navbar-main'])}
-      ${generateCollapseMenu(sectionList)}
-      
-      </div>
-			
-    </div>
-		
-  </nav>
-	<div class="container border border-2 border-primary w-100 d-lg-none"></div>
-  </div>`;
-  block.innerHTML = header;
 }
 function getMetadataStyleProps(section) {
   const { dataset } = section;
@@ -299,3 +222,83 @@ function generateMainMenu(menu) {
     .join('')}
 </ul></div>`;
 }
+
+function setNavBar(block, sectionList) {
+  const header = `
+  <div class="">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <div class="row w-100 p-0 m-0">
+			<div class="d-flex col-sm-12 col-lg-2 p-0">
+					<a class="navbar-brand" href="${sectionList['navbar-brand'].url}" ${getMetadataStyleProps(sectionList['navbar-brand'])}>
+						${sectionList['navbar-brand'].picture.innerHTML || ''}
+					</a>
+					<button class="ms-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<div class="navbar-icon"></div>
+					</button>
+			</div>
+			<div class="d-lg-none p-0">
+			<a class="nav-link p-0 m-0 text-primary fw-bold" href="${sectionList['navbar-top'][0].text}">${sectionList['navbar-top'][0].text} <i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i> </a>
+			</div>
+      ${generateTopNavigation(sectionList['navbar-top'])}
+      ${generateMainMenu(sectionList['navbar-main'])}
+      ${generateCollapseMenu(sectionList)}
+      
+      </div>
+			
+    </div>
+		
+  </nav>
+	<div class="container border border-2 border-primary w-100 d-lg-none"></div>
+  </div>`;
+  block.innerHTML = header;
+}
+
+/**
+ * decorates the header, mainly the nav
+ * @param {Element} block The header block element
+ */
+export default async function decorate(block) {
+  // load nav as fragment
+  const navMeta = getMetadata('nav');
+  const navPath = navMeta ? new URL(navMeta).pathname : '/en/nav';
+  const fragment = await loadFragment(navPath);
+
+  // decorate nav DOM
+  const nav = document.createElement('nav');
+  nav.id = 'nav';
+  // nav.classList = 'navbar navbar-expand-lg navbar-light bg-light';
+
+  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+
+  const sectionList = {};
+  [...nav.children].forEach((section) => {
+    const classList = [...section.classList];
+    const firstClass = classList.shift();
+    const currentSection = classList.shift();
+    sectionList[currentSection] = {};
+    if (currentSection === 'navbar-brand') {
+      const brand = section.querySelector('.default-content-wrapper p a');
+      const url = brand.getAttribute('href');
+      const picture = brand.querySelector('picture');
+      sectionList[currentSection] = {
+        url,
+        picture,
+      };
+    }
+    if (currentSection === 'navbar-top') {
+      const nav = section.querySelector('.default-content-wrapper ul');
+      sectionList[currentSection] = parseListToJson(nav);
+    }
+    if (currentSection === 'navbar-main') {
+      const nav = section.querySelector('.default-content-wrapper ul');
+      sectionList[currentSection] = parseListToJson(nav);
+    }
+    sectionList[currentSection].dataset = section.dataset;
+  });
+  console.log(nav, sectionList);
+
+  setNavBar(block, sectionList);
+}
+
+
