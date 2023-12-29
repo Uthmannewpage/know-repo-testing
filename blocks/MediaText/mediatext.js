@@ -1,83 +1,35 @@
-// eslint-disable-next-line max-len
-function updateContentBlock(
-  mediaType,
-  mediaSrc,
-  textContent,
-  textPosition,
-  mediaContainer,
-  textContainer,
-  heading,
-  buttoncolor,
-  buttontext,
-  headingcolor,
-) {
-  // Clear existing content
-  mediaContainer.innerHTML = '';
-  textContainer.innerHTML = '';
-  // Set the media content
-  if (mediaType === 'image') {
-    const image = document.createElement('img');
-    image.src = mediaSrc;
-    image.style.width = '50%';
-    mediaContainer.appendChild(image);
-  } else if (mediaType === 'video') {
-    const video = document.createElement('video');
-    video.src = mediaSrc;
-    video.controls = true;
-    mediaContainer.appendChild(video);
-    mediaContainer.classList.add('ratio', 'ratio-16x9');
-  }
-
-  // Set the text content
-  textContainer.innerHTML = `<p>${textContent}</p>`;
-
-  // Set the text position
-  if (textPosition === 'left') {
-    textContainer.style.order = -1;
-  } else {
-    textContainer.style.order = 1;
-  }
-  textContainer.style.width = '50%';
-  if (heading) {
-    const h1 = `<h2 style='color: ${headingcolor}'>${heading}</h2>`;
-    textContainer.innerHTML = h1 + textContainer.innerHTML;
-  }
-  if (buttontext && buttontext !== '') {
-    const btn = `<button class='btn' style='background-color: ${buttoncolor}; padding: 1rem 0.5rem;'> 
-    ${buttontext}</button>`;
-    textContainer.innerHTML += btn;
-  }
-
-  textContainer.classList.add('d-flex', 'flex-column', 'p-1', 'align-items-center');
-}
-
 export default function decorate(block) {
   const metadata = block.closest('.section').dataset;
-  const {
-    type,
-    imagepath,
-    text,
-    position,
-    buttoncolor,
-    buttontext,
-    headingcolor,
-    heading,
-  } = metadata;
+  const { type, headingcolor } = metadata;
 
-  const cols = [...block.firstElementChild.children];
-  block.firstElementChild.classList.add('d-flex', 'flex-row', 'justify-content-center', 'align-items-center');
-  const contentMedia = cols[0];
-  const contentText = cols[1];
-  updateContentBlock(
-    type,
-    imagepath,
-    text,
-    position,
-    contentMedia,
-    contentText,
-    heading,
-    buttoncolor,
-    buttontext,
-    headingcolor,
-  );
+  const blockItems = [...block.firstElementChild.children];
+
+  const [contentLeft, contentRight] = blockItems;
+  const text = contentRight.innerHTML.split('<br>');
+  const h2 = `${text[0].split('\n')[1].trim().split(',').join('<br>')}</h2>`;
+  let p = text[1];
+  // eslint-disable-next-line prefer-destructuring
+  p = p.split('</h2>')[0];
+  let media = '';
+  if (type === 'video') {
+    media = `<video controls class="ratio ratio-16x9">
+        <source src="${contentLeft.innerHTML}">
+        Your browser does not support the video tag.
+      </video>`;
+  } else if (type === 'image') {
+    media = contentLeft.innerHTML;
+  }
+  block.innerHTML = `
+  <div class="container-fluid p-2" style='background-color: #f9f9f8'>
+      <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-xs-12 col-sm-6">
+      ${media}
+    </div>
+        <div class="col-xs-12 col-sm-4 ps-4">
+          <div style='color: ${headingcolor} !important;'>${h2}</div>
+          <p>${p}</p>
+        </div>
+       
+      </div>
+  </div>`;
 }
