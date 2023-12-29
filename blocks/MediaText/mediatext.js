@@ -26,10 +26,11 @@ function updateContentBlock(
     video.controls = true;
     video.style.width = '50%';
     mediaContainer.appendChild(video);
+    mediaContainer.classList.add('ratio', 'ratio-16x9');
   }
 
   // Set the text content
-  textContainer.textContent = textContent;
+  textContainer.innerHTML = `<p>${textContent}</p>`;
 
   // Set the text position
   if (textPosition === 'left') {
@@ -39,11 +40,11 @@ function updateContentBlock(
   }
   textContainer.style.width = '50%';
   if (heading) {
-    const h1 = `<h1 style='color: ${headingcolor}'>${heading}</h1>`;
+    const h1 = `<h2 style='color: ${headingcolor}'>${heading}</h2>`;
     textContainer.innerHTML = h1 + textContainer.innerHTML;
   }
   if (buttontext && buttontext !== '') {
-    const btn = `<button class='btn' style='background-color: ${buttoncolor}'> 
+    const btn = `<button class='btn' style='background-color: ${buttoncolor}; padding: 1rem 0.5rem;'> 
     ${buttontext}</button>`;
     textContainer.innerHTML += btn;
   }
