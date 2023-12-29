@@ -130,7 +130,7 @@ function generateCollapseMenu(sections) {
   <li class="nav-item border-bottom border-1  p-0 w-100 active"><a class="nav-link p-3 mb-1" aria-current="page" href="/">Home</a></li>
   ${menu
     .map(
-      (item, index) => `${
+      (item) => `${
         !item.children
           ? `<li class="nav-item border-bottom border-1  p-0 w-100">
       <a class="nav-link p-3 mb-1" aria-current="page" href="${item.link}">${
@@ -165,12 +165,12 @@ function generateCollapseMenu(sections) {
   </ul>
     <div>
     <div class="nav-bottom w-100 d-flex align-items-center">
-      <a class="nav-link  text-primary" href="${topMenu.dataset['spanishUrl']}">${topMenu.dataset['spanishLabel']}</a>
+      <a class="nav-link  text-primary" href="${topMenu.dataset.spanishUrl}">${topMenu.dataset.spanishLabel}</a>
       <span><i class="fa-solid fa-caret-right  text-primary"></i><i class="fa-solid fa-caret-right  text-primary"></i></span>
     </div>
     <div class="nav-bottom w-100 d-flex align-items-center">
       <ul class="list-unstyled d-flex align-items-center">
-        ${topMenu.map((item, index) => (index>0 && index < 3) ?`<li><a class="nav-link  text-primary" href="${item.link}">${item.text||item.picture.innerHTML}</a></li>`:'').join('')}
+        ${topMenu.map((item, index) => ((index > 0 && index < 3) ? `<li><a class="nav-link  text-primary" href="${item.link}">${item.text || item.picture.innerHTML}</a></li>` : '')).join('')}
         <li class="text-primary">Follow Us</li>
         </ul>
         
@@ -272,7 +272,7 @@ export default async function decorate(block) {
   const sectionList = {};
   [...nav.children].forEach((section) => {
     const classList = [...section.classList];
-    const firstClass = classList.shift();
+    classList.shift();
     const currentSection = classList.shift();
     sectionList[currentSection] = {};
     if (currentSection === 'navbar-brand') {
@@ -285,18 +285,14 @@ export default async function decorate(block) {
       };
     }
     if (currentSection === 'navbar-top') {
-      const nav = section.querySelector('.default-content-wrapper ul');
-      sectionList[currentSection] = parseListToJson(nav);
+      const navTop = section.querySelector('.default-content-wrapper ul');
+      sectionList[currentSection] = parseListToJson(navTop);
     }
     if (currentSection === 'navbar-main') {
-      const nav = section.querySelector('.default-content-wrapper ul');
-      sectionList[currentSection] = parseListToJson(nav);
+      const navMain = section.querySelector('.default-content-wrapper ul');
+      sectionList[currentSection] = parseListToJson(navMain);
     }
     sectionList[currentSection].dataset = section.dataset;
   });
-  console.log(nav, sectionList);
-
   setNavBar(block, sectionList);
 }
-
-
