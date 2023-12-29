@@ -16,6 +16,7 @@ header .bottom-navbar.navbar-nav .nav-link.show{
   background: var(--color-primary) !important;
   color: white !important;
 }
+
 header .bottom-navbar.navbar-nav .dropdown-menu .dropdown-item{
   background-image: linear-gradient(to top, #f1efeb, #d6d2ca);
   padding: 15px 0;
@@ -25,6 +26,7 @@ header .bottom-navbar.navbar-nav .dropdown-menu .dropdown-item{
   color: var(--color-primary);
   letter-spacing: -.09px;
 }
+
 header ul.language-dropdown li.nav-item a.nav-link{
   font-weight: 600;
   color: var(--color-primary);
@@ -32,46 +34,60 @@ header ul.language-dropdown li.nav-item a.nav-link{
   min-width: 0;
   font-size: 18px;
 }
+
 header ul.language-dropdown li.nav-item ul.dropdown-menu {
   min-width: 0;
 }
+
 header ul.language-dropdown li.nav-item ul.dropdown-menu a.dropdown-item {
   font-weight: 600;
   color: var(--color-primary);
   text-align: left;
 }
-header ul.language-dropdown li.nav-item a.nav-link:hover{
-  color: var(--color-primary);
-}
+
 header .bottom-navbar.navbar-nav .nav-item a.nav-link {
   background-image: linear-gradient(to top, #f1efeb, #d6d2ca);
   font-size: 20px;
   font-weight: 700;
   color: var(--color-primary);
 }
+
+header ul.language-dropdown li.nav-item a.nav-link:hover{
+  color: var(--color-primary);
+}
+
+
+
 header .border-primary {
   border-color: var(--color-primary) !important;
 }
+
 header .border-info {
   border-color: var(--color-info) !important;
 }
+
 header .border-warning {
   border-color: var(--color-warning) !important;
 }
+
 header .border-success {
   border-color: var(--color-success) !important;
 }
+
 header .w-35 {
   width: 35% !important;
 }
+
 header .navbar-toggler{
   background: var(--color-primary);
   z-index: 100  ;
   transition: 0.2s ease-in-out;
 }
+
 header .navbar-toggler[aria-expanded="true"]{
   background: transparent;
 }
+
 header .navbar-toggler .navbar-icon{
   background: transparent;
   height: 0.3rem;
@@ -80,12 +96,14 @@ header .navbar-toggler .navbar-icon{
   transition: all .3s ease-in-out;
   border-radius: 0.6rem;
 }
+
 header .navbar-toggler[aria-expanded="false"] .navbar-icon{
   background: white;
 }
+
 header .navbar-toggler .navbar-icon::before{
   content: '';
-  top: 0px  ;
+  top: 0  ;
   height: 0.3rem;
   background: white;
   width: 30px;
@@ -93,32 +111,35 @@ header .navbar-toggler .navbar-icon::before{
   position: absolute; 
   border-radius: 0.6rem;
   transition: all .3s ease-in-out;
-  transform: translateY(0px) rotate(45deg);
+  transform: translateY(0) rotate(45deg);
 }
+
 header .navbar-toggler[aria-expanded="false"] .navbar-icon::before{
   content: '';
   background: white;
   height: 0.3rem;
   width: 30px;
   position: absolute;
-  top: 0px  ;
+  top: 0  ;
   left: 0;
   border-radius: 0.6rem;
   transition: all .3s ease-in-out;
   transform: translateY(-10px) rotate(0deg);
 }
+
 header .navbar-toggler .navbar-icon::after{
   content: '';
   background: white;
   height: 0.3rem;
   width: 30px;
   position: absolute;
-  top: 0px  ;
+  top: 0  ;
   left: 0;
   border-radius: 0.6rem;
   transition: .3s ease-in-out;
-  transform: translateY(0px) rotate(-45deg);
+  transform: translateY(0) rotate(-45deg);
 }
+
 header .navbar-toggler[aria-expanded="false"] .navbar-icon::after{
   content: '';
   background: white;
@@ -129,7 +150,7 @@ header .navbar-toggler[aria-expanded="false"] .navbar-icon::after{
   left: 0;
   border-radius: 0.6rem;
   transition: all .3s ease-in-out;
-  transform: translateY(0px) rotate(0deg);
+  transform: translateY(0) rotate(0deg);
 }
 
 header .mobile-view.navbar-collapse.show{
@@ -141,9 +162,11 @@ header .mobile-view.navbar-collapse.show{
   position: absolute;
   background: var(--color-dark);
 }
+
 header .mobile-view.navbar-collapse.show .nav-item .nav-link{
   color: white ;
 }
+
 header .mobile-view.navbar-collapse.show .nav-item .nav-link:hover{
   background-color: var(--color-primary);
 }
@@ -170,7 +193,7 @@ header .mobile-view .nav-bottom{
   background: var(--color-gray);
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   header .bottom-navbar.navbar-nav .nav-item a.nav-link {
     font-size: 15px;
   }

@@ -57,12 +57,13 @@
   border: 1px solid #e8e4dc;
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .divhr {
     width: 1px;
     transform: rotate(15deg);
   }
 }
+
 .divhr:last-child {
   display: none;
 }
