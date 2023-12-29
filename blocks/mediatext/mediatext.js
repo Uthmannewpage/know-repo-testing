@@ -20,7 +20,7 @@ export default function decorate(block) {
     media = contentLeft.innerHTML;
   }
   block.innerHTML = `
-  <div class="container-fluid p-2" style='background-color: #f9f9f8'>
+  <div class="container p-2" style='background-color: #f9f9f8'>
       <div class="row d-flex justify-content-center align-items-center">
       <div class="col-xs-12 col-sm-6">
       ${media}
