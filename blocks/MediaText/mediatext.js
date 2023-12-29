@@ -24,7 +24,6 @@ function updateContentBlock(
     const video = document.createElement('video');
     video.src = mediaSrc;
     video.controls = true;
-    video.style.width = '50%';
     mediaContainer.appendChild(video);
     mediaContainer.classList.add('ratio', 'ratio-16x9');
   }
@@ -66,7 +65,7 @@ export default function decorate(block) {
   } = metadata;
 
   const cols = [...block.firstElementChild.children];
-  block.firstElementChild.classList.add(`columns-media-${cols.length}-cols`);
+  block.firstElementChild.classList.add('d-flex', 'flex-row', 'justify-content-center', 'align-items-center');
   const contentMedia = cols[0];
   const contentText = cols[1];
   updateContentBlock(
