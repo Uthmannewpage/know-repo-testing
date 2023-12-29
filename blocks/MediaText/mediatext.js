@@ -47,6 +47,8 @@ function updateContentBlock(
     ${buttontext}</button>`;
     textContainer.innerHTML += btn;
   }
+
+  textContainer.classList.add('d-flex', 'flex-column', 'p-1', 'align-items-center');
 }
 
 export default function decorate(block) {
