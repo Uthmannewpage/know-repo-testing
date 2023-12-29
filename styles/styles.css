@@ -68,7 +68,6 @@ body {
   line-height: 1.6;
   color: var(--text-color) !important;
   background-color: var(--background-color) !important;
-  display: none;
 }
 
 body.appear {
