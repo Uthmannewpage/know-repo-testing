@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-:root {
+ :root {
   /* colors */
   --link-color: #783384;
   --link-hover-color: #8a4196;
@@ -45,10 +45,18 @@
 
   /* nav height */
   --nav-height: 64px;
-  --border-radius: 4px;
+
 }
 
-@media (width >=900px) {
+@font-face {
+  font-family: roboto-fallback;
+  size-adjust: 100.06%;
+  ascent-override: 95%;
+  src: local('Arial');
+}
+
+
+@media (width >= 900px) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -74,7 +82,70 @@ body.appear {
   display: block;
 }
 
-/* Common css */
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  scroll-margin: calc(var(--nav-height) + 1em);
+}
+
+h1 {
+  font-size: var(--heading-font-size-s)!important;
+  line-height: 23px;
+  margin-top: var(--heading-font-size-s);
+}
+h2 { font-size: var(--heading-font-size-xl) }
+h3 { font-size: var(--heading-font-size-l) }
+h4 { font-size: var(--heading-font-size-m) }
+h5 { font-size: var(--heading-font-size-s) }
+h6 { font-size: var(--heading-font-size-xs) }
+
+/* p, dl, ol, ul, pre, blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+} */
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom: 1px solid var(--overlay-background-color);
+}
+
+code, pre, samp {
+  font-family: var(--fixed-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+code, samp {
+  padding: .125em;
+}
+
+pre {
+  overflow: scroll;
+}
+
+main pre {
+  background-color: var(--overlay-background-color);
+  padding: 1em;
+  border-radius: .25em;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+a:any-link {
+  color: var(--link-color);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
 .text-primary {
   color: var(--color-primary) !important;
 }
@@ -83,10 +154,77 @@ body.appear {
   border-color: var(--color-primary) !important;
 }
 
-@media (width <= 992px) {
-  .container {
-    max-width: 100% !important;
-  }
+.section[data-align = 'center'] {
+  text-align: center;
+}
+
+.section[data-align = 'right'] {
+  text-align: right;
+}
+
+.section[data-font = 'roboto'] {
+  font-family: roboto-slab, serif;
+}
+
+.section[data-type = 'purple'] .default-content-wrapper {
+  background: #783384;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0 35px;
+}
+
+.section[data-type = 'purple'] .default-content-wrapper a {
+  color: #fff;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* buttons */
+a.button:any-link, button {
+  font-family: var(--body-font-family);
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 2px solid transparent;
+  padding: 5px 17px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--background-color);
+  background-color: var(--link-color);
+  margin: 16px 0;
+  white-space: nowrap;
+  overflow: inital;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+a.button:any-link::after, button::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 9px solid var(--link-color);
+  display: inline-block;
+  position: absolute;
+  right: -11px;
+  top: -1px;
+}
+
+a.button:hover, a.button:focus, button:hover, button:focus  {
+  background-color: var(--link-hover-color);
+  cursor: pointer;
+}
+
+a.button:hover:any-link::after, button:hover::after {
+  border-left: 9px solid var(--link-hover-color);;
+}
+
+button:disabled, button:disabled:hover {
+  background-color: var(--overlay-background-color);
+  cursor: unset;
 }
 
 a.button.secondary, button.secondary {
@@ -161,21 +299,21 @@ p, ul li, table {
   font-size: var(--paragraph-font-size-s);
 }
 
-.hide-img-mobile .img-box img {
+.hide-img-mobile .img-box img{
   display: none;
 }
 
-@media (width >=600px) {
+@media (width >= 600px) {
   main .section {
     padding: 64px 32px;
   }
 
-  .hide-img-mobile .img-box img {
+  .hide-img-mobile .img-box img{
     display: block;
   }
 
   h1 {
-    font-size: var(--heading-font-size-xl) !important;
+    font-size: var(--heading-font-size-xl)!important;
     line-height: 1.13;
     letter-spacing: -0.2px;
   }
@@ -185,9 +323,19 @@ p, ul li, table {
   }
 }
 
-@media (width >=900px) {
-  .section>div {
-    max-width: 1200px;
+@media (width >= 900px) {
+  .section > div {
     margin: auto;
   }
+}
+
+@media (width <= 992px) {
+  .container {
+    max-width: 100% !important;
+  }
+}
+
+/* section metadata */
+main .section.highlight {
+  background-color: var(--highlight-background-color);
 }

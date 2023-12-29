@@ -126,7 +126,7 @@ function generateCollapseMenu(sections) {
   return `
   <div class="mobile-view col-lg-12 p-0 collapse navbar-collapse d-none" id="navbarSupportedContent">
   <ul class="navbar-nav me-auto d-flex w-100 gap-1 justify-content-strech">
-  <li class="nav-item border-bottom border-1  p-0 w-100 disabled"><a class="nav-link p-3 mb-1" aria-current="page" href="/">&nbsp;</a></li>
+  <li class="nav-item border-bottom border-1  p-0 w-100 disabled"><span class="nav-link p-3 mb-1" aria-current="page" href="/">&nbsp;</span></li>
   <li class="nav-item border-bottom border-1  p-0 w-100 active"><a class="nav-link p-3 mb-1" aria-current="page" href="/">Home</a></li>
   ${menu
     .map(

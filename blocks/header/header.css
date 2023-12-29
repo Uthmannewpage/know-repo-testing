@@ -12,6 +12,10 @@ header .navbar-nav .dropdown-menu {
   margin-top: -5px;
 }
 
+header button::after{
+  content: none !important;
+}
+
 header .bottom-navbar.navbar-nav .nav-link.show{
   background: var(--color-primary) !important;
   color: white !important;
@@ -33,6 +37,10 @@ header ul.language-dropdown li.nav-item a.nav-link{
   text-align: left;
   min-width: 0;
   font-size: 18px;
+}
+
+header .nav-link{
+  color: var(--color-primary) !important;
 }
 
 header ul.language-dropdown li.nav-item ul.dropdown-menu {
@@ -82,10 +90,12 @@ header .navbar-toggler{
   background: var(--color-primary);
   z-index: 100  ;
   transition: 0.2s ease-in-out;
+  margin: inherit;
 }
 
 header .navbar-toggler[aria-expanded="true"]{
-  background: transparent;
+  background: var(--color-dark);
+  
 }
 
 header .navbar-toggler .navbar-icon{
@@ -164,11 +174,12 @@ header .mobile-view.navbar-collapse.show{
 }
 
 header .mobile-view.navbar-collapse.show .nav-item .nav-link{
-  color: white ;
+  color: white  !important;
 }
 
-header .mobile-view.navbar-collapse.show .nav-item .nav-link:hover{
+header .mobile-view.navbar-collapse.show .nav-item a.nav-link:hover{
   background-color: var(--color-primary);
+  text-decoration: none;
 }
 
 header .mobile-view.navbar-collapse.show .nav-item.active{
