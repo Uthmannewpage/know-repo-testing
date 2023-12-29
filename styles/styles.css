@@ -18,11 +18,17 @@
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
+  --color-primary: #783384;
+  --color-warning: #f2c107;
+  --color-success: #45b274;
+  --color-info: #4ebce8;
+  --color-gray: #d6d2ca;
+  --color-dark: #444b50;
 
   /* fonts */
-  --body-font-family: 'Lato'
+  --body-font-family: lato, sans-serif;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Lato';
+  --fixed-font-family: lato, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -64,22 +70,18 @@
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-m) !important;
   margin: 0;
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family) !important;
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  display: none;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
 }
 
 body.appear {
   display: block;
 }
 
-header {
-  height: var(--nav-height);
-}
 
 h1, h2, h3,
 h4, h5, h6 {
@@ -102,10 +104,10 @@ h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
 
-p, dl, ol, ul, pre, blockquote {
+/* p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
-}
+} */
 
 hr {
   margin-top: 1.5em;
@@ -142,6 +144,14 @@ a:any-link {
 a:hover {
   text-decoration: underline;
   color: var(--link-hover-color);
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.border-primary {
+  border-color: var(--color-primary) !important;
 }
 
 .section[data-align = 'center'] {
@@ -315,8 +325,13 @@ p, ul li, table {
 
 @media (width >= 900px) {
   .section > div {
-    max-width: 1200px;
     margin: auto;
+  }
+}
+
+@media (width <= 992px) {
+  .container {
+    max-width: 100% !important;
   }
 }
 
