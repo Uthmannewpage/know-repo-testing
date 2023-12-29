@@ -1,7 +1,7 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  block.classList.add('d-flex', 'flex-column', 'flex-lg-row', 'common-menu','container');
+  block.classList.add('d-flex', 'flex-column', 'flex-lg-row', 'common-menu', 'container');
 
   [...block.children].forEach((row) => {
     row.classList.add('d-flex', 'p-3', 'align-items-center');
@@ -14,13 +14,9 @@ export default function decorate(block) {
     pictureDiv.classList.add('flex-shrink-0');
     pictureDiv
       .querySelectorAll('img')
-      .forEach((img) =>
-        img
-          .closest('picture')
-          .replaceWith(
-            createOptimizedPicture(img.src, img.alt, false, [{ width: '110' }])
-          )
-      );
+      .forEach((img) => img
+        .closest('picture')
+        .replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '110' }])));
 
     const triangle1 = document.createElement('span');
     triangle1.classList.add('triangle', 'ms-2', 'me-1');
