@@ -147,23 +147,29 @@ header .mobile-view.navbar-collapse.show .nav-item .nav-link{
 header .mobile-view.navbar-collapse.show .nav-item .nav-link:hover{
   background-color: var(--color-primary);
 }
+
 header .mobile-view.navbar-collapse.show .nav-item.active{
   background: var(--color-primary);
 }
+
 header .mobile-view.navbar-collapse.collapse.show{
   width: 100%;
   z-index: 90;
 }
+
 header .mobile-view.navbar-collapse{
   display: none !important;
   opacity: 0;;
 }
+
 header .mobile-view .dropdown-menu{
   background: var(--color-dark);
 }
+
 header .mobile-view .nav-bottom{
   background: var(--color-gray);
 }
+
 @media (max-width: 1200px) {
   header .bottom-navbar.navbar-nav .nav-item a.nav-link {
     font-size: 15px;
