@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
- :root {
+:root {
   /* colors */
   --link-color: #783384;
   --link-hover-color: #8a4196;
@@ -25,8 +25,6 @@
   --color-info: #4ebce8;
   --color-gray: #d6d2ca;
   --color-dark: #444b50;
-  
-  
 
   /* fonts */
   --body-font-family: 'Lato'
@@ -50,9 +48,9 @@
   --nav-height: 64px;
 
   --border-radius: 4px;
- }
+}
 
-@media (width >= 900px) {
+@media (width >=900px) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -79,18 +77,14 @@ body.appear {
   display: block;
 }
 
-
-
 /* Common css */
-.text-primary{
+.text-primary {
   color: var(--color-primary) !important;
 }
-
-
-
-.border-primary{
+.border-primary {
   border-color: var(--color-primary) !important;
 }
+
 @media (max-width: 992px) {
   .container {
     max-width: 100% !important;
@@ -168,21 +162,21 @@ p, ul li, table {
   font-size: var(--paragraph-font-size-s);
 }
 
-.hide-img-mobile .img-box img{
+.hide-img-mobile .img-box img {
   display: none;
 }
 
-@media (width >= 600px) {
+@media (width >=600px) {
   main .section {
     padding: 64px 32px;
   }
 
-  .hide-img-mobile .img-box img{
+  .hide-img-mobile .img-box img {
     display: block;
   }
 
   h1 {
-    font-size: var(--heading-font-size-xl)!important;
+    font-size: var(--heading-font-size-xl) !important;
     line-height: 1.13;
     letter-spacing: -0.2px;
   }
@@ -192,8 +186,8 @@ p, ul li, table {
   }
 }
 
-@media (width >= 900px) {
-  .section > div {
+@media (width >=900px) {
+  .section>div {
     max-width: 1200px;
     margin: auto;
   }

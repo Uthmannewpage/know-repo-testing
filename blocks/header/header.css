@@ -1,12 +1,7 @@
 header nav{
   --nav-height: auto
 }
-header .bottom-navbar.navbar-nav .nav-item a.nav-link {
-  background-image: linear-gradient(to top, #f1efeb, #d6d2ca);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-primary);
-}
+
 header .navbar-nav .dropdown-menu {
   width: 100%;
   text-align: center;
@@ -48,6 +43,12 @@ header ul.language-dropdown li.nav-item ul.dropdown-menu a.dropdown-item {
 header ul.language-dropdown li.nav-item a.nav-link:hover{
   color: var(--color-primary);
 }
+header .bottom-navbar.navbar-nav .nav-item a.nav-link {
+  background-image: linear-gradient(to top, #f1efeb, #d6d2ca);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
 header .border-primary {
   border-color: var(--color-primary) !important;
 }
@@ -82,18 +83,6 @@ header .navbar-toggler .navbar-icon{
 header .navbar-toggler[aria-expanded="false"] .navbar-icon{
   background: white;
 }
-header .navbar-toggler[aria-expanded="false"] .navbar-icon::before{
-  content: '';
-  background: white;
-  height: 0.3rem;
-  width: 30px;
-  position: absolute;
-  top: 0px  ;
-  left: 0;
-  border-radius: 0.6rem;
-  transition: all .3s ease-in-out;
-  transform: translateY(-10px) rotate(0deg);
-}
 header .navbar-toggler .navbar-icon::before{
   content: '';
   top: 0px  ;
@@ -106,17 +95,17 @@ header .navbar-toggler .navbar-icon::before{
   transition: all .3s ease-in-out;
   transform: translateY(0px) rotate(45deg);
 }
-header .navbar-toggler[aria-expanded="false"] .navbar-icon::after{
+header .navbar-toggler[aria-expanded="false"] .navbar-icon::before{
   content: '';
   background: white;
   height: 0.3rem;
   width: 30px;
   position: absolute;
-  top: 10px  ;
+  top: 0px  ;
   left: 0;
   border-radius: 0.6rem;
   transition: all .3s ease-in-out;
-  transform: translateY(0px) rotate(0deg);
+  transform: translateY(-10px) rotate(0deg);
 }
 header .navbar-toggler .navbar-icon::after{
   content: '';
@@ -130,6 +119,19 @@ header .navbar-toggler .navbar-icon::after{
   transition: .3s ease-in-out;
   transform: translateY(0px) rotate(-45deg);
 }
+header .navbar-toggler[aria-expanded="false"] .navbar-icon::after{
+  content: '';
+  background: white;
+  height: 0.3rem;
+  width: 30px;
+  position: absolute;
+  top: 10px  ;
+  left: 0;
+  border-radius: 0.6rem;
+  transition: all .3s ease-in-out;
+  transform: translateY(0px) rotate(0deg);
+}
+
 header .mobile-view.navbar-collapse.show{
   transition: 0.3s ease-in-out;
   left: 0;
