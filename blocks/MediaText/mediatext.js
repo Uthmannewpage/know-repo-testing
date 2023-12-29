@@ -6,6 +6,10 @@ function updateContentBlock(
   textPosition,
   mediaContainer,
   textContainer,
+  heading,
+  buttoncolor,
+  buttontext,
+  headingcolor,
 ) {
   // Clear existing content
   mediaContainer.innerHTML = '';
@@ -34,12 +38,28 @@ function updateContentBlock(
     textContainer.style.order = 1;
   }
   textContainer.style.width = '50%';
+  if (heading) {
+    const h1 = `<h1 style='color: ${headingcolor}'>${heading}</h1>`;
+    textContainer.innerHTML = h1 + textContainer.innerHTML;
+  }
+  if (buttontext && buttontext !== '') {
+    const btn = `<button class='btn' style='background-color: ${buttoncolor}'> 
+    ${buttontext}</button>`;
+    textContainer.innerHTML += btn;
+  }
 }
 
 export default function decorate(block) {
   const metadata = block.closest('.section').dataset;
   const {
-    type, imagepath, text, position,
+    type,
+    imagepath,
+    text,
+    position,
+    buttoncolor,
+    buttontext,
+    headingcolor,
+    heading,
   } = metadata;
 
   const cols = [...block.firstElementChild.children];
@@ -53,5 +73,9 @@ export default function decorate(block) {
     position,
     contentMedia,
     contentText,
+    heading,
+    buttoncolor,
+    buttontext,
+    headingcolor,
   );
 }
