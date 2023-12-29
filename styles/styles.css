@@ -26,9 +26,9 @@
   --color-dark: #444b50;
 
   /* fonts */
-  --body-font-family: 'Lato';
+  --body-font-family: Lato, sans-serif;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Lato';
+  --fixed-font-family: Lato, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -64,7 +64,7 @@
 body {
   font-size: var(--body-font-size-m);
   margin: 0;
-  font-family: Lato, sans-serif;
+  font-family: var(--body-font-family);
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
