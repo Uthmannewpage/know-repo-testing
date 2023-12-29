@@ -204,7 +204,7 @@ function generateCollapseMenu(sections) {
   const topMenu = sections['navbar-top'];
   return `
   <div class="mobile-view col-lg-12 p-0 collapse navbar-collapse d-none" id="navbarSupportedContent">
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex w-100 gap-1 justify-content-strech">
+  <ul class="navbar-nav me-auto d-flex w-100 gap-1 justify-content-strech">
   <li class="nav-item border-bottom border-1  p-0 w-100 disabled"><a class="nav-link p-3 mb-1" aria-current="page" href="/">&nbsp;</a></li>
   <li class="nav-item border-bottom border-1  p-0 w-100 active"><a class="nav-link p-3 mb-1" aria-current="page" href="/">Home</a></li>
   ${menu
@@ -230,7 +230,7 @@ function generateCollapseMenu(sections) {
         
           ${item.children
     .map(
-      (subMenu) => `<li class="w-100" ><a class="dropdown-item text-start" href="${subMenu.link}">${subMenu.text}</a></li>`,
+      (subMenu) => `<li class="w-100 nav-item" ><a class="dropdown-item text-start nav-link p-3" href="${subMenu.link}">${subMenu.text}</a></li>`,
     )
     .join('')}
         </ul>
@@ -242,8 +242,18 @@ function generateCollapseMenu(sections) {
     .join('')}
     <li class="nav-item border-bottom border-1  p-0 w-100"><a class="nav-link p-3 mb-1" aria-current="page" href="/">${topMenu[0].text}</a></li>
   </ul>
-    <div class="nav-bottom">
-      <a class="nav-link  text-primary">Visite el sitio en español</a >
+    <div>
+    <div class="nav-bottom w-100 d-flex align-items-center">
+      <a class="nav-link  text-primary" href="${topMenu.dataset['spanishUrl']}">${topMenu.dataset['spanishLabel']}</a>
+      <span><i class="fa-solid fa-caret-right  text-primary"></i><i class="fa-solid fa-caret-right  text-primary"></i></span>
+    </div>
+    <div class="nav-bottom w-100 d-flex align-items-center">
+      <ul class="list-unstyled d-flex align-items-center">
+        ${topMenu.map((item, index) => (index>0 && index < 3) ?`<li><a class="nav-link  text-primary" href="${item.link}">${item.text||item.picture.innerHTML}</a></li>`:'').join('')}
+        <li class="text-primary">Follow Us</li>
+        </ul>
+        
+      </div>
     </div>
   </div>
   `;

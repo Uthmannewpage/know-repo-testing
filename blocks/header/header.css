@@ -66,6 +66,10 @@ header .w-35 {
 header .navbar-toggler{
   background: var(--color-primary);
   z-index: 100  ;
+  transition: 0.2s ease-in-out;
+}
+header .navbar-toggler[aria-expanded="true"]{
+  background: transparent;
 }
 header .navbar-toggler .navbar-icon{
   background: transparent;
@@ -75,10 +79,10 @@ header .navbar-toggler .navbar-icon{
   transition: all .3s ease-in-out;
   border-radius: 0.6rem;
 }
-header .navbar-toggler.collapsed .navbar-icon{
+header .navbar-toggler[aria-expanded="false"] .navbar-icon{
   background: white;
 }
-header .navbar-toggler.collapsed .navbar-icon::before{
+header .navbar-toggler[aria-expanded="false"] .navbar-icon::before{
   content: '';
   background: white;
   height: 0.3rem;
@@ -102,7 +106,7 @@ header .navbar-toggler .navbar-icon::before{
   transition: all .3s ease-in-out;
   transform: translateY(0px) rotate(45deg);
 }
-header .navbar-toggler.collapsed .navbar-icon::after{
+header .navbar-toggler[aria-expanded="false"] .navbar-icon::after{
   content: '';
   background: white;
   height: 0.3rem;
@@ -138,6 +142,9 @@ header .mobile-view.navbar-collapse.show{
 header .mobile-view.navbar-collapse.show .nav-item .nav-link{
   color: white ;
 }
+header .mobile-view.navbar-collapse.show .nav-item .nav-link:hover{
+  background-color: var(--color-primary);
+}
 header .mobile-view.navbar-collapse.show .nav-item.active{
   background: var(--color-primary);
 }
@@ -148,6 +155,9 @@ header .mobile-view.navbar-collapse.collapse.show{
 header .mobile-view.navbar-collapse{
   display: none !important;
   opacity: 0;;
+}
+header .mobile-view .dropdown-menu{
+  background: var(--color-dark);
 }
 header .mobile-view .nav-bottom{
   background: var(--color-gray);
