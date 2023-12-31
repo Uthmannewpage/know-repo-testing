@@ -18,7 +18,13 @@ export default async function decorate(block) {
 
   // create language selector
   const languageSelector = footer.querySelector('ul:last-of-type');
+  const labelElement = document.createElement('label');
+  labelElement.setAttribute('for', 'langSelector');
+
   const selectElement = document.createElement('select');
+  selectElement.id = 'langSelector';
+  selectElement.setAttribute('name', 'langSelector');
+
   languageSelector?.querySelectorAll('li').forEach((li) => {
     const optionElement = document.createElement('option');
 
@@ -28,6 +34,7 @@ export default async function decorate(block) {
     selectElement.add(optionElement);
   });
 
+  languageSelector?.parentNode.appendChild(labelElement);
   languageSelector?.parentNode.replaceChild(selectElement, languageSelector);
 
   selectElement.addEventListener('change', (e) => {
