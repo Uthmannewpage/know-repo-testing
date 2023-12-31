@@ -5,7 +5,7 @@ export default function decorate(block) {
   const [contentLeft, contentRight] = blockItems;
 
   if (backgroundColor) block.style.backgroundColor = backgroundColor;
-  if (headingcolor) block.querySelector('h2').style.backgroundColor = headingcolor;
+  if (headingcolor) block.querySelector('h2').style.color = headingcolor;
 
   if (type === 'video') {
     contentLeft.innerHTML = `<video controls class="ratio ratio-16x9">
