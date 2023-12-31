@@ -267,7 +267,7 @@ export default async function decorate(block) {
   nav.id = 'nav';
   // nav.classList = 'navbar navbar-expand-lg navbar-light bg-light';
 
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  while (fragment?.firstElementChild) nav.append(fragment.firstElementChild);
 
   const sectionList = {};
   [...nav.children].forEach((section) => {

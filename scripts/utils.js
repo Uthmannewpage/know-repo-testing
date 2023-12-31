@@ -1,3 +1,8 @@
+export const allLanguages = {
+  'english': 'en',
+  'spanish': 'es',
+}
+
 export function getLocalizedResourceUrl(resourceName) {
   const { pathname } = window.location;
   const lastChartFromUrl = pathname.charAt(pathname.length - 1);

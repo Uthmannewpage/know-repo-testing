@@ -33,7 +33,7 @@ export default function decorate(block) {
   } else {
     block.classList.add('ps-0', 'ps-md-5', 'py-md-5', 'py-3');
 
-    const [contentLeft, contentRight, contentImage] = bannerItems;
+    const [contentLeft, contentRight, contentImage, outsideOfContent] = bannerItems;
     if (imageCover === 'background') {
       block.style.background = `url(${contentImage.querySelector('img').getAttribute('src').split('?')[0]}) no-repeat top / cover transparent`;
     }
@@ -54,12 +54,29 @@ export default function decorate(block) {
 
     // searchng for tables:
     tables.forEach((table) => {
-      const firstRow = table.querySelector('tr:first-child');
-      const firstRowContent = firstRow.innerText.trim();
+      const aliasRow = table.querySelector('tr:first-child');
+      const aliasRowText = aliasRow.innerText.trim();
 
-      if (allPossibleTables.includes(firstRowContent)) {
-        table.classList.add(firstRowContent);
-        firstRow.style.display = 'none';
+      if (aliasRowText === 'dropdown') {
+        table.style.display = 'none';
+        const dropDownBox = document.createElement('div');
+        dropDownBox.className = 'dropdownTable';
+        //dropDownBox.classList.add('open');
+
+        const [alias, triggerText, contentText, closeText] = Array.from(table.querySelectorAll('tr')).map(row => row.innerHTML.trim());
+
+        dropDownBox.innerHTML = `<div class="triggerText">${triggerText}</div>`;
+        dropDownBox.innerHTML += `<div class="contentText">${contentText} <div class="closeText">${closeText}</div></div>`;
+
+        table.appendChild(dropDownBox);
+
+        
+
+      }
+
+      if (allPossibleTables.includes(aliasRowText)) {
+        table.classList.add(aliasRowText);
+        const secondRow = table.querySelector('tr:first-child');
       }
     });
 
@@ -77,7 +94,18 @@ export default function decorate(block) {
             </video>` : ''}
             ${contentRight && contentRight.innerHTML !== '' && contentRight.innerHTML}
           </div>
+
+          <div class="col-12">${outsideOfContent && outsideOfContent.innerHTML !== '' && outsideOfContent.innerHTML}</div>
         </div>
     </div>`;
+
+    // only for dropdown
+    block.querySelector('.triggerText') && block.querySelector('.triggerText').addEventListener('click', (e) => {
+      e.target.closest('.dropdownTable').classList.toggle('open');
+    });
+
+    block.querySelector('.closeText') && block.querySelector('.closeText').addEventListener('click', (e) => {
+      e.target.closest('.dropdownTable').classList.remove('open');
+    });
   }
 }

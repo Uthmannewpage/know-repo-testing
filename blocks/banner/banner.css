@@ -11,11 +11,9 @@
   line-height: 1;
   margin-bottom: 2rem;
   color: #783384;
-  text-align: left;
 }
 
 .section.banner-container.section .banner p, .section.banner-container.section .banner li {
-  text-align: left;
   font-size: 20px;
   font-weight: 400;
   color: #363636;
@@ -41,6 +39,20 @@
 .section.banner-container.section .banner .carousel-caption {
   position: absolute;
   inset: 4rem 4rem 0 0;
+  text-align: unset;
+}
+
+.section.banner-container.section .banner .carousel-caption a.button::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 9px solid var(--link-color);
+  display: inline-block;
+  position: absolute;
+  right: -11px;
+  top: -1px;
 }
 
 .section.banner-container.section .banner .carousel-indicators li {
@@ -83,6 +95,10 @@
   color: #783284;
 }
 
+.section.banner-container.section .banner table.or-options tr:nth-of-type(1) {
+  display: none;
+}
+
 .section.banner-container.section .banner table.or-options tr:nth-of-type(2) td:nth-of-type(2){
   text-align: center;
   background-color: #d6d2ca;
@@ -97,6 +113,48 @@
   justify-content: center;
   line-height: 18.5px;
   margin: 0 auto;
+}
+
+
+/* dropdown */
+.section.banner-container.section .banner div.dropdownTable.open .triggerText p:nth-of-type(1), .section.banner-container.section .banner div.dropdownTable .triggerText p:nth-of-type(2), .section.banner-container.section .banner div.dropdownTable .contentText {
+  display: none;
+}
+
+.section.banner-container.section .banner div.dropdownTable.open .triggerText p:nth-of-type(2), .section.banner-container.section .banner div.dropdownTable.open .contentText  {
+  display: block;
+}
+
+.section.banner-container.section .banner div.dropdownTable .triggerText *, .section.banner-container.section .banner div.dropdownTable .closeText {
+  text-align: right;
+  font-size: var(--paragraph-font-size-l);
+  color: var( --color-primary);
+  cursor: pointer;
+  margin: 0;
+}
+
+.section.banner-container.section .banner div.dropdownTable .triggerText {
+  width: 50%;
+  margin-left: 50%;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  padding: 15px;
+  margin-bottom: -2px;
+  z-index: 1111;
+  position: relative;
+}
+
+.section.banner-container.section .banner div.dropdownTable.open .triggerText {
+  border: #25a8d9 2px solid;
+  border-bottom: 0;
+  background: #fff;
+}
+
+.section.banner-container.section .banner div.dropdownTable .contentText {
+  width: 100%;
+  padding: 24px;
+  border: #25a8d9 2px solid;
+  background: #fff;
 }
 
 @media (width >= 768px) {
