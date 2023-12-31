@@ -60,18 +60,16 @@ export default function decorate(block) {
       if (aliasRowText === 'dropdown') {
         table.style.display = 'none';
         const dropDownBox = document.createElement('div');
-        dropDownBox.className = 'dropdownTable';
-        //dropDownBox.classList.add('open');
+        dropDownBox.className = 'dropdown-table';
 
-        const [alias, triggerText, contentText, closeText] = Array.from(table.querySelectorAll('tr')).map(row => row.innerHTML.trim());
+        /* eslint-disable no-unused-vars */
+        const [alias, triggerText, contentText, closeText] = Array.from(table.querySelectorAll('tr')).map((row) => row.innerHTML.trim());
+        /* eslint-disable no-unused-vars */
 
-        dropDownBox.innerHTML = `<div class="triggerText">${triggerText}</div>`;
-        dropDownBox.innerHTML += `<div class="contentText">${contentText} <div class="closeText">${closeText}</div></div>`;
+        dropDownBox.innerHTML = `<div class="trigger-text">${triggerText}</div>`;
+        dropDownBox.innerHTML += `<div class="content-text">${contentText} <div class="close-text">${closeText}</div></div>`;
 
         table.appendChild(dropDownBox);
-
-        
-
       }
 
       if (allPossibleTables.includes(aliasRowText)) {
@@ -100,12 +98,16 @@ export default function decorate(block) {
     </div>`;
 
     // only for dropdown
-    block.querySelector('.triggerText') && block.querySelector('.triggerText').addEventListener('click', (e) => {
-      e.target.closest('.dropdownTable').classList.toggle('open');
-    });
+    if (block.querySelector('.trigger-text')) {
+      block.querySelector('.trigger-text').addEventListener('click', (e) => {
+        e.target.closest('.dropdown-table').classList.toggle('open');
+      });
+    }
 
-    block.querySelector('.closeText') && block.querySelector('.closeText').addEventListener('click', (e) => {
-      e.target.closest('.dropdownTable').classList.remove('open');
-    });
+    if (block.querySelector('.close-text')) {
+      block.querySelector('.close-text').addEventListener('click', (e) => {
+        e.target.closest('.dropdown-table').classList.remove('open');
+      });
+    }
   }
 }

@@ -1,7 +1,7 @@
 export const allLanguages = {
-  'english': 'en',
-  'spanish': 'es',
-}
+  english: 'en',
+  spanish: 'es',
+};
 
 export function getLocalizedResourceUrl(resourceName) {
   const { pathname } = window.location;

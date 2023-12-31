@@ -117,15 +117,22 @@
 
 
 /* dropdown */
-.section.banner-container.section .banner div.dropdownTable.open .triggerText p:nth-of-type(1), .section.banner-container.section .banner div.dropdownTable .triggerText p:nth-of-type(2), .section.banner-container.section .banner div.dropdownTable .contentText {
+.section.banner-container.section .banner div.dropdown-table .trigger-text p:nth-of-type(2), .section.banner-container.section .banner div.dropdown-table.open .trigger-text p:nth-of-type(1), .section.banner-container.section .banner div.dropdown-table .content-text {
   display: none;
 }
 
-.section.banner-container.section .banner div.dropdownTable.open .triggerText p:nth-of-type(2), .section.banner-container.section .banner div.dropdownTable.open .contentText  {
+.section.banner-container.section .banner div.dropdown-table .content-text {
+  width: 100%;
+  padding: 24px;
+  border: #25a8d9 2px solid;
+  background: #fff;
+}
+
+.section.banner-container.section .banner div.dropdown-table.open .trigger-text p:nth-of-type(2), .section.banner-container.section .banner div.dropdown-table.open .content-text  {
   display: block;
 }
 
-.section.banner-container.section .banner div.dropdownTable .triggerText *, .section.banner-container.section .banner div.dropdownTable .closeText {
+.section.banner-container.section .banner div.dropdown-table .trigger-text *, .section.banner-container.section .banner div.dropdown-table .close-text {
   text-align: right;
   font-size: var(--paragraph-font-size-l);
   color: var( --color-primary);
@@ -133,7 +140,7 @@
   margin: 0;
 }
 
-.section.banner-container.section .banner div.dropdownTable .triggerText {
+.section.banner-container.section .banner div.dropdown-table .trigger-text {
   width: 50%;
   margin-left: 50%;
   border: 1px solid transparent;
@@ -144,16 +151,9 @@
   position: relative;
 }
 
-.section.banner-container.section .banner div.dropdownTable.open .triggerText {
+.section.banner-container.section .banner div.dropdown-table.open .trigger-text {
   border: #25a8d9 2px solid;
   border-bottom: 0;
-  background: #fff;
-}
-
-.section.banner-container.section .banner div.dropdownTable .contentText {
-  width: 100%;
-  padding: 24px;
-  border: #25a8d9 2px solid;
   background: #fff;
 }
 
