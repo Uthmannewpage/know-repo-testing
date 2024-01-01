@@ -10,7 +10,6 @@ export default async function decorate(block) {
 
   // load footer fragment
   const footerPath = getLocalizedResourceUrl('footer');
-  console.log(footerPath)
   const fragment = await loadFragment(footerPath);
 
   // decorate footer DOM
