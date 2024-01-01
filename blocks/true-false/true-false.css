@@ -5,11 +5,12 @@
     color: var(--color-primary);
     min-height: 171px;
 }
-.true-false-block .left-arrow:before{
+
+.true-false-block .left-arrow::before{
     content: '';
     height: 100%;
     width: 71px;
-    background-image: url(https://www.knowpneumonia.com/images/true-arrow.png); 
+    background-image: url("https://www.knowpneumonia.com/images/true-arrow.png"); 
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position:absolute;
@@ -17,24 +18,29 @@
     top: 0;
     left: 0;
 }
+
 .true-false-block .body-content{
     margin-top: 50px;
-    font-family: lato;
+    font-family: lato, sans-serif;
     font-size: 24px;
 }
+
 .true-false-block .body-content p{
     font-size: 24px;
 }
+
 .true-false-block strong{
-    font-family: 'roboto slab';
+    font-family: 'roboto slab', serif;
     font-size: 24px;
     color: var(--color-primary);
     font-weight: 500;
 
 }
+
 .true-false-block .link-findout{
     height: 50px;
 }
+
 .true-false-block a.button::after{
     content: '';
     width: 6px;
@@ -47,14 +53,16 @@
     right: -11px;
     top: -2px;
 }
+
 .true-false-block .true-false-option{
     padding: 0 10px;
     cursor: pointer;
     position: relative;
     color: var(--color-primary);
     font-weight: 500;
-    font-family: 'roboto slab';
+    font-family: 'roboto slab', serif;
 }
+
 .true-false-block .true-false-option::before{
     content: '';
     width: 23px;

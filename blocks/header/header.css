@@ -173,11 +173,28 @@ header .mobile-view.navbar-collapse.show{
   background: var(--color-dark);
 }
 
+header .bottom-navbar.navbar-nav .nav-item  a.nav-link:hover
+{
+  background: var(--color-primary);
+  color: white !important;
+  text-decoration: none;
+}
+
 header .mobile-view.navbar-collapse.show .nav-item .nav-link{
   color: white  !important;
 }
 
-header .mobile-view.navbar-collapse.show .nav-item a.nav-link:hover, header .bottom-navbar.navbar-nav .dropdown-item:hover, header .bottom-navbar.navbar-nav .nav-item a.nav-link:hover{
+header .mobile-view.navbar-collapse.show .nav-item a.nav-link:hover
+{
+  background: var(--color-primary);
+  color: white !important;
+  text-decoration: none;
+}
+
+
+
+header .bottom-navbar.navbar-nav .dropdown-item:hover
+{
   background: var(--color-primary);
   color: white !important;
   text-decoration: none;
