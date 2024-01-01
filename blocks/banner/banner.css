@@ -13,10 +13,16 @@
   color: #783384;
 }
 
+.section.banner-container.section .banner ul {
+  padding: 1rem 0;
+}
+
 .section.banner-container.section .banner p, .section.banner-container.section .banner li {
   font-size: 20px;
   font-weight: 400;
   color: #363636;
+  list-style-position: inside;
+  list-style-type: none;;
 }
 
 .section.banner-container.section .banner ul li::before {
@@ -155,6 +161,58 @@
   border: #25a8d9 2px solid;
   border-bottom: 0;
   background: #fff;
+}
+
+.section.banner-container.section .banner.banner-with-tabs .text-left ul {
+  padding: 1rem 0 1rem 4rem;
+}
+
+.section.banner-container.section .banner.banner-with-tabs .text-left ul.greyed {
+  background: rgb(243,241,236);
+  background: linear-gradient(90deg, rgba(243,241,236,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.section.banner-container.section .banner.banner-with-tabs .content-right {
+  position: relative;
+  width: 394px;
+}
+
+.section.banner-container.section .banner.banner-with-tabs .content-right picture:not(:first-child) {
+  display: none;
+}
+
+.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+
+.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+
+.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points span.red-point {
+  background-color: #8E181E;
+  left: 189px;
+  top: 52px;
+}
+
+.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points span.green-point {
+  background-color: #10974C;
+  left: 110px;
+  top: 262px;
+}
+
+.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points span.blue-point {
+  background-color: #2A81C3;
+  left: 35px;
+  bottom: 127px;
 }
 
 @media (width >= 768px) {
