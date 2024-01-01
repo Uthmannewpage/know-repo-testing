@@ -4,13 +4,13 @@ export default function decorate(block) {
   const parentBlock = block.closest('.section');
   const metaData = parentBlock.dataset;
   const {
-    type, video, imageCover, titleColor,
+    type, functionality, video, imageCover, titleColor,
   } = metaData;
   const bannerItems = [...block.children];
 
   if (titleColor) block.querySelector('h1').style.color = titleColor;
 
-  if (type === 'carousel') {
+  if (type && type === 'carousel') {
     block.innerHTML = `
   <div id="myCarousel" class="container carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
@@ -80,7 +80,7 @@ export default function decorate(block) {
     block.innerHTML = `
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-xs-11 col-sm-11${leftContentClasses} ps-4">
+          <div class="col-xs-11 col-sm-11${leftContentClasses} text-left ps-4">
             ${contentLeft.innerHTML}
           </div>
 
@@ -89,10 +89,18 @@ export default function decorate(block) {
               <source src="${video}" type="application/x-mpegURL">
               Your browser does not support the video tag.
             </video>` : ''}
-            ${contentRight && contentRight.innerHTML !== '' && contentRight.innerHTML}
+
+            <div class="content-right">
+              ${functionality && functionality === 'tabs' ? `<div class="trigger-points">
+                <span class="red-point"></span>
+                <span class="green-point"></span>
+                <span class="blue-point"></span>
+              </div>` : ''}
+              ${contentRight && contentRight.innerHTML !== '' && contentRight.innerHTML}
+            </div>
           </div>
 
-          <div class="col-12">${outsideOfContent && outsideOfContent.innerHTML !== '' && outsideOfContent.innerHTML}</div>
+          ${outsideOfContent ? `<div class="col-12">${outsideOfContent.innerHTML}</div>` : ''}
         </div>
     </div>`;
 
@@ -106,6 +114,36 @@ export default function decorate(block) {
     if (block.querySelector('.close-text')) {
       block.querySelector('.close-text').addEventListener('click', (e) => {
         e.target.closest('.dropdown-table').classList.remove('open');
+      });
+    }
+
+    if (functionality && functionality === 'tabs') {
+      block.classList.add('banner-with-tabs');
+      const triggerPoints = block.querySelectorAll('.trigger-points span');
+
+      triggerPoints.forEach((point) => {
+        point.addEventListener('click', (e) => {
+          block.querySelectorAll('.content-right picture').forEach((element) => {
+            element.style.display = 'none';
+          });
+
+          block.querySelectorAll('.text-left ul').forEach((element) => {
+            element.className = '';
+          });
+
+          if (e.target.classList.contains('red-point')) {
+            block.querySelector('.content-right picture:nth-of-type(2)').style.display = 'block';
+            block.querySelector('.text-left ul:nth-of-type(1)').className = 'greyed';
+          }
+          if (e.target.classList.contains('green-point')) {
+            block.querySelector('.content-right picture:nth-of-type(3)').style.display = 'block';
+            block.querySelector('.text-left ul:nth-of-type(2)').className = 'greyed';
+          }
+          if (e.target.classList.contains('blue-point')) {
+            block.querySelector('.content-right picture:nth-of-type(4)').style.display = 'block';
+            block.querySelector('.text-left ul:nth-of-type(3)').className = 'greyed';
+          }
+        });
       });
     }
   }

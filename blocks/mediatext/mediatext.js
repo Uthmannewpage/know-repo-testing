@@ -7,6 +7,13 @@ export default function decorate(block) {
   if (backgroundColor) block.style.backgroundColor = backgroundColor;
   if (headingcolor) block.querySelector('h2').style.color = headingcolor;
 
+  let leftBoxSize = 'col-sm-6';
+  let rightBoxSize = 'col-sm-6';
+  if (type === 'image-small-left') {
+    leftBoxSize = 'col-sm-3 ';
+    rightBoxSize = 'col-sm-8';
+  }
+
   if (type === 'video') {
     contentLeft.innerHTML = `<video controls class="ratio ratio-16x9">
         <source src="${contentLeft.innerHTML}">
@@ -16,10 +23,10 @@ export default function decorate(block) {
   block.innerHTML = `
   <div class="container p-2">
       <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 ${leftBoxSize}">
           ${contentLeft.innerHTML}
         </div>
-        <div class="col-xs-12 col-sm-6 ps-4">
+        <div class="col-xs-12 ${rightBoxSize} ps-4">
           ${contentRight.innerHTML}
         </div>
        
