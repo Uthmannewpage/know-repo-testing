@@ -80,7 +80,7 @@ function generateTopNavigation(section) {
       (item) => `${
         !item.children
           ? `<li class="nav-item">
-        <a class="nav-link" aria-current="page" href="${item.link}">
+        <a class="nav-link ${(new URL(item.link)).hostname !== window.location.hostname ? 'forein-link' : ''}" aria-current="page" href="${item.link}" >
 					${item.picture?.innerHTML || ''}
 					${item?.text}
 				</a>
@@ -117,6 +117,23 @@ function generateTopNavigation(section) {
     )
     .join('')}
   </ul>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
   `;
 }
