@@ -168,8 +168,8 @@
 }
 
 .section.banner-container.section .banner.banner-with-tabs .text-left ul.greyed {
-  background: rgb(243,241,236);
-  background: linear-gradient(90deg, rgba(243,241,236,1) 0%, rgba(255,255,255,1) 100%);
+  background: #F3F1EC;
+  background: linear-gradient(90deg, #F3F1EC 0%, #fff 100%);
 }
 
 .section.banner-container.section .banner.banner-with-tabs .content-right {

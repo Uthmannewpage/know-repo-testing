@@ -123,11 +123,11 @@ export default function decorate(block) {
 
       triggerPoints.forEach((point) => {
         point.addEventListener('click', (e) => {
-          block.querySelectorAll('.content-right picture').forEach(element => {
+          block.querySelectorAll('.content-right picture').forEach((element) => {
             element.style.display = 'none';
           });
 
-          block.querySelectorAll('.text-left ul').forEach(element => {
+          block.querySelectorAll('.text-left ul').forEach((element) => {
             element.className = '';
           });
 
@@ -144,9 +144,7 @@ export default function decorate(block) {
             block.querySelector('.text-left ul:nth-of-type(3)').className = 'greyed';
           }
         });
-
       });
     }
-    
   }
 }
