@@ -80,7 +80,7 @@ function generateTopNavigation(section) {
       (item) => `${
         !item.children
           ? `<li class="nav-item">
-        <a class="nav-link ${(new URL(item.link)).hostname !== window.location.hostname?'forein-link':''}" aria-current="page" href="${item.link}" >
+        <a class="nav-link ${(new URL(item.link)).hostname !== window.location.hostname ? 'forein-link' : ''}" aria-current="page" href="${item.link}" >
 					${item.picture?.innerHTML || ''}
 					${item?.text}
 				</a>

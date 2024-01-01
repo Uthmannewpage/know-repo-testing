@@ -1,5 +1,55 @@
 export default function decorate(block) {
-  console.log(block);
+  // Function to create HTML content for link block column
+  function createLinkBlockColumn(linkBlock) {
+    return `
+      <div>
+        <a class="button link-findout" href="${linkBlock.children[2].innerHTML}">${linkBlock.children[1].innerHTML}</a>
+      </div>
+    `;
+  }
+  // Function to create HTML content for options column
+  function createOptionsColumn() {
+    return `
+      <div class="col-lg-4 col-xs-12 col-sm-12 mb-lg-0 mb-5 text-lg-left text-center  ">
+        <div class="row">
+          <span class="col-lg-6  opt-true"><span class="true-false-option"></span> True </span>
+          <span class="col-lg-6 opt-false"><span class="true-false-option"></span> False </span>
+        </div>
+      </div>
+    `;
+  }
+  // Function to create HTML content for each row
+  function createRowContent(child, index, linkBlock) {
+    return `
+      <div class="row d-flex justify-content-center align-items-center ${index === 0 ? '' : 'd-none'}"> 
+        <div class="${index === 0 ? 'col-8' : 'col'}">
+          ${Array.from(child.children).map((elem, idx) => `
+            ${idx === 0 ? `<strong>${elem.innerHTML}</strong>` : `<p class="${idx === 2 ? 'text-dark' : ''}" >${elem.innerHTML}</p>`}
+          `).join('')}
+        </div>
+        ${index === 0 ? createOptionsColumn() : createLinkBlockColumn(linkBlock)}
+      </div>
+    `;
+  }
+  // Function to toggle options visibility
+  function toggleOptions(selectedOption) {
+    const bodyContent = block.querySelector('.body-content');
+
+    // Remove 'd-none' from the selected option's corresponding content
+    bodyContent.children[selectedOption.classList.contains('opt-true') ? 1 : 2].classList.remove('d-none');
+    bodyContent.children[selectedOption.classList.contains('opt-true') ? 1 : 2].classList.add('mb-5');
+
+    // Hide the main content
+    bodyContent.children[0].classList.add('d-none');
+
+    // Show the link block
+    bodyContent.children[3].classList.remove('d-none');
+  }
+  // Function to add click event listener to options
+  function addOptionClickListener(selector) {
+    const option = block.querySelector(selector);
+    option.addEventListener('click', () => toggleOptions(option));
+  }
 
   // Extract link block from the end of children
   const linkBlock = block.lastElementChild;
@@ -20,60 +70,4 @@ export default function decorate(block) {
   // Event listeners for True and False options
   addOptionClickListener('.opt-true');
   addOptionClickListener('.opt-false');
-
-  // Function to toggle options visibility
-  function toggleOptions(selectedOption) {
-    const bodyContent = block.querySelector('.body-content');
-
-    // Remove 'd-none' from the selected option's corresponding content
-    bodyContent.children[selectedOption.classList.contains('opt-true') ? 1 : 2].classList.remove('d-none');
-    bodyContent.children[selectedOption.classList.contains('opt-true') ? 1 : 2].classList.add('mb-5');
-
-    // Hide the main content
-    bodyContent.children[0].classList.add('d-none');
-
-    // Show the link block
-    bodyContent.children[3].classList.remove('d-none');
-  }
-
-  // Function to create HTML content for each row
-  function createRowContent(child, index, linkBlock) {
-    return `
-      <div class="row d-flex justify-content-center align-items-center ${index === 0 ? '' : 'd-none'}"> 
-        <div class="${index === 0 ? 'col-8' : 'col'}">
-          ${Array.from(child.children).map((elem, index) => `
-            ${index === 0 ? `<strong>${elem.innerHTML}</strong>` : `<p class="${index === 2 ? 'text-dark' : ''}" >${elem.innerHTML}</p>`}
-          `).join('')}
-        </div>
-        ${index === 0 ? createOptionsColumn() : createLinkBlockColumn(linkBlock)}
-      </div>
-    `;
-  }
-
-  // Function to create HTML content for options column
-  function createOptionsColumn() {
-    return `
-      <div class="col-lg-4 col-xs-12 col-sm-12 mb-lg-0 mb-5 text-lg-left text-center">
-        <div class="row">
-          <span class="col-lg-6  opt-true"><span class="true-false-option"></span> True </span>
-          <span class="col-lg-6 opt-false"><span class="true-false-option"></span> False </span>
-        </div>
-      </div>
-    `;
-  }
-
-  // Function to create HTML content for link block column
-  function createLinkBlockColumn(linkBlock) {
-    return `
-      <div>
-        <a class="button link-findout" href="${linkBlock.children[2].innerHTML}">${linkBlock.children[1].innerHTML}</a>
-      </div>
-    `;
-  }
-
-  // Function to add click event listener to options
-  function addOptionClickListener(selector) {
-    const option = block.querySelector(selector);
-    option.addEventListener('click', () => toggleOptions(option));
-  }
 }
