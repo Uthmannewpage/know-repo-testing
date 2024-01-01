@@ -22,7 +22,7 @@ export default function decorate(block) {
       ${bannerItems.length && bannerItems.map((slide, index) => {
     const [content, image] = [...slide.children];
     return `<div class="carousel-item ${index === 0 ? 'active' : ''}">
-      <img src="${image.querySelector('img').getAttribute('src').split('?')[0]}" class="d-block w-100" alt="Slide">
+      <img src="${image.querySelector('img').getAttribute('src')}" class="d-block w-100" alt="Slide" width="${image.querySelector('img').getAttribute('width')}" height="${image.querySelector('img').getAttribute('height')}">
       <div class="carousel-caption d-block rows col-5 col-md-5">
         ${content.innerHTML}
       </div>
@@ -33,7 +33,7 @@ export default function decorate(block) {
   } else {
     block.classList.add('ps-0', 'ps-md-5', 'py-md-5', 'py-3');
 
-    const [contentLeft, contentRight, contentImage] = bannerItems;
+    const [contentLeft, contentRight, contentImage, outsideOfContent] = bannerItems;
     if (imageCover === 'background') {
       block.style.background = `url(${contentImage.querySelector('img').getAttribute('src').split('?')[0]}) no-repeat top / cover transparent`;
     }
@@ -54,12 +54,26 @@ export default function decorate(block) {
 
     // searchng for tables:
     tables.forEach((table) => {
-      const firstRow = table.querySelector('tr:first-child');
-      const firstRowContent = firstRow.innerText.trim();
+      const aliasRow = table.querySelector('tr:first-child');
+      const aliasRowText = aliasRow.innerText.trim();
 
-      if (allPossibleTables.includes(firstRowContent)) {
-        table.classList.add(firstRowContent);
-        firstRow.style.display = 'none';
+      if (aliasRowText === 'dropdown') {
+        table.style.display = 'none';
+        const dropDownBox = document.createElement('div');
+        dropDownBox.className = 'dropdown-table';
+
+        /* eslint-disable no-unused-vars */
+        const [alias, triggerText, contentText, closeText] = Array.from(table.querySelectorAll('tr')).map((row) => row.innerHTML.trim());
+        /* eslint-disable no-unused-vars */
+
+        dropDownBox.innerHTML = `<div class="trigger-text">${triggerText}</div>`;
+        dropDownBox.innerHTML += `<div class="content-text">${contentText} <div class="close-text">${closeText}</div></div>`;
+
+        table.appendChild(dropDownBox);
+      }
+
+      if (allPossibleTables.includes(aliasRowText)) {
+        table.classList.add(aliasRowText);
       }
     });
 
@@ -77,7 +91,22 @@ export default function decorate(block) {
             </video>` : ''}
             ${contentRight && contentRight.innerHTML !== '' && contentRight.innerHTML}
           </div>
+
+          <div class="col-12">${outsideOfContent && outsideOfContent.innerHTML !== '' && outsideOfContent.innerHTML}</div>
         </div>
     </div>`;
+
+    // only for dropdown
+    if (block.querySelector('.trigger-text')) {
+      block.querySelector('.trigger-text').addEventListener('click', (e) => {
+        e.target.closest('.dropdown-table').classList.toggle('open');
+      });
+    }
+
+    if (block.querySelector('.close-text')) {
+      block.querySelector('.close-text').addEventListener('click', (e) => {
+        e.target.closest('.dropdown-table').classList.remove('open');
+      });
+    }
   }
 }

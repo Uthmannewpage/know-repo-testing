@@ -1,17 +1,7 @@
-export function getLocalizedResourceUrl(resourceName) {
-  const { pathname } = window.location;
-  const lastChartFromUrl = pathname.charAt(pathname.length - 1);
-  const pagwIsInFolder = lastChartFromUrl === '/';
-
-  let pathnameAsArray = pathname.split('/');
-
-  if (pagwIsInFolder) return `${pathnameAsArray.join('/')}${resourceName}`;
-
-  const basePathIndex = pathname.startsWith('/pgwa/') ? 3 : 2;
-  pathnameAsArray = pathnameAsArray.slice(0, basePathIndex + 1);
-
-  return `${pathnameAsArray.join('/')}${resourceName}`;
-}
+export const allLanguages = {
+  english: 'en',
+  spanish: 'es',
+};
 
 export function getDefaultLanguage() {
   const localisationList = ['en', 'es'];
@@ -19,4 +9,8 @@ export function getDefaultLanguage() {
   const foundLanguage = localisationList.find((item) => currentPathUrl.indexOf(`/${item}/`) !== -1);
 
   return foundLanguage || 'en';
+}
+
+export function getLocalizedResourceUrl(resourceName) {
+  return `/${getDefaultLanguage()}/${resourceName}`;
 }
