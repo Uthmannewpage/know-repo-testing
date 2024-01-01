@@ -4,18 +4,7 @@ export const allLanguages = {
 };
 
 export function getLocalizedResourceUrl(resourceName) {
-  const { pathname } = window.location;
-  const lastChartFromUrl = pathname.charAt(pathname.length - 1);
-  const pagwIsInFolder = lastChartFromUrl === '/';
-
-  let pathnameAsArray = pathname.split('/');
-
-  if (pagwIsInFolder) return `${pathnameAsArray.join('/')}${resourceName}`;
-
-  const basePathIndex = pathname.startsWith('/pgwa/') ? 3 : 2;
-  pathnameAsArray = pathnameAsArray.slice(0, basePathIndex + 1);
-
-  return `${pathnameAsArray.join('/')}${resourceName}`;
+  return `/${getDefaultLanguage()}/${resourceName}`;
 }
 
 export function getDefaultLanguage() {
