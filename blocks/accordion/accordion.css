@@ -44,7 +44,7 @@ div.section.resources-and-faqs.accordion-container {
   margin-top: 0px;
   content: '';
   margin-left: 40px;
-  background: url('../../icons/accordion-open-icon.png');
+  background: url('../../images/icons/accordion-open-icon.png');
   
 }
 
@@ -57,39 +57,39 @@ div.section.resources-and-faqs.accordion-container {
 }
 .accordion-container .accordion-item:nth-child(1).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(1) .accordion-question::before {
-  content: url('../../icons/asthma-inhaler-icon.png');
+  content: url('../../images/icons/asthma-inhaler-icon.png');
 }
 .accordion-container .accordion-item:nth-child(2).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(2) .accordion-question::before {
-  content: url('../../icons/lungs-icon.png');
+  content: url('../../images/icons/lungs-icon.png');
 }
 .accordion-container .accordion-item:nth-child(3).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(3) .accordion-question::before {
-  content: url('../../icons/heart-rate-icon.png');
+  content: url('../../images/icons/heart-rate-icon.png');
 }
 .accordion-container .accordion-item:nth-child(4).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(4) .accordion-question::before {
-  content: url('../../icons/blood-drops-icon.png');
+  content: url('../../images/icons/blood-drops-icon.png');
 }
 .accordion-container .accordion-item:nth-child(5).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(5) .accordion-question::before {
-  content: url('../../icons/prescription-bottle-icon.png');
+  content: url('../../images/icons/prescription-bottle-icon.png');
 }
 .accordion-container .accordion-item:nth-child(6).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(6) .accordion-question::before {
-  content: url('../../icons/cancer-awareness-ribbon-icon.png');
+  content: url('../../images/icons/cancer-awareness-ribbon-icon.png');
 }
 .accordion-container .accordion-item:nth-child(7).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(7) .accordion-question::before {
-  content: url('../../icons/kidneys-icon.png');
+  content: url('../../images/icons/kidneys-icon.png');
 }
 .accordion-container .accordion-item:nth-child(8).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(8) .accordion-question::before {
-  content: url('../../icons/spleen-icon.png');
+  content: url('../../images/icons/spleen-icon.png');
 }
 .accordion-container .accordion-item:nth-child(9).active .accordion-question::before,
 .accordion-container .accordion-item:nth-child(9) .accordion-question::before {
-  content: url('../../icons/HIV-virus-icon.png');
+  content: url('../../images/icons/HIV-virus-icon.png');
 }
 
 .accordion-container .accordion-item.active {
@@ -109,7 +109,7 @@ div.section.resources-and-faqs.accordion-container {
   height: 20px;
   margin-top: 0px;
   content: '';
-  background: url('../../icons/close-accordion.png');
+  background: url('../../images/icons/close-accordion.png');
 }
 
 .accordion-container .accordion-item.active .accordion-question::before {
@@ -118,7 +118,7 @@ div.section.resources-and-faqs.accordion-container {
   width: 50px;
   height: 50px;
   margin: 0px;
-  content: url('../../icons/asthma-inhaler-icon.png');
+  content: url('../../images/icons/asthma-inhaler-icon.png');
   background-color: #fff;
 }
 
