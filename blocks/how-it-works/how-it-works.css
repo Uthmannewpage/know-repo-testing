@@ -1,0 +1,223 @@
+/* Mobile styles */
+.how-it-works-column {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.how-it-works-column:nth-child(even) {
+  background-image: url(/images/how-it-works/arrow2-mobile.png);
+}
+
+.how-it-works-column:nth-child(odd) {
+  background-image: url(/images/how-it-works/arrow1-mobile.png);
+}
+
+.how-it-works-column:last-child {
+  background-image: none;
+  background-color: #e8e4dc;
+}
+
+.how-it-works-column.column-4 {
+  z-index: 1;
+  margin-top: -100px;
+}
+
+.how-it-works-column.column-3 {
+  z-index: 2;
+  margin-left: 0;
+  height: 360px;
+}
+
+.how-it-works-column.column-2 {
+  z-index: 3;
+  margin-top: -80px;
+  height: 430px;
+}
+
+.how-it-works-column.column-1 {
+  z-index: 4;
+}
+
+.how-it-works-column.column-2 .how-it-works-column-wrapper,
+.how-it-works-column.column-4 .how-it-works-column-wrapper {
+  padding-top: 110px;
+}
+
+.how-it-works-column-wrapper {
+  padding: 20px 16% 30px;
+}
+
+.how-it-works-image-conatiner {
+  width: 100%;
+}
+
+.how-it-works-icon {
+  height: 85px;
+}
+
+.how-it-works-number {
+  border-radius: 100%;
+  background: green;
+  padding: 5px 15px;
+  color: white;
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.how-it-works-content {
+  font-family: lato, sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
+  text-align: center;
+  color: #363636;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .how-it-works-column {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .how-it-works-column:nth-child(even) {
+    background-image: url(/images/how-it-works/arrow2.png);
+  }
+
+  .how-it-works-column:nth-child(odd) {
+    background-image: url(/images/how-it-works/arrow1.png);
+  }
+
+  .how-it-works-column:last-child {
+    background-image: none;
+    background-color: #e8e4dc;
+  }
+
+  .how-it-works-column.column-4 {
+    margin-left: -90px;
+    margin-top: 0;
+  }
+
+  .how-it-works-column.column-3 {
+    margin-left: -70px;
+    height: initial;
+  }
+
+  .how-it-works-column.column-2 {
+    margin-left: -80px;
+    margin-top: 0;
+    height: initial;
+  }
+
+  .how-it-works-column.column-1 {
+    margin-left: -40px;
+  }
+
+  .how-it-works-column.column-2 .how-it-works-column-wrapper,
+  .how-it-works-column.column-4 .how-it-works-column-wrapper {
+    padding-top: 40px;
+  }
+
+  .how-it-works-column-wrapper {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-right: 16%;
+    padding-left: 23%;
+  }
+
+  .how-it-works-content {
+    font-size: 16.5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .how-it-works-content {
+    font-size: 20.5px;
+  }
+}
+
+.three-col-view {
+  padding: 0 20px;
+  max-width: 1020px;
+  margin: auto;
+  width: 100%;
+  padding-bottom: 22px;
+}
+
+.alternate .how-it-works-column:nth-child(even) {
+  background-image: url(/images/how-it-works/alt-arrow-middle-mobile.png);
+}
+
+.alternate .how-it-works-column:nth-child(odd) {
+  background-image: url(/images/how-it-works/alt-arrow-mobile.png);
+}
+
+.alternate .how-it-works-column:last-child {
+  background-image: none;
+  background-color: #d6d2ca;
+}
+
+.alternate .how-it-works-column-wrapper {
+  padding: 5% 10% 15% 10%;
+}
+
+.alternate .how-it-works-icon {
+  height: initial;
+}
+
+.alternate .how-it-works-column.column-2 {
+  background-color: #d6d2ca;
+  height: 550px;
+}
+
+.alternate .how-it-works-column.column-1 {
+  background-color: #e8e4dc;
+}
+
+.alternate .how-it-works-content {
+  font-size: 36px;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .alternate .how-it-works-column:nth-child(even) {
+    background-image: url(/images/how-it-works/alt-arrow-middle.png);
+  }
+
+  .alternate .how-it-works-column:nth-child(odd) {
+    background-image: url(/images/how-it-works/alt-arrow.png);
+  }
+
+  .alternate .how-it-works-column:last-child {
+    background-image: none;
+    background-color: #d6d2ca;
+  }
+
+  .alternate .how-it-works-column-wrapper {
+    padding: 42px 20% 30px 20%;
+  }
+
+  .alternate .how-it-works-icon {
+    height: 85px;
+  }
+
+  .alternate .how-it-works-column.column-2 {
+    background-color: transparent;
+    height: initial;
+  }
+
+  .alternate .how-it-works-column.column-1 {
+    background-color: transparent;
+  }
+
+  .alternate .how-it-works-content {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+a:any-link {
+  color: var(--link-color);
+  text-decoration: underline;
+}
