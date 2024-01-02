@@ -2,6 +2,7 @@ div.section.resources-and-faqs.accordion-container {
   padding-bottom: 46px;
   
 }
+
 .accordion-container .accordion-wrapper {
   background: #fff; 
 }
@@ -39,7 +40,6 @@ div.section.resources-and-faqs.accordion-container {
   right: 15px;
   width: 25px;
   height: 25px;
-  margin-top: 0px;
   content: '';
   margin-left: 40px;
   background: url('../../images/icons/accordion-open-icon.png');
@@ -51,47 +51,6 @@ div.section.resources-and-faqs.accordion-container {
   width: 70px;
   height: 70px;
   background-color: #fff;
-}
-.accordion-container .accordion-item:nth-child(1).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(1) .accordion-question::before {
-  content: url('../../images/icons/asthma-inhaler-icon.png');
-}
-.accordion-container .accordion-item:nth-child(2).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(2) .accordion-question::before {
-  content: url('../../images/icons/lungs-icon.png');
-}
-.accordion-container .accordion-item:nth-child(3).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(3) .accordion-question::before {
-  content: url('../../images/icons/heart-rate-icon.png');
-}
-.accordion-container .accordion-item:nth-child(4).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(4) .accordion-question::before {
-  content: url('../../images/icons/blood-drops-icon.png');
-}
-.accordion-container .accordion-item:nth-child(5).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(5) .accordion-question::before {
-  content: url('../../images/icons/prescription-bottle-icon.png');
-}
-.accordion-container .accordion-item:nth-child(6).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(6) .accordion-question::before {
-  content: url('../../images/icons/cancer-awareness-ribbon-icon.png');
-}
-.accordion-container .accordion-item:nth-child(7).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(7) .accordion-question::before {
-  content: url('../../images/icons/kidneys-icon.png');
-}
-.accordion-container .accordion-item:nth-child(8).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(8) .accordion-question::before {
-  content: url('../../images/icons/spleen-icon.png');
-}
-.accordion-container .accordion-item:nth-child(9).active .accordion-question::before,
-.accordion-container .accordion-item:nth-child(9) .accordion-question::before {
-  content: url('../../images/icons/HIV-virus-icon.png');
-}
-
-.accordion-container .accordion-item.active {
-  border-bottom-left-radius: 0px !important; /* overriding the inline style */
-  border-bottom-right-radius: 0px !important; /* overriding the inline style */
 }
 
 .accordion-container .accordion-item.active .accordion-question {
@@ -105,7 +64,6 @@ div.section.resources-and-faqs.accordion-container {
   top: 30%;
   width: 20px;
   height: 20px;
-  margin-top: 0px;
   content: '';
   background: url('../../images/icons/close-accordion.png');
 }
@@ -117,6 +75,79 @@ div.section.resources-and-faqs.accordion-container {
   background-color: #fff;
 }
 
+
+.accordion-container .accordion-item:nth-child(1) .accordion-question::before {
+  content: url('../../images/icons/asthma-inhaler-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(2) .accordion-question::before {
+  content: url('../../images/icons/lungs-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(3) .accordion-question::before {
+  content: url('../../images/icons/heart-rate-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(4) .accordion-question::before {
+  content: url('../../images/icons/blood-drops-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(5) .accordion-question::before {
+  content: url('../../images/icons/prescription-bottle-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(6) .accordion-question::before {
+  content: url('../../images/icons/cancer-awareness-ribbon-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(7) .accordion-question::before {
+  content: url('../../images/icons/kidneys-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(8) .accordion-question::before {
+  content: url('../../images/icons/spleen-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(9) .accordion-question::before {
+  content: url('../../images/icons/HIV-virus-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(1).active .accordion-question::before {
+  content: url('../../images/icons/asthma-inhaler-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(2).active .accordion-question::before {
+  content: url('../../images/icons/lungs-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(3).active .accordion-question::before {
+  content: url('../../images/icons/heart-rate-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(4).active .accordion-question::before {
+  content: url('../../images/icons/blood-drops-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(5).active .accordion-question::before {
+  content: url('../../images/icons/prescription-bottle-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(6).active .accordion-question::before {
+  content: url('../../images/icons/cancer-awareness-ribbon-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(7).active .accordion-question::before {
+  content: url('../../images/icons/kidneys-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(8).active .accordion-question::before {
+  content: url('../../images/icons/spleen-icon.png');
+}
+
+.accordion-container .accordion-item:nth-child(9).active .accordion-question::before {
+  content: url('../../images/icons/HIV-virus-icon.png');
+}
+
 .accordion-container .accordion-wrapper .accordion-answer {
   overflow: hidden;
   max-height: 0;
@@ -125,7 +156,7 @@ div.section.resources-and-faqs.accordion-container {
 }
 
 .accordion-container .accordion-wrapper .accordion-content {
-  padding: 20px 20px 15px 20px;
+  padding: 20px 20px 15px;
   font-size: 14px;
   text-align: center;
 }
@@ -134,8 +165,9 @@ div.section.resources-and-faqs.accordion-container {
 .accordion-container .accordion-wrapper .accordion-content ol {
   padding-left: 20px;
 }
+
 .accordion-container .accordion-wrapper .accordion-content strong {
-  padding: 20px 20px 15px 20px;
+  padding: 20px 20px 15px;
   font-size: 18px;
   text-align:left;
 }
@@ -153,14 +185,13 @@ div.section.resources-and-faqs.accordion-container {
   margin: 0;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (width >= 600px) {
   div.section.resources-and-faqs.accordion-container {
     padding-bottom: 68px;
   }
 
   .accordion-container .accordion-wrapper .accordion-item {
     margin-bottom: 20px;
-    border-radius: 0px;
     background: #fff;
   }
 
@@ -169,7 +200,6 @@ div.section.resources-and-faqs.accordion-container {
     line-height: 24px;
     min-height: 70px;
     padding: 10px 8px 10px 120px;
-    border-radius: 0px;
     background: #f3f1ed; 
   }
 
@@ -178,7 +208,6 @@ div.section.resources-and-faqs.accordion-container {
   }
 
   .accordion-container .accordion-wrapper .accordion-question::before {
-    left: 0px; 
     padding: 10px 20px 20px 10px;
   }
 
