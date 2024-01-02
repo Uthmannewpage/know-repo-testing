@@ -9,7 +9,7 @@ export default function decorate(block) {
       'flex-column',
       'align-items-center',
       'how-it-works-column',
-      `column-${index + 1}`
+      `column-${index + 1}`,
     );
     const children = [...row.children];
     const pictureDiv = children[0];
@@ -19,11 +19,7 @@ export default function decorate(block) {
 
     pictureDiv
       .querySelectorAll('img')
-      .forEach((img) =>
-        iconContainer.append(
-          createOptimizedPicture(img.src, img.alt, false, [{ width: '110' }])
-        )
-      );
+      .forEach((img) => iconContainer.append(createOptimizedPicture(img.src, img.alt, false, [{ width: '110' }])));
 
     const numericalDiv = document.createElement('div');
     numericalDiv.classList.add('how-it-works-number', 'my-4');
@@ -34,7 +30,7 @@ export default function decorate(block) {
       'how-it-works-image-conatiner',
       'flex-column',
       'd-flex',
-      'align-items-center'
+      'align-items-center',
     );
 
     imagesContainer.append(iconContainer);

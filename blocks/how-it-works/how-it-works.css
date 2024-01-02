@@ -6,11 +6,11 @@
 }
 
 .how-it-works-column:nth-child(even) {
-  background-image: url(/images/how-it-works/arrow2-mobile.png);
+  background-image: url('/images/how-it-works/arrow2-mobile.png');
 }
 
 .how-it-works-column:nth-child(odd) {
-  background-image: url(/images/how-it-works/arrow1-mobile.png);
+  background-image: url('/images/how-it-works/arrow1-mobile.png');
 }
 
 .how-it-works-column:last-child {
@@ -39,13 +39,13 @@
   z-index: 4;
 }
 
+.how-it-works-column-wrapper {
+  padding: 20px 16% 30px;
+}
+
 .how-it-works-column.column-2 .how-it-works-column-wrapper,
 .how-it-works-column.column-4 .how-it-works-column-wrapper {
   padding-top: 110px;
-}
-
-.how-it-works-column-wrapper {
-  padding: 20px 16% 30px;
 }
 
 .how-it-works-image-conatiner {
@@ -75,18 +75,18 @@
 }
 
 /* Desktop styles */
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .how-it-works-column {
     flex-basis: 100%;
     width: 100%;
   }
 
   .how-it-works-column:nth-child(even) {
-    background-image: url(/images/how-it-works/arrow2.png);
+    background-image: url('/images/how-it-works/arrow2.png');
   }
 
   .how-it-works-column:nth-child(odd) {
-    background-image: url(/images/how-it-works/arrow1.png);
+    background-image: url('/images/how-it-works/arrow1.png');
   }
 
   .how-it-works-column:last-child {
@@ -114,16 +114,17 @@
     margin-left: -40px;
   }
 
+  .how-it-works-column-wrapper {
+    padding: 40px 30px 16% 23%;
+  }
+
+  .alternate .how-it-works-column-wrapper {
+    padding: 5% 10% 15%;
+  }
+  
   .how-it-works-column.column-2 .how-it-works-column-wrapper,
   .how-it-works-column.column-4 .how-it-works-column-wrapper {
     padding-top: 40px;
-  }
-
-  .how-it-works-column-wrapper {
-    padding-top: 40px;
-    padding-bottom: 30px;
-    padding-right: 16%;
-    padding-left: 23%;
   }
 
   .how-it-works-content {
@@ -131,7 +132,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .how-it-works-content {
     font-size: 20.5px;
   }
@@ -146,20 +147,16 @@
 }
 
 .alternate .how-it-works-column:nth-child(even) {
-  background-image: url(/images/how-it-works/alt-arrow-middle-mobile.png);
+  background-image: url('/images/how-it-works/alt-arrow-middle-mobile.png');
 }
 
 .alternate .how-it-works-column:nth-child(odd) {
-  background-image: url(/images/how-it-works/alt-arrow-mobile.png);
+  background-image: url('/images/how-it-works/alt-arrow-mobile.png');
 }
 
 .alternate .how-it-works-column:last-child {
   background-image: none;
   background-color: #d6d2ca;
-}
-
-.alternate .how-it-works-column-wrapper {
-  padding: 5% 10% 15% 10%;
 }
 
 .alternate .how-it-works-icon {
@@ -180,13 +177,13 @@
 }
 
 /* Desktop styles */
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .alternate .how-it-works-column:nth-child(even) {
-    background-image: url(/images/how-it-works/alt-arrow-middle.png);
+    background-image: url('/images/how-it-works/alt-arrow-middle.png');
   }
 
   .alternate .how-it-works-column:nth-child(odd) {
-    background-image: url(/images/how-it-works/alt-arrow.png);
+    background-image: url('/images/how-it-works/alt-arrow.png');
   }
 
   .alternate .how-it-works-column:last-child {
@@ -195,7 +192,7 @@
   }
 
   .alternate .how-it-works-column-wrapper {
-    padding: 42px 20% 30px 20%;
+    padding: 42px 20% 30px;
   }
 
   .alternate .how-it-works-icon {
