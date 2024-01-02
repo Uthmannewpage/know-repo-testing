@@ -7,9 +7,9 @@ div.section.resources-and-faqs.accordion-container {
 }
 
 .accordion-container .accordion-wrapper .accordion-item {
-  width: 55%;
+  width: 66%;
   margin-bottom: 10px;
-  margin-left: 200px;
+  margin-left: 70px;
 }
 
 .accordion-container .accordion-wrapper .accordion-item:last-child {
@@ -26,13 +26,11 @@ div.section.resources-and-faqs.accordion-container {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
-  min-height: 51px;
+  height: 80px;
   cursor: pointer;
   border: solid 10px #fff;
   box-shadow: 10px;
   box-shadow: 0 0 10px #d3d2d2;
-  background: #f3f1ed
 }
 
 .accordion-container .accordion-item .accordion-question::after {
@@ -50,9 +48,8 @@ div.section.resources-and-faqs.accordion-container {
 
 .accordion-container .accordion-item .accordion-question::before {
   position: absolute;
-  padding: 15px 20px 15px 10px;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   background-color: #fff;
 }
 .accordion-container .accordion-item:nth-child(1).active .accordion-question::before,
@@ -100,6 +97,7 @@ div.section.resources-and-faqs.accordion-container {
 .accordion-container .accordion-item.active .accordion-question {
   background: #783384; 
   color: #fff;
+  transition: all 0.5s ease-in-out;
 }
 
 .accordion-container .accordion-item.active .accordion-question::after {
@@ -114,11 +112,8 @@ div.section.resources-and-faqs.accordion-container {
 
 .accordion-container .accordion-item.active .accordion-question::before {
   position: absolute;
-  padding: 15px 20px 15px 10px;
-  width: 50px;
-  height: 50px;
-  margin: 0px;
-  content: url('../../images/icons/asthma-inhaler-icon.png');
+  width: 70px;
+  height: 70px;
   background-color: #fff;
 }
 
@@ -172,7 +167,7 @@ div.section.resources-and-faqs.accordion-container {
   .accordion-container .accordion-wrapper .accordion-question {
     font-size: 20px;
     line-height: 24px;
-    min-height: 40px;
+    min-height: 70px;
     padding: 10px 8px 10px 120px;
     border-radius: 0px;
     background: #f3f1ed; 
@@ -183,7 +178,8 @@ div.section.resources-and-faqs.accordion-container {
   }
 
   .accordion-container .accordion-wrapper .accordion-question::before {
-    left: 0px;
+    left: 0px; 
+    padding: 10px 20px 20px 10px;
   }
 
 }
