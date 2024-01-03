@@ -37,7 +37,7 @@
 
 .section.take-the-risk-container .steps-bullets {
   width: 500px;
-  margin: 0rem auto 3rem;
+  margin: 0 auto 3rem;
   position: relative;
 }
 
@@ -48,10 +48,11 @@
   text-align: center;
   padding: 4px 0;
   font-size: 12px;
-  line-height: 1.428571429;
+  line-height: 1.4286;
   border-radius: 15px;
   border: 1px solid #ccc;
   background-color: white;
+  box-shadow: 10px 10px 10px #c4c3c3;
 }
 
 .section.take-the-risk-container .steps-bullets div span {
@@ -67,7 +68,7 @@
   background: #fbbd19;
 }
 
-.section.take-the-risk-container .steps-bullets:before {
+.section.take-the-risk-container .steps-bullets::before {
   content: " ";
   position: absolute;
   top: 16px;
@@ -77,25 +78,8 @@
   background-color: #ccc;
   border: 0;
   left: 0;
-  width: 100%;
-}
-
-.section.take-the-risk-container .steps-bullets div {
-  box-shadow: 10px 10px 10px #c4c3c3;
 }
 
 .section.take-the-risk-container .main-content {
   text-align: center;
-}
-
-@media (width >= 768px) {
- 
-}
-
-@media screen and (width >= 991px) {
-
-}
-
-@media screen and (width <= 768px) {
- 
 }

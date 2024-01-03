@@ -12,7 +12,7 @@ export default function decorate(block) {
 
   if (type && type === 'carousel') {
     block.innerHTML = `
-  <div id="myCarousel" class="container carousel slide carousel-fade" data-bs-ride="carousel">
+  <div id="my-carousel" class="container carousel slide carousel-fade" data-bs-ride="carousel">
     <ol class="carousel-indicators">
       ${bannerItems.length && bannerItems.map((_, index) => `
         <li data-bs-target="#myCarousel" data-bs-slide-to="${index}" ${index === 0 ? 'class="active"' : ''}></li>

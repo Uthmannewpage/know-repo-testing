@@ -1,15 +1,12 @@
 export default function decorate(block) {
-  const parentBlock = block.closest('.section');
-  const metaData = parentBlock.dataset;
-  const {} = metaData;
   const stepsItems = [...block.children];
-  const [step0, step1, step2, step3, result] = stepsItems;
+  const [step0, step1] = stepsItems;
 
   /* step 1 */
   const ageIntervalsBox = block.querySelector('ul');
   const ageIntervals = ageIntervalsBox.getElementsByTagName('li');
 
-  for (let i = 0; i < ageIntervals.length; i++) {
+  Array.from(ageIntervals).forEach((interval, i) => {
     const radioInput = document.createElement('input');
     radioInput.type = 'radio';
     radioInput.name = 'itemRadio';
@@ -20,11 +17,9 @@ export default function decorate(block) {
 
     ageIntervalsBox.insertBefore(label, ageIntervals[i]);
     ageIntervals[i].style.display = 'none';
-  }
-  
-  /* end step 1 */
+  });
 
- 
+  /* end step 1 */
   block.innerHTML = `
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
