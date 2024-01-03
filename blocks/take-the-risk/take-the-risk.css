@@ -3,7 +3,7 @@
 }
 
 .section.take-the-risk-container .block .content-left {
-  
+  padding: 1rem;
 }
 
 .section.take-the-risk-container .block .content-left::after {
