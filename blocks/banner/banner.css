@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-.section.banner-container #myCarousel {
-  padding: 0
-}
-
 .section.banner-container .banner img {
   width: 100%;
 }
@@ -264,6 +260,10 @@
     margin-top: 1em;
   }
 
+  .section.banner-container #myCarousel {
+    padding: 0
+  }
+  
   .section.banner-container .banner .carousel-caption {
     inset: 0 0 0 1rem;
     padding: 1rem 0;

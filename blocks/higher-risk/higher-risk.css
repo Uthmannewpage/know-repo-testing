@@ -4,11 +4,11 @@
     position: relative;
 }
 
-.section.higher-risk-container h2{
+.section.higher-risk-container h2 {
     margin: 0;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk{
+.section.higher-risk-container .higher-risk-wrapper .higher-risk {
     background-color: var(--color-light);
     font-family: roboto-slab, serif;
     font-size: 18px;
@@ -24,6 +24,8 @@
 .section.higher-risk-container.move-above-slider .higher-risk{
     width: calc(100% - 40px);
     margin-top: -40px;
+    z-index: 2;
+    position: relative;
 }
 
 .section.higher-risk-container .higher-risk-wrapper .higher-risk .col{
