@@ -9,8 +9,9 @@ export default function decorate(block) {
   parentBlock.firstElementChild.classList.add('p-0');
   block.classList.add('row');
   [...block.children].forEach((child, index) => {
-    child.classList.add('col');
+    child.classList.add('col-12');
     child.classList.add('col-sm-12');
+    child.classList.add('col-xs-12');
     if (child.firstElementChild.textContent.toLowerCase() === 'or') {
       child.classList.add('col-lg-2');
       child.classList.add('or-container');
@@ -23,8 +24,8 @@ export default function decorate(block) {
 
       const arrowRight = document.createElement('div');
       arrowRight.classList.add('bg-holder-lg');
+      arrowRight.classList.add('d-none');
       arrowRight.classList.add('d-lg-flex');
-      arrowRight.classList.add('d-sm-none');
       child.prepend(arrowRight);
       child.prepend(arrow);
     } else {

@@ -26,7 +26,7 @@
     margin-top: -40px;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk .col{
+.section.higher-risk-container .higher-risk-wrapper .higher-risk .col-12{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -36,7 +36,7 @@
     position: relative;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk .col h3{
+.section.higher-risk-container .higher-risk-wrapper .higher-risk .col-12 h3{
     font-size: 30.5px;
     font-family: 'roboto slab', serif;
     font-weight: 600;
@@ -60,7 +60,7 @@
     font-weight: 700;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child{
+.section.higher-risk-container .higher-risk-wrapper .higher-risk .col-12:first-child{
     font-size: 32px;
     font-weight: 600;
     font-stretch: normal;
@@ -75,7 +75,7 @@
     padding: 60px 65px 90px;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child div{
+.section.higher-risk-container .higher-risk-wrapper .higher-risk .col-12:first-child div{
     z-index: 1;
 }
 
@@ -106,14 +106,14 @@
         padding: 20px 0;
     }
 
-    .section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child{
+    .section.higher-risk-container .higher-risk-wrapper .higher-risk .col-12:first-child{
         font-size: 19px;
         line-height: 20.5px;
         height: 80px;
         overflow: hidden;
     }
 
-    .section.higher-risk-container .higher-risk-wrapper .higher-risk .col h3{
+    .section.higher-risk-container .higher-risk-wrapper .higher-risk .col-12 h3{
         font-size: 20.5px;
         line-height: 22.5px;
     }
