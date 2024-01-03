@@ -1,0 +1,131 @@
+.section.higher-risk-container{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.section.higher-risk-container h2{
+    margin: 0;
+}
+
+.section.higher-risk-container .higher-risk-wrapper .higher-risk{
+    background-color: var(--color-light);
+    font-family: roboto-slab, serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #630172;
+    line-height: 1.56;
+    letter-spacing: -0.18px;
+    margin-top: 0;
+    width: 100%;
+}
+
+.section.higher-risk-container.move-above-slider .higher-risk{
+    width: calc(100% - 40px);
+    margin-top: -40px;
+}
+
+.section.higher-risk-container .higher-risk-wrapper .higher-risk .col{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--color-primary);
+    font-family: 'roboto slab', serif;
+    position: relative;
+}
+
+.section.higher-risk-container .higher-risk-wrapper .higher-risk .col h3{
+    font-size: 30.5px;
+    font-family: 'roboto slab', serif;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+.section.higher-risk-container .or-container div:first-child{
+    background: var(--color-gray);
+    color: var(--color-dark);
+    font-family: 'roboto slab', serif;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16.5px;
+    font-weight: 700;
+}
+
+.section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child{
+    font-size: 32px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    font-family: Lato, sans-serif;
+    line-height: 1.26;
+    letter-spacing: -0.34px;
+    text-align: left;
+    color: var(--color-primary);
+    margin: 0;
+    background-size: 100% 100%;
+    padding: 60px 65px 90px;
+}
+
+.section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child div{
+    z-index: 1;
+}
+
+.section.higher-risk-container .bg-holder-sm{
+    background-image: url("https://www.knowpneumonia.com/images/white-arrow-mobile.png");
+    background-size: 100% 100%;;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: -30px;
+    z-index: 0;
+}
+
+.section.higher-risk-container .bg-holder-lg{
+    background-image: url("https://www.knowpneumonia.com/images/arrow-new.png");
+    background-size: 100% 100%;;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+@media (width <= 992px) {
+    .section.higher-risk-container .or-container{
+        padding: 20px 0;
+    }
+
+    .section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child{
+        font-size: 19px;
+        line-height: 20.5px;
+        height: 80px;
+        overflow: hidden;
+    }
+
+    .section.higher-risk-container .higher-risk-wrapper .higher-risk .col h3{
+        font-size: 20.5px;
+        line-height: 22.5px;
+    }
+
+    .section.higher-risk-container .higher-risk-wrapper .higher-risk{
+        font-size: 13.5px;
+        line-height: 22.5px;
+        margin-top: 5px;
+        padding-bottom: 20px;
+    }
+
+    .section.higher-risk-container.move-above-slider .higher-risk{
+        width: 100%
+    }
+  }

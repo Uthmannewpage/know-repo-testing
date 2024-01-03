@@ -24,6 +24,7 @@
   --color-info: #4ebce8;
   --color-gray: #d6d2ca;
   --color-dark: #444b50;
+  --color-light: #f3f1ed;
 
   /* fonts */
   --body-font-family: lato, sans-serif;
@@ -300,8 +301,29 @@ p, ul li, table {
   font-size: var(--paragraph-font-size-s);
 }
 
+a.button.append-right-arrow::after{
+  content: '';
+  width: 20px;
+  height: calc(100% + 4px);
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid var(--link-color);
+  position: absolute;
+  right: -22px;
+  top: -2px;
+  background-color: transparent;
+}
+
 .hide-img-mobile .img-box img{
   display: none;
+}
+
+.font-roboto-slab{
+  font-family: 'roboto slab', serif;
+}
+
+.font-weight-600{
+  font-weight: 600;
 }
 
 @media (width >= 600px) {
