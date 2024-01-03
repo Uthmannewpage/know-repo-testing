@@ -1,3 +1,5 @@
+import { getMetadataStyleProps } from "../../scripts/utils.js";
+
 export default function decorate(block) {
   // Function to create HTML content for link block column
   function createLinkBlockColumn(linkBlock) {
@@ -54,10 +56,10 @@ export default function decorate(block) {
   // Extract link block from the end of children
   const linkBlock = block.lastElementChild;
   const blockItems = Array.from(block.children).slice(0, -1); // Exclude the last link block
-
+  const parentBlock = block.closest('.section');
   // Dynamically create the HTML content
   block.innerHTML = `
-    <div class="container">
+    <div class="container" ${getMetadataStyleProps(parentBlock)}>
       <div class="row">
         <div class="col-lg-1 d-lg-flex d-none left-arrow"></div>
         <div class="col-lg-11 body-content">

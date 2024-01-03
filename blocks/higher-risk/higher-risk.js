@@ -1,4 +1,10 @@
+import { metaDataToStylesArray } from '../../scripts/utils.js';
+
 export default function decorate(block) {
+  const parentBlock = block.closest('.section');
+  const metaData = parentBlock.dataset;
+  const styles = metaDataToStylesArray(metaData);
+  parentBlock.style = styles.join(" ;");
   block.classList.add('row');
   [...block.children].forEach((child, index) => {
     child.classList.add('col');
