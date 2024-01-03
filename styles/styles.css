@@ -286,7 +286,8 @@ main .section {
 p, ul li, table {
   font-size: var(--paragraph-font-size-s);
 }
-a.button.append-right-arrow:after{
+
+a.button.append-right-arrow::after{
   content: '';
   width: 20px;
   height: calc(100% + 4px);
@@ -298,12 +299,15 @@ a.button.append-right-arrow:after{
   top: -2px;
   background-color: transparent;
 }
+
 .hide-img-mobile .img-box img{
   display: none;
 }
+
 .font-roboto-slab{
   font-family: 'roboto slab', serif;
 }
+
 .font-weight-600{
   font-weight: 600;
 }

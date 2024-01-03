@@ -1,4 +1,4 @@
-import { getMetadataStyleProps } from "../../scripts/utils.js";
+import { getMetadataStyleProps } from '../../scripts/utils.js';
 
 export default function decorate(block) {
   // Function to create HTML content for link block column

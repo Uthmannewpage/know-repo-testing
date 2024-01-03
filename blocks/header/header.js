@@ -1,7 +1,7 @@
 /* eslint-disable no-tabs */
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-import {getMetadataStyleProps} from '../../scripts/utils.js';
+import { getMetadataStyleProps } from '../../scripts/utils.js';
 
 function parseListToJson(ulElement) {
   function parseListItem(li) {
