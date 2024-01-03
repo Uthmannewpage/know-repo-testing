@@ -209,7 +209,8 @@ function generateMainMenu(menu) {
 
 function setNavBar(block, sectionList) {
   const header = `
-  <div class="">
+  <div class="section">
+  <div>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
       <div class="row w-100 p-0 m-0">
@@ -234,6 +235,7 @@ function setNavBar(block, sectionList) {
 		
   </nav>
 	<div class="container border border-2 border-primary w-100 d-lg-none"></div>
+  </div>
   </div>`;
   block.innerHTML = header;
 }
