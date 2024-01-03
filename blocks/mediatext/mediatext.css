@@ -9,7 +9,25 @@
     font-family: var(--body-font-family);
 }
 
-.mediatext iframe {
-    width: 100%;
-    height: auto;
+@media screen and (width <= 768px) {
+    .mediatext iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .mediatext h2 {
+        font-size: 18.5px;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .mediatext p {
+        font-size: 16px;
+    }
+
+    .image-small-left .mediatext img {
+        width: 160px;
+        margin: 0 auto 1rem;
+        display: block;
+    }
 }

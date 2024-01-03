@@ -31,8 +31,6 @@ export default function decorate(block) {
     </div>
   </div>`;
   } else {
-    block.classList.add('ps-0', 'ps-md-5', 'py-md-5', 'py-3');
-
     const [contentLeft, contentRight, contentImage, outsideOfContent] = bannerItems;
     if (imageCover === 'background') {
       block.style.background = `url(${contentImage.querySelector('img').getAttribute('src').split('?')[0]}) no-repeat top / cover transparent`;
@@ -80,12 +78,12 @@ export default function decorate(block) {
     block.innerHTML = `
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-xs-11 col-sm-11${leftContentClasses} text-left ps-4">
+          <div class="col-xs-12 col-sm-11${leftContentClasses} text-left p-0">
             ${contentLeft.innerHTML}
           </div>
 
-          <div class="col-xs-11 col-sm-11${rightContentClasses} text-right img-box">
-            ${video ? `<video controls>
+          <div class="col-xs-12 col-sm-11${rightContentClasses} text-right img-box p-0">
+            ${video ? `<video controls autoplay>
               <source src="${video}" type="application/x-mpegURL">
               Your browser does not support the video tag.
             </video>` : ''}

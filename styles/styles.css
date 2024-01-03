@@ -357,6 +357,30 @@ a.button.append-right-arrow::after{
   .container {
     max-width: 100% !important;
   }
+
+  main .section {
+    padding: 1rem 16px;
+  }
+}
+
+@media (width <= 992px) {
+  main .section.purple-box {
+    padding: 1rem 0;
+  }
+
+  main .section.purple-box .block {
+    padding: 1rem 15px;
+  }
+
+  main .section.purple-box h3 strong {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .section[data-type = 'purple'] .default-content-wrapper {
+    text-align: left;
+    padding: 1rem 2rem;
+  }
 }
 
 /* section metadata */

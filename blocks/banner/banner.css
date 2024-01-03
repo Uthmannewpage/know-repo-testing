@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.section.banner-container .banner.block {
+  padding: 1rem 2rem 2rem;
+}
+
 .section.banner-container .banner img {
   width: 100%;
 }
@@ -87,6 +91,7 @@
 
 .section.banner-container .banner video {
   width: 90%;
+  float: right;
 }
 
 .section.banner-container .banner table.or-options {
@@ -255,15 +260,43 @@
   }
 }
 
+
+@media screen and (width <= 990px) {
+  .section.banner-container .banner.banner-with-tabs .text-right {
+    display: none;
+  }
+
+  .section.banner-container .banner.banner-with-tabs .text-left ul {
+    padding: 1rem 0 0rem 4rem;
+  }
+}
+
 @media screen and (width <= 768px) {
   .section.banner-container .banner h1 {
-    margin-top: 1em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    line-height: 23px;
   }
 
   .section.banner-container #myCarousel {
     padding: 0
   }
-  
+
+  .section.banner-container .banner video {
+    width: 100%;
+    float: unset;
+  }
+
+  .section.banner-container .banner div.dropdown-table .trigger-text {
+    width: 100%;
+    margin-left: 0;
+   }
+
+  .section.banner-container .banner div.dropdown-table .trigger-text *, .section.banner-container .banner div.dropdown-table .close-text {
+    font-size: 14px;
+  }
+
   .section.banner-container .banner .carousel-caption {
     inset: 0 0 0 1rem;
     padding: 1rem 0;
@@ -295,8 +328,14 @@
     margin-bottom: 1rem;
   }
 
+  .section.banner-container .banner p, .section.banner-container .banner li {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
   .section.banner-container .banner .carousel-indicators li {
     height: 15px;
     width: 15px;
   }
+
 }

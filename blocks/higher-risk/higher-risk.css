@@ -22,8 +22,9 @@
 }
 
 .section.higher-risk-container.move-above-slider .higher-risk{
-    width: calc(100% - 40px);
-    margin-top: -40px;
+    width: 86%;
+    margin: 0 auto;
+    margin-top: -72px;
     z-index: 2;
     position: relative;
 }
@@ -74,7 +75,7 @@
     color: var(--color-primary);
     margin: 0;
     background-size: 100% 100%;
-    padding: 60px 65px 90px;
+    padding: 50px 65px;
 }
 
 .section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child div{
