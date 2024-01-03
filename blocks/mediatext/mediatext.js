@@ -15,10 +15,8 @@ export default function decorate(block) {
   }
 
   if (type === 'video') {
-    contentLeft.innerHTML = `<video controls class="ratio ratio-16x9">
-        <source src="${contentLeft.innerHTML}">
-        Your browser does not support the video tag.
-      </video>`;
+    contentLeft.innerHTML = `<iframe width="560" height="315" src="${contentLeft.innerHTML}" title="Know Pneumonia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      `;
   }
   block.innerHTML = `
   <div class="container p-2">

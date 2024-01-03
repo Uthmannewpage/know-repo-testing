@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.section.banner-container #myCarousel {
+  padding: 0
+}
+
 .section.banner-container .banner img {
   width: 100%;
 }
@@ -78,6 +82,7 @@
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  opacity: 1;
 }
 
 .section.banner-container .banner .carousel-indicators .active {
@@ -261,12 +266,16 @@
 
   .section.banner-container .banner .carousel-caption {
     inset: 0 0 0 1rem;
+    padding: 1rem 0;
   }
 
   .section.banner-container .banner .carousel-caption h1, .section.banner-container .banner .carousel-caption h2 {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 17px;
+    font-size: 17px!important;
+    line-height: 18.5px;
+    letter-spacing: -0.17px;
+    font-weight: bold;
   }
 
   .section.banner-container .banner .carousel-caption p {
@@ -274,7 +283,20 @@
     line-height: 18.5px!important;
   }
 
+  .section.banner-container .banner .carousel-caption p.button-container {
+    display: none;
+  }
+
   .section.banner-container .banner .carousel-caption a {
     margin: 0;
+  }
+
+  .section.banner-container .banner .carousel-indicators {
+    margin-bottom: 1rem;
+  }
+
+  .section.banner-container .banner .carousel-indicators li {
+    height: 15px;
+    width: 15px;
   }
 }
