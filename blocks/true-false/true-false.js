@@ -11,7 +11,7 @@ export default function decorate(block) {
   function createOptionsColumn() {
     return `
       <div class="col-lg-4 col-xs-12 col-sm-12 mb-lg-0 mb-5 text-lg-left text-center  ">
-        <div class="row">
+        <div class="row font-roboto-slab font-weight-600">
           <span class="col-lg-6  opt-true"><span class="true-false-option"></span> True </span>
           <span class="col-lg-6 opt-false"><span class="true-false-option"></span> False </span>
         </div>
