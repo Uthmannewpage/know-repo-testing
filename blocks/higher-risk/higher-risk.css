@@ -129,6 +129,15 @@
     }
 
     .section.higher-risk-container.move-above-slider .higher-risk{
-        width: 100%
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .section.higher-risk-container .bg-holder-lg {
+        display: none;
+    }
+
+    .section.higher-risk-container .bg-holder-sm {
+        top: -15px;
     }
   }

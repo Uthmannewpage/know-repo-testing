@@ -228,6 +228,11 @@
   bottom: 127px;
 }
 
+.section.banner-container[data-type='carousel'] .button-under-carousel {
+  margin: 1rem auto;
+  display: none;
+}
+
 @media (width >= 768px) {
   .section.banner-container .banner h1 {
     font-size: 30px;
@@ -271,6 +276,14 @@
 }
 
 @media screen and (width <= 768px) {
+  .section.banner-container[data-type='carousel'] .block {
+    padding: 0;
+  }
+
+  .section.banner-container[data-type='carousel'] .button-under-carousel {
+    display: block;
+  }
+
   .section.banner-container .banner h1 {
     margin-top: 0;
     margin-bottom: 1rem;

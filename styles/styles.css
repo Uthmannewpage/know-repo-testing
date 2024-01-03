@@ -314,6 +314,10 @@ a.button.append-right-arrow::after{
   background-color: transparent;
 }
 
+.split-mobile strong {
+  display: block;
+}
+
 .hide-img-mobile .img-box img{
   display: none;
 }

@@ -11,6 +11,13 @@ export default function decorate(block) {
   if (titleColor) block.querySelector('h1').style.color = titleColor;
 
   if (type && type === 'carousel') {
+    const bottomAnchor = document.createElement('div');
+    const anchorButton = block.querySelector('p.button-container');
+    anchorButton.classList.add('button-under-carousel', 'text-center');
+    anchorButton.querySelector('a').classList.add('append-right-arrow');
+    const clonedAnchor = anchorButton.cloneNode(true);
+    bottomAnchor.appendChild(clonedAnchor);
+
     block.innerHTML = `
   <div id="my-carousel" class="container carousel slide carousel-fade" data-bs-ride="carousel">
     <ol class="carousel-indicators">
@@ -29,7 +36,9 @@ export default function decorate(block) {
     </div>`;
   }).join('')}
     </div>
-  </div>`;
+  </div>
+  ${bottomAnchor.innerHTML}
+  `;
   } else {
     const [contentLeft, contentRight, contentImage, outsideOfContent] = bannerItems;
     if (imageCover === 'background') {

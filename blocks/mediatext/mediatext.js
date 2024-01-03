@@ -1,4 +1,5 @@
 export default function decorate(block) {
+  block.closest('.section').id = 'media-section';
   const metadata = block.closest('.section').dataset;
   const { type, backgroundColor, headingcolor } = metadata;
   const blockItems = [...block.firstElementChild.children];
