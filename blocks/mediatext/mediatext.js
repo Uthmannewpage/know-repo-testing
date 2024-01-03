@@ -15,7 +15,7 @@ export default function decorate(block) {
   }
 
   if (type === 'video') {
-    contentLeft.innerHTML = `<iframe width="560" height="315" src="${contentLeft.innerHTML}" title="Know Pneumonia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    contentLeft.innerHTML = `<iframe width="560" height="315" src="${contentLeft.innerHTML}" title="Know Pneumonia" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       `;
   }
   block.innerHTML = `
