@@ -29,7 +29,7 @@ export default function decorate(block) {
   block.querySelectorAll('h2').forEach((it) => {
     it.style.color = '#783384';
   });
-
+  // emptying out innerHTML
   contentLeft.innerHTML = '';
   contentRight.innerHTML = '';
 }
