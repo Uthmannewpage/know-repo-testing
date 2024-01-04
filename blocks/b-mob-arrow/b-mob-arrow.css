@@ -67,3 +67,10 @@
 .b-mob-arrow-container .divhr:last-child {
   display: none;
 }
+
+
+@media screen and (width <= 768px) {
+  .b-mob-arrow-container .common-menu {
+    padding: 1rem 0;
+  }
+}
