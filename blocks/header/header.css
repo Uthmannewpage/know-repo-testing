@@ -231,4 +231,7 @@ header .mobile-view .nav-bottom{
   header .bottom-navbar.navbar-nav .nav-item a.nav-link, header .bottom-navbar.navbar-nav .dropdown-menu .dropdown-item{
     font-size: 15px;
   }
+  header .section{
+    min-height: 106.6px;
+  }
 }
