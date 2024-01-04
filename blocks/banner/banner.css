@@ -59,7 +59,7 @@
   text-align: unset;
 }
 
-.section.banner-container .banner .carousel-caption a.button::before {
+.section.banner-container .banner .carousel-caption a.button::after {
   content: '';
   width: 0;
   height: 0;

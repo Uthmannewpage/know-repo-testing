@@ -301,7 +301,7 @@ p, ul li, table {
   font-size: var(--paragraph-font-size-s);
 }
 
-a.button.append-right-arrow::before {
+a.button.append-right-arrow::after {
   content: '';
   width: 20px;
   height: calc(100% + 4px);
@@ -441,7 +441,7 @@ a.button.append-right-arrow::before {
     text-align: left;
     padding: 1rem 2rem;
   }
-  a.button.append-right-arrow::before {
+  a.button.append-right-arrow::after {
     border-top: 18px solid transparent;
     border-bottom: 18px solid transparent;
   }

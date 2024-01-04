@@ -47,7 +47,7 @@ export default async function decorate(block) {
   const filesDiv = document.createElement('div');
   filesDiv.innerHTML = `
   <!-- adding Lato font -->
-    
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"   rel="stylesheet">
     
    `;
   footer.append(filesDiv);
