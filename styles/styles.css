@@ -353,7 +353,35 @@ a.button.append-right-arrow::after {
 .font-weight-600 {
   font-weight: 600;
 }
-
+.double-crates-right{
+  position: relative;
+  width: auto;
+  display: inline-block !important;
+}
+.double-crates-right::after{
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  right: -30px;
+  top: calc(50% - 5px);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--color-primary);
+}
+.double-crates-right::before{
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  right: -20px;
+  top: calc(50% - 5px);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--color-primary);
+}
 @media (width >= 600px) {
   main .section {
     padding: 2rem;
