@@ -12,10 +12,10 @@
   display: inline-block;
 }
 
-.b-mob-arrow-container  .title {
+.b-mob-arrow-container .title {
   font-size: 22px;
   font-weight: 700;
-  font-family: roboto-slab, serif;
+  font-family: "Roboto Slab", sans-serif;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.18;
@@ -25,13 +25,6 @@
 
 .b-mob-arrow-container .common-menu-text {
   padding: 14px 12px 22px 17px;
-  font-size: 22px;
-  font-weight: 700;
-  font-family: roboto-slab, serif;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.18;
-  letter-spacing: normal;
 }
 
 .b-mob-arrow-container .common-menu-text a.button:any-link,
@@ -48,6 +41,12 @@
   overflow: visible;
   text-overflow: ellipsis;
   border-radius: 0;
+  font-size: 22px;
+  font-family: "Roboto Slab", sans-serif;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
 }
 
 .b-mob-arrow-container .divhr {
@@ -67,7 +66,6 @@
 .b-mob-arrow-container .divhr:last-child {
   display: none;
 }
-
 
 @media screen and (width <= 768px) {
   .b-mob-arrow-container .common-menu {
