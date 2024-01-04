@@ -13,7 +13,7 @@ export default function decorate(block) {
     child.classList.add('col-sm-12');
     child.classList.add('col-xs-12');
     if (child.firstElementChild.textContent.toLowerCase() === 'or') {
-      child.classList.add('col-lg-2');
+      child.classList.add('col-lg-1');
       child.classList.add('or-container');
     } else if (index === 0) {
       child.classList.add('col-lg-4');
@@ -29,7 +29,12 @@ export default function decorate(block) {
       child.prepend(arrowRight);
       child.prepend(arrow);
     } else {
-      child.classList.add('col-lg-3');
+      if (index === [...block.children].length - 1) {
+        child.classList.add('col-lg-4');
+      } else {
+        child.classList.add('col-lg-3');
+      }
+
       child.querySelector('.button').classList.add('append-right-arrow');
     }
   });
