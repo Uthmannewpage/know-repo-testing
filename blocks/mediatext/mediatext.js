@@ -1,4 +1,5 @@
 export default function decorate(block) {
+  block.closest('.section').id = 'media-section';
   const metadata = block.closest('.section').dataset;
   const { type, backgroundColor, headingcolor } = metadata;
   const blockItems = [...block.firstElementChild.children];
@@ -15,10 +16,10 @@ export default function decorate(block) {
   }
 
   if (type === 'video') {
-    contentLeft.innerHTML = `<video controls class="ratio ratio-16x9">
-        <source src="${contentLeft.innerHTML}">
-        Your browser does not support the video tag.
-      </video>`;
+    contentLeft.innerHTML = `<video controls>
+    <source src="${contentLeft.innerHTML}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>`;
   }
   block.innerHTML = `
   <div class="container p-2">

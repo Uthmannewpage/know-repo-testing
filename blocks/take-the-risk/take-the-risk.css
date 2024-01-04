@@ -1,0 +1,85 @@
+.section.take-the-risk-container .block {
+  background-color: #FBFAF9;
+}
+
+.section.take-the-risk-container .block .content-left {
+  padding: 1rem;
+}
+
+.section.take-the-risk-container .block .content-left::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid white;
+  display: none;
+}
+
+.section.take-the-risk-container .block .content-left h3 {
+  font-family: roboto-slab, serif;
+  font-size: 36px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  text-align: left;
+  color: #363636;
+  margin-bottom: 2rem;
+}
+
+.section.take-the-risk-container .block .content-right {
+  background: url('../../images/icons/arrow-right.png') 0 0 no-repeat #f3f1ed;
+  background-size: auto 100%;
+  padding: 2rem 1rem 2rem 6rem;
+}
+
+.section.take-the-risk-container .steps-bullets {
+  width: 500px;
+  margin: 0 auto 3rem;
+  position: relative;
+}
+
+.section.take-the-risk-container .steps-bullets div {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 12px;
+  line-height: 1.4286;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  background-color: white;
+  box-shadow: 10px 10px 10px #c4c3c3;
+}
+
+.section.take-the-risk-container .steps-bullets div span {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  background: white;
+  border-radius: 50px;
+}
+
+.section.take-the-risk-container .steps-bullets div.active span {
+  background: #fbbd19;
+}
+
+.section.take-the-risk-container .steps-bullets::before {
+  content: " ";
+  position: absolute;
+  top: 16px;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  border: 0;
+  left: 0;
+}
+
+.section.take-the-risk-container .main-content {
+  text-align: center;
+}

@@ -1,23 +1,27 @@
-.section.banner-container.section {
+.section.banner-container {
   color: black;
   padding: 0;
 }
 
-.section.banner-container.section .banner img {
+.section.banner-container .banner.block {
+  padding: 1rem 2rem 2rem;
+}
+
+.section.banner-container .banner img {
   width: 100%;
 }
 
-.section.banner-container.section .banner h1, .section.banner-container.section .banner h2 {
+.section.banner-container .banner h1, .section.banner-container .banner h2 {
   line-height: 1;
   margin-bottom: 2rem;
   color: #783384;
 }
 
-.section.banner-container.section .banner ul {
+.section.banner-container .banner ul {
   padding: 1rem 0;
 }
 
-.section.banner-container.section .banner p, .section.banner-container.section .banner li {
+.section.banner-container .banner p, .section.banner-container .banner li {
   font-size: 20px;
   font-weight: 400;
   color: #363636;
@@ -25,7 +29,7 @@
   list-style-type: none;;
 }
 
-.section.banner-container.section .banner ul li::before {
+.section.banner-container .banner ul li::before {
   content: "\2022";
   color: #d12f6d;
   font-weight: 700;
@@ -34,21 +38,28 @@
   margin-left: -1em;
 }
 
-.section.banner-container.section .banner ul:nth-of-type(2) li::before {
+.section.banner-container .banner ul:nth-of-type(2) li::before {
   color: #288650;
 }
 
-.section.banner-container.section .banner ul:nth-of-type(3) li::before {
+.section.banner-container .banner ul:nth-of-type(3) li::before {
   color: #2f97d1;
 }
 
-.section.banner-container.section .banner .carousel-caption {
+.section.banner-container .banner .carousel-indicators {
+  padding: 0;
+  margin-right: 0;
+  margin-bottom: 5rem;
+  margin-left: 0;
+}
+
+.section.banner-container .banner .carousel-caption {
   position: absolute;
   inset: 4rem 4rem 0 0;
   text-align: unset;
 }
 
-.section.banner-container.section .banner .carousel-caption a.button::after {
+.section.banner-container .banner .carousel-caption a.button::after {
   content: '';
   width: 0;
   height: 0;
@@ -61,7 +72,7 @@
   top: -1px;
 }
 
-.section.banner-container.section .banner .carousel-indicators li {
+.section.banner-container .banner .carousel-indicators li {
   cursor: pointer;
   height: 20px;
   width: 20px;
@@ -71,41 +82,43 @@
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  opacity: 1;
 }
 
-.section.banner-container.section .banner .carousel-indicators .active {
+.section.banner-container .banner .carousel-indicators .active {
   background-color: #646464;
 }
 
-.section.banner-container.section .banner video {
+.section.banner-container .banner video {
   width: 90%;
+  float: right;
 }
 
-.section.banner-container.section .banner table.or-options {
+.section.banner-container .banner table.or-options {
   font-weight: 400;
   margin: 3rem 0;
 }
 
-.section.banner-container.section .banner table.or-options tr td {
+.section.banner-container .banner table.or-options tr td {
   width: 100%;
   display: block;
   text-align: center;
 }
 
-.section.banner-container.section .banner table.or-options a {
+.section.banner-container .banner table.or-options a {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.section.banner-container.section .banner table.or-options a:hover {
+.section.banner-container .banner table.or-options a:hover {
   color: #783284;
 }
 
-.section.banner-container.section .banner table.or-options tr:nth-of-type(1) {
+.section.banner-container .banner table.or-options tr:nth-of-type(1) {
   display: none;
 }
 
-.section.banner-container.section .banner table.or-options tr:nth-of-type(2) td:nth-of-type(2){
+.section.banner-container .banner table.or-options tr:nth-of-type(2) td:nth-of-type(2){
   text-align: center;
   background-color: #d6d2ca;
   border-radius: 50%;
@@ -123,22 +136,22 @@
 
 
 /* dropdown */
-.section.banner-container.section .banner div.dropdown-table .trigger-text p:nth-of-type(2), .section.banner-container.section .banner div.dropdown-table.open .trigger-text p:nth-of-type(1), .section.banner-container.section .banner div.dropdown-table .content-text {
+.section.banner-container .banner div.dropdown-table .trigger-text p:nth-of-type(2), .section.banner-container .banner div.dropdown-table.open .trigger-text p:nth-of-type(1), .section.banner-container .banner div.dropdown-table .content-text {
   display: none;
 }
 
-.section.banner-container.section .banner div.dropdown-table .content-text {
+.section.banner-container .banner div.dropdown-table .content-text {
   width: 100%;
   padding: 24px;
   border: #25a8d9 2px solid;
   background: #fff;
 }
 
-.section.banner-container.section .banner div.dropdown-table.open .trigger-text p:nth-of-type(2), .section.banner-container.section .banner div.dropdown-table.open .content-text  {
+.section.banner-container .banner div.dropdown-table.open .trigger-text p:nth-of-type(2), .section.banner-container .banner div.dropdown-table.open .content-text  {
   display: block;
 }
 
-.section.banner-container.section .banner div.dropdown-table .trigger-text *, .section.banner-container.section .banner div.dropdown-table .close-text {
+.section.banner-container .banner div.dropdown-table .trigger-text *, .section.banner-container .banner div.dropdown-table .close-text {
   text-align: right;
   font-size: var(--paragraph-font-size-l);
   color: var( --color-primary);
@@ -146,7 +159,7 @@
   margin: 0;
 }
 
-.section.banner-container.section .banner div.dropdown-table .trigger-text {
+.section.banner-container .banner div.dropdown-table .trigger-text {
   width: 50%;
   margin-left: 50%;
   border: 1px solid transparent;
@@ -157,38 +170,38 @@
   position: relative;
 }
 
-.section.banner-container.section .banner div.dropdown-table.open .trigger-text {
+.section.banner-container .banner div.dropdown-table.open .trigger-text {
   border: #25a8d9 2px solid;
   border-bottom: 0;
   background: #fff;
 }
 
-.section.banner-container.section .banner.banner-with-tabs .text-left ul {
+.section.banner-container .banner.banner-with-tabs .text-left ul {
   padding: 1rem 0 1rem 4rem;
 }
 
-.section.banner-container.section .banner.banner-with-tabs .text-left ul.greyed {
+.section.banner-container .banner.banner-with-tabs .text-left ul.greyed {
   background: #F3F1EC;
   background: linear-gradient(90deg, #F3F1EC 0%, #fff 100%);
 }
 
-.section.banner-container.section .banner.banner-with-tabs .content-right {
+.section.banner-container .banner.banner-with-tabs .content-right {
   position: relative;
   width: 394px;
 }
 
-.section.banner-container.section .banner.banner-with-tabs .content-right picture:not(:first-child) {
+.section.banner-container .banner.banner-with-tabs .content-right picture:not(:first-child) {
   display: none;
 }
 
-.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points {
+.section.banner-container .banner.banner-with-tabs .content-right .trigger-points {
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 5;
 }
 
-.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points span {
+.section.banner-container .banner.banner-with-tabs .content-right .trigger-points span {
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -197,77 +210,148 @@
   cursor: pointer;
 }
 
-.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points span.red-point {
+.section.banner-container .banner.banner-with-tabs .content-right .trigger-points span.red-point {
   background-color: #8E181E;
   left: 189px;
   top: 52px;
 }
 
-.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points span.green-point {
+.section.banner-container .banner.banner-with-tabs .content-right .trigger-points span.green-point {
   background-color: #10974C;
   left: 110px;
   top: 262px;
 }
 
-.section.banner-container.section .banner.banner-with-tabs .content-right .trigger-points span.blue-point {
+.section.banner-container .banner.banner-with-tabs .content-right .trigger-points span.blue-point {
   background-color: #2A81C3;
   left: 35px;
   bottom: 127px;
 }
 
+.section.banner-container[data-type='carousel'] .button-under-carousel {
+  margin: 1rem auto;
+  display: none;
+}
+
 @media (width >= 768px) {
-  .section.banner-container.section .banner h1 {
+  .section.banner-container .banner h1 {
     font-size: 30px;
   }
 
-  .section.banner-container.section .banner table.or-options tr td {
+  .section.banner-container .banner table.or-options tr td {
     width: auto;
     display: table-cell;
     text-align: left;
   }
 
-  .section.banner-container.section .banner table.or-options tr:nth-of-type(2) td:nth-of-type(2){
+  .section.banner-container .banner table.or-options tr:nth-of-type(2) td:nth-of-type(2){
     margin: 0 3rem;
   }
 }
 
 @media screen and (width >= 991px) {
-  .section.banner-container.section .banner h1 {
+  .section.banner-container .banner h1 {
     font-size: var(--heading-font-size-xl);
     line-height: var(--heading-font-size-xl);
     text-align: left;
   }
 
-  .section.banner-container.section .banner.button-container {
+  .section.banner-container .banner.button-container {
     display: block;
   }
 
-  .section.banner-container.section .banner img {
+  .section.banner-container .banner img {
     width: initial;
   }
 }
 
+@media screen and (width <= 990px) {
+  .section.banner-container .banner.banner-with-tabs .text-right {
+    display: none;
+  }
+
+  .section.banner-container .banner.banner-with-tabs .text-left ul {
+    padding: 1rem 0 0 4rem;
+  }
+}
+
 @media screen and (width <= 768px) {
-  .section.banner-container.section .banner h1 {
-    margin-top: 1em;
+  .section.banner-container[data-type='carousel'] .block {
+    padding: 0;
   }
 
-  .section.banner-container.section .banner .carousel-caption {
+  .section.banner-container[data-type='carousel'] .button-under-carousel {
+    display: block;
+  }
+
+  .section.banner-container .banner h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  .section.banner-container #my-carousel {
+    padding: 0
+  }
+
+  .section.banner-container .banner video {
+    width: 100%;
+    float: unset;
+  }
+
+  .section.banner-container .banner div.dropdown-table .trigger-text {
+    width: 100%;
+    margin-left: 0;
+   }
+
+  .section.banner-container .banner div.dropdown-table .trigger-text *, .section.banner-container .banner div.dropdown-table .close-text {
+    font-size: 14px;
+  }
+
+  .section.banner-container .banner .carousel-caption {
     inset: 0 0 0 1rem;
+    padding: 1rem 0;
   }
 
-  .section.banner-container.section .banner .carousel-caption h1, .section.banner-container.section .banner .carousel-caption h2 {
+  .section.banner-container .banner .carousel-caption h1, .section.banner-container .banner .carousel-caption h2 {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 17px;
+    font-size: 17px!important;
+    line-height: 18.5px;
+    letter-spacing: -0.17px;
+    font-weight: bold;
   }
 
-  .section.banner-container.section .banner .carousel-caption p {
+  .section.banner-container .banner p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .section.banner-container .banner .carousel-caption p {
     font-size: 14px!important;
     line-height: 18.5px!important;
   }
 
-  .section.banner-container.section .banner .carousel-caption a {
+  .section.banner-container .banner .carousel-caption p.button-container {
+    display: none;
+  }
+
+  .section.banner-container .banner .carousel-caption a {
     margin: 0;
+  }
+
+  .section.banner-container .banner .carousel-indicators {
+    margin-bottom: 1rem;
+  }
+
+  .section.banner-container .banner li {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .section.banner-container .banner .carousel-indicators li {
+    height: 15px;
+    width: 15px;
   }
 }

@@ -33,7 +33,7 @@
     font-family: 'roboto slab', serif;
     font-size: 24px;
     color: var(--color-primary);
-    font-weight: 500;
+    font-weight: 600;
 
 }
 
@@ -59,7 +59,7 @@
     cursor: pointer;
     position: relative;
     color: var(--color-primary);
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'roboto slab', serif;
 }
 

@@ -1,6 +1,7 @@
 /* eslint-disable no-tabs */
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+import { getMetadataStyleProps } from '../../scripts/utils.js';
 
 function parseListToJson(ulElement) {
   function parseListItem(li) {
@@ -37,38 +38,6 @@ function parseListToJson(ulElement) {
   }
 
   return parseList(ulElement);
-}
-function getMetadataStyleProps(section) {
-  const { dataset } = section;
-  if (dataset) {
-    const styleProps = [];
-    if (dataset.marginTop) {
-      styleProps.push(`margin-top: ${dataset.marginTop}`);
-    }
-    if (dataset.marginBottom) {
-      styleProps.push(`margin-bottom: ${dataset.marginBottom}`);
-    }
-    if (dataset.marginLeft) {
-      styleProps.push(`margin-left: ${dataset.marginLeft}`);
-    }
-    if (dataset.marginRight) {
-      styleProps.push(`margin-right: ${dataset.marginRight}`);
-    }
-    if (dataset.paddingTop) {
-      styleProps.push(`padding-top: ${dataset.paddingTop}`);
-    }
-    if (dataset.paddingBottom) {
-      styleProps.push(`padding-bottom: ${dataset.paddingBottom}`);
-    }
-    if (dataset.paddingLeft) {
-      styleProps.push(`padding-left: ${dataset.paddingLeft}`);
-    }
-    if (dataset.paddingRight) {
-      styleProps.push(`padding-right: ${dataset.paddingRight}`);
-    }
-    return `style="${styleProps.join(';')}"`;
-  }
-  return '';
 }
 function generateTopNavigation(section) {
   return `
@@ -240,7 +209,8 @@ function generateMainMenu(menu) {
 
 function setNavBar(block, sectionList) {
   const header = `
-  <div class="">
+  <div class="section">
+  <div>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
       <div class="row w-100 p-0 m-0">
@@ -265,6 +235,7 @@ function setNavBar(block, sectionList) {
 		
   </nav>
 	<div class="container border border-2 border-primary w-100 d-lg-none"></div>
+  </div>
   </div>`;
   block.innerHTML = header;
 }
