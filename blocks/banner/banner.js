@@ -11,8 +11,16 @@ export default function decorate(block) {
   if (titleColor) block.querySelector('h1').style.color = titleColor;
 
   if (type && type === 'carousel') {
+    const bottomAnchor = document.createElement('div');
+    const anchorButton = block.querySelector('p.button-container');
+
+    anchorButton.querySelector('a').classList.add('append-right-arrow');
+    const clonedAnchor = anchorButton.cloneNode(true);
+    clonedAnchor.classList.add('button-under-carousel', 'text-center');
+    bottomAnchor.appendChild(clonedAnchor);
+
     block.innerHTML = `
-  <div id="myCarousel" class="container carousel slide" data-bs-ride="carousel">
+  <div id="my-carousel" class="container carousel slide carousel-fade" data-bs-ride="carousel">
     <ol class="carousel-indicators">
       ${bannerItems.length && bannerItems.map((_, index) => `
         <li data-bs-target="#myCarousel" data-bs-slide-to="${index}" ${index === 0 ? 'class="active"' : ''}></li>
@@ -22,17 +30,17 @@ export default function decorate(block) {
       ${bannerItems.length && bannerItems.map((slide, index) => {
     const [content, image] = [...slide.children];
     return `<div class="carousel-item ${index === 0 ? 'active' : ''}">
-      <img src="${image.querySelector('img').getAttribute('src')}" class="d-block w-100" alt="Slide" width="${image.querySelector('img').getAttribute('width')}" height="${image.querySelector('img').getAttribute('height')}">
+      ${image.innerHTML}
       <div class="carousel-caption d-block rows col-5 col-md-5">
         ${content.innerHTML}
       </div>
     </div>`;
   }).join('')}
     </div>
-  </div>`;
+  </div>
+  ${bottomAnchor.innerHTML}
+  `;
   } else {
-    block.classList.add('ps-0', 'ps-md-5', 'py-md-5', 'py-3');
-
     const [contentLeft, contentRight, contentImage, outsideOfContent] = bannerItems;
     if (imageCover === 'background') {
       block.style.background = `url(${contentImage.querySelector('img').getAttribute('src').split('?')[0]}) no-repeat top / cover transparent`;
@@ -80,12 +88,12 @@ export default function decorate(block) {
     block.innerHTML = `
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-xs-11 col-sm-11${leftContentClasses} text-left ps-4">
+          <div class="col-xs-12 col-sm-11${leftContentClasses} text-left p-0">
             ${contentLeft.innerHTML}
           </div>
 
-          <div class="col-xs-11 col-sm-11${rightContentClasses} text-right img-box">
-            ${video ? `<video controls>
+          <div class="col-xs-12 col-sm-11${rightContentClasses} text-right img-box p-0">
+            ${video ? `<video controls autoplay>
               <source src="${video}" type="application/x-mpegURL">
               Your browser does not support the video tag.
             </video>` : ''}
