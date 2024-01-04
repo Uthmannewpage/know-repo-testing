@@ -9,6 +9,10 @@
     font-family: var(--body-font-family);
 }
 
+.mediatext video {
+    width: 100%;
+}
+
 @media screen and (width <= 768px) {
     .mediatext iframe {
         width: 100%;

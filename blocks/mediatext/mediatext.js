@@ -16,8 +16,10 @@ export default function decorate(block) {
   }
 
   if (type === 'video') {
-    contentLeft.innerHTML = `<iframe width="560" height="315" src="${contentLeft.innerHTML}" title="Know Pneumonia" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      `;
+    contentLeft.innerHTML = `<video controls>
+    <source src="${contentLeft.innerHTML}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>`;
   }
   block.innerHTML = `
   <div class="container p-2">
