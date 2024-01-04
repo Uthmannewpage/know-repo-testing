@@ -30,6 +30,7 @@ header .bottom-navbar.navbar-nav .dropdown-menu .dropdown-item{
   color: var(--color-primary);
   letter-spacing: -.09px;
 }
+
 header .learn-about-pfizer{
   font-size: 13px;
   text-decoration: underline;
