@@ -13,7 +13,7 @@ export default function decorate(block) {
   if (type && type === 'carousel') {
     const bottomAnchor = document.createElement('div');
     const anchorButton = block.querySelector('p.button-container');
-    
+
     anchorButton.querySelector('a').classList.add('append-right-arrow');
     const clonedAnchor = anchorButton.cloneNode(true);
     clonedAnchor.classList.add('button-under-carousel', 'text-center');

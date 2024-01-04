@@ -330,9 +330,10 @@ a.button.append-right-arrow::after {
   border-bottom: 6px solid transparent;
   border-left: 6px solid;
   display: inline-block;
-  border-left-color: rgb(148, 76, 154);
+  border-left-color: #94549A;
   margin-left: 6px;
 }
+
 .triangles-link a::after {
   content: '';
   width: 0;
@@ -341,7 +342,7 @@ a.button.append-right-arrow::after {
   border-bottom: 6px solid transparent;
   border-left: 6px solid;
   display: inline-block;
-  border-left-color: rgb(148, 76, 154);
+  border-left-color: #94549A;
   margin-left: 6px;
 }
 
