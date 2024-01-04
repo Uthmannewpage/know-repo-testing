@@ -9,6 +9,7 @@ export default function decorate(block) {
   parentBlock.firstElementChild.classList.add('p-0');
   block.classList.add('row');
   const blockItems = [...block.children];
+  const blockLastIndex = blockItems.length - 1;
   blockItems.forEach((child, index) => {
     child.classList.add('col-12');
     child.classList.add('col-sm-12');
@@ -30,7 +31,7 @@ export default function decorate(block) {
       child.prepend(arrowRight);
       child.prepend(arrow);
     } else {
-      if (index === blockItems.length - 1) {
+      if (index === blockLastIndex) {
         child.classList.add('col-lg-4');
       } else {
         child.classList.add('col-lg-3');

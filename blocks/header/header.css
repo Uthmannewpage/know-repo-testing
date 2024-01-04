@@ -1,7 +1,9 @@
 header nav{
   --nav-height: auto
 }
-
+header.header-wrapper{
+  min-height: 159px;
+}
 header .navbar-nav .dropdown-menu {
   width: 100%;
   text-align: center;
