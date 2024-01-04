@@ -441,6 +441,7 @@ a.button.append-right-arrow::after {
     text-align: left;
     padding: 1rem 2rem;
   }
+
   a.button.append-right-arrow::after {
     border-top: 18px solid transparent;
     border-bottom: 18px solid transparent;
