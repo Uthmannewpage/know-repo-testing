@@ -30,7 +30,7 @@ export default function decorate(block) {
       ${bannerItems.length && bannerItems.map((slide, index) => {
     const [content, image] = [...slide.children];
     return `<div class="carousel-item ${index === 0 ? 'active' : ''}">
-      <img src="${image.querySelector('img').getAttribute('src')}" class="d-block w-100" alt="Slide" width="${image.querySelector('img').getAttribute('width')}" height="${image.querySelector('img').getAttribute('height')}">
+      ${image.innerHTML}
       <div class="carousel-caption d-block rows col-5 col-md-5">
         ${content.innerHTML}
       </div>
