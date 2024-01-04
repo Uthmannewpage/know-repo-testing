@@ -5,23 +5,27 @@ export default function decorate(block) {
   block.innerHTML = rows.map((row, index) => {
     const [image, content] = [...row.children];
     const buttonContainer = content.querySelector('.button-container');
+
+    let updatedButton = '';
+
     if (buttonContainer) {
-      buttonContainer.children[0].classList.remove('button');
-
-      const triangle1 = document.createElement('span');
-      triangle1.classList.add('triangle', 'ms-2', 'me-1');
-
-      const triangle2 = document.createElement('span');
-      triangle2.classList.add('triangle');
-
-      buttonContainer.append(triangle1);
-      buttonContainer.append(triangle2);
+      const anchor = buttonContainer.children[0];
+      updatedButton = `
+        <p class="mb-0">
+          ${content.children[0].innerHTML}
+        </p>
+        <p>
+          <a href="${anchor.getAttribute('href')}" title="${anchor.getAttribute('title')}" target="_blank">${anchor.getAttribute('title')}</a>
+          <span class="triangle ms-1"></span>
+          <span class="triangle"></span>
+        </p>
+      `;
     }
     const colItem = `
     <div class="d-flex flex-column align-items-center how-it-works-column column-${index + 1}">
       <div class="how-it-works-column-wrapper">
         <div class="d-flex flex-column align-items-center how-it-works-image-conatiner">
-          <div class="d-flex how-it-works-icon>
+          <div class="d-flex how-it-works-icon">
             ${image.innerHTML}
           </div>
           <div class="how-it-works-number my-4">
@@ -29,7 +33,7 @@ export default function decorate(block) {
           </div>
         </div>
         <div class="how-it-works-content">
-          ${content.innerHTML}
+          ${buttonContainer ? updatedButton : content.innerHTML}
         </div>
       </div>
     </div>
