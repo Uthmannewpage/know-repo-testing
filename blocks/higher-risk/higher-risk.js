@@ -8,7 +8,8 @@ export default function decorate(block) {
   parentBlock.firstElementChild.classList.add('container');
   parentBlock.firstElementChild.classList.add('p-0');
   block.classList.add('row');
-  [...block.children].forEach((child, index) => {
+  const blockItems = [...block.children];
+  blockItems.forEach((child, index) => {
     child.classList.add('col-12');
     child.classList.add('col-sm-12');
     child.classList.add('col-xs-12');
@@ -29,7 +30,7 @@ export default function decorate(block) {
       child.prepend(arrowRight);
       child.prepend(arrow);
     } else {
-      if (index === [...block.children].length - 1) {
+      if (index === blockItems.length - 1) {
         child.classList.add('col-lg-4');
       } else {
         child.classList.add('col-lg-3');
