@@ -2,11 +2,11 @@ import { metaDataToStylesArray } from '../../scripts/utils.js';
 
 export default function decorate(block) {
   const parentBlock = block.closest('.section');
+  parentBlock.classList.add('p-0');
   const metaData = parentBlock.dataset;
   const styles = metaDataToStylesArray(metaData);
   parentBlock.style = styles.join('; ');
   parentBlock.firstElementChild.classList.add('container');
-  parentBlock.firstElementChild.classList.add('p-0');
   block.classList.add('row');
   const blockItems = [...block.children];
   const blockLastIndex = blockItems.length - 1;
