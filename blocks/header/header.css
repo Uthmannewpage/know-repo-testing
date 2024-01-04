@@ -31,6 +31,11 @@ header .bottom-navbar.navbar-nav .dropdown-menu .dropdown-item{
   letter-spacing: -.09px;
 }
 
+header .learn-about-pfizer{
+  font-size: 13px;
+  text-decoration: underline;
+}
+
 header ul.language-dropdown li.nav-item a.nav-link{
   font-weight: 600;
   color: var(--color-primary);
@@ -225,5 +230,9 @@ header .mobile-view .nav-bottom{
 @media (width <= 1200px) {
   header .bottom-navbar.navbar-nav .nav-item a.nav-link, header .bottom-navbar.navbar-nav .dropdown-menu .dropdown-item{
     font-size: 15px;
+  }
+
+  header .section{
+    min-height: 106.6px;
   }
 }

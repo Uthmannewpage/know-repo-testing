@@ -12,8 +12,8 @@ export default function decorate(block) {
   // Function to create HTML content for options column
   function createOptionsColumn() {
     return `
-      <div class="col-lg-4 col-xs-12 col-sm-12 mb-lg-0 mb-5 text-lg-left text-center  ">
-        <div class="row font-roboto-slab font-weight-600">
+      <div class="col-lg-3 col-xs-12 col-sm-12 mb-lg-0 mb-5 text-lg-left text-center  ">
+        <div class="row font-roboto-slab font-weight-600 align-items-end align-items-end pb-3 h-100">
           <span class="col-lg-6  opt-true"><span class="true-false-option"></span> True </span>
           <span class="col-lg-6 opt-false"><span class="true-false-option"></span> False </span>
         </div>
@@ -23,7 +23,7 @@ export default function decorate(block) {
   // Function to create HTML content for each row
   function createRowContent(child, index, linkBlock) {
     return `
-      <div class="row d-flex justify-content-center align-items-center ${index === 0 ? '' : 'd-none'}"> 
+      <div class="row d-flex ${index === 0 ? '' : 'd-none'}"> 
         <div class="${index === 0 ? 'col-8' : 'col'}">
           ${Array.from(child.children).map((elem, idx) => `
             ${idx === 0 ? `<strong>${elem.innerHTML}</strong>` : `<p class="${idx === 2 ? 'text-dark' : ''}" >${elem.innerHTML}</p>`}
