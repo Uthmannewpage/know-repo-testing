@@ -152,7 +152,7 @@ function generateCollapseMenu(sections) {
     <div>
     <div class="nav-bottom w-100 d-flex align-items-center">
       <a class="nav-link  text-primary" href="${topMenu.dataset.spanishUrl}">${topMenu.dataset.spanishLabel}</a>
-      <span><i class="fa-solid fa-caret-right  text-primary"></i><i class="fa-solid fa-caret-right  text-primary"></i></span>
+      <span class="double-crates-right"></span>
     </div>
     <div class="nav-bottom w-100 d-flex align-items-center">
       <ul class="list-unstyled d-flex align-items-center">
@@ -223,7 +223,7 @@ function setNavBar(block, sectionList) {
 					</button>
 			</div>
 			<div class="d-lg-none p-0">
-			<a class="nav-link p-0 m-0 text-primary fw-bold" href="${sectionList['navbar-top'][0].text}">${sectionList['navbar-top'][0].text} <i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i> </a>
+			<a class="nav-link p-0 m-0 text-primary fw-bold learn-about-pfizer double-crates-right" href="${sectionList['navbar-top'][0].link}">${sectionList['navbar-top'][0].text} </a>
 			</div>
       ${generateTopNavigation(sectionList['navbar-top'])}
       ${generateMainMenu(sectionList['navbar-main'])}

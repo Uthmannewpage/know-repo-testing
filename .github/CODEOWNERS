@@ -1,0 +1,9 @@
+# The below members will be automatically added as reviewers for any PR raised
+* @vineetha-v @Tiseanu @faizansarwer-newpage @reshail2 @namith-scindhia-newpage-io @stutya 
+
+# Any change to the below file will need approval from the members mentioned below
+fstab.yaml @vineetha-v @Tiseanu
+
+.github @vineetha-v
+
+head.html @vineetha-v @Tiseanu
