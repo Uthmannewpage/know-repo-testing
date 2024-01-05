@@ -31,7 +31,6 @@ div.section.resources-and-faqs.accordion-container {
   box-shadow: 10px;
   box-shadow: 0 0 10px var(--box-shadow);
   background-color: var(--color-light);
-
 }
 
 .accordion-container .accordion-item .accordion-question::after {
@@ -137,11 +136,16 @@ div.section.resources-and-faqs.accordion-container {
   margin: 0;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (width >=600px) {
   .accordion-wrapper .accordion.two-columns {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+  }
+
+  .accordion-container .accordion-wrapper .accordion-item {
+    margin-bottom: 20px;
+    background: var(--background-color);
   }
 
   .accordion-wrapper .accordion.two-columns .accordion-item {
@@ -151,11 +155,6 @@ div.section.resources-and-faqs.accordion-container {
 
   div.section.resources-and-faqs.accordion-container {
     padding-bottom: 68px;
-  }
-
-  .accordion-container .accordion-wrapper .accordion-item {
-    margin-bottom: 20px;
-    background: var(--background-color);
   }
 
   .accordion-container .accordion-wrapper .accordion-question {
