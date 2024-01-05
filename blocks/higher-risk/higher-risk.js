@@ -13,7 +13,6 @@ export default function decorate(block) {
 
   // Append the new container div to the parent block
   parentBlock.children[0].appendChild(containerDiv);
- 
   // Move the .row class to the container div
   block.classList.add('row');
   containerDiv.appendChild(block);

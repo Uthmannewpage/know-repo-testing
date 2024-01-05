@@ -2,12 +2,14 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import { getMetadataStyleProps } from '../../scripts/utils.js';
+
 const menuSize = {
   0: 'w-35',
   1: 'w-28',
   2: 'w-22',
   3: 'w-15',
-}
+};
+
 function parseListToJson(ulElement) {
   function parseListItem(li) {
     const item = {
