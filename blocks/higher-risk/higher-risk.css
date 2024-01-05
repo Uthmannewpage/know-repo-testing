@@ -1,16 +1,16 @@
-.section.higher-risk-container{
+.higher-risk-container{
     margin: 0;
     padding: 0;
     position: relative;
 }
 
-.section.higher-risk-container h2 {
+.higher-risk-container h2 {
     margin: 0;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk {
+.higher-risk-container .higher-risk-wrapper .higher-risk {
     background-color: var(--color-light);
-    font-family: roboto-slab, serif;
+    font-family: 'roboto slab', sans-serif;
     font-size: 18px;
     font-weight: 700;
     text-align: center;
@@ -21,27 +21,26 @@
     width: 100%;
 }
 
-.section.higher-risk-container.move-above-slider .higher-risk{
-    width: 86%;
-    margin: 0 auto;
-    margin-top: -72px;
-    z-index: 2;
+.higher-risk-container.move-above-slider .higher-risk{
+    width: calc(100% - 40px);
+    margin-top: -40px;
     position: relative;
+    z-index: 2;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk .col{
+.higher-risk-container .higher-risk-wrapper .higher-risk .col-12{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     color: var(--color-primary);
-    font-family: 'roboto slab', serif;
+    font-family: 'roboto slab', sans-serif;
     position: relative;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk .col h3{
+.higher-risk-container .higher-risk-wrapper .higher-risk .col-12 h3{
     font-size: 30.5px;
-    font-family: 'roboto slab', serif;
+    font-family: 'roboto slab', sans-serif;
     font-weight: 600;
     color: var(--color-dark);
     margin-bottom: 0;
@@ -49,10 +48,10 @@
     text-align: center;
 }
 
-.section.higher-risk-container .or-container div:first-child{
+.higher-risk-container .or-container div:first-child{
     background: var(--color-gray);
     color: var(--color-dark);
-    font-family: 'roboto slab', serif;
+    font-family: 'roboto slab', sans-serif;
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -63,7 +62,7 @@
     font-weight: 700;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child{
+.higher-risk-container .higher-risk-wrapper .higher-risk .col-12:first-child{
     font-size: 32px;
     font-weight: 600;
     font-stretch: normal;
@@ -78,11 +77,11 @@
     padding: 50px 65px;
 }
 
-.section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child div{
+.higher-risk-container .higher-risk-wrapper .higher-risk .col-12:first-child div{
     z-index: 1;
 }
 
-.section.higher-risk-container .bg-holder-sm{
+.higher-risk-container .bg-holder-sm{
     background-image: url("https://www.knowpneumonia.com/images/white-arrow-mobile.png");
     background-size: 100% 100%;;
     width: 100%;
@@ -93,7 +92,7 @@
     z-index: 0;
 }
 
-.section.higher-risk-container .bg-holder-lg{
+.higher-risk-container .bg-holder-lg{
     background-image: url("https://www.knowpneumonia.com/images/arrow-new.png");
     background-size: 100% 100%;;
     width: 100%;
@@ -105,39 +104,43 @@
 }
 
 @media (width <= 992px) {
-    .section.higher-risk-container .or-container{
+    .higher-risk-container .or-container{
         padding: 20px 0;
     }
 
-    .section.higher-risk-container .higher-risk-wrapper .higher-risk .col:first-child{
+    .higher-risk-container .higher-risk-wrapper .higher-risk .col-12:first-child{
         font-size: 19px;
         line-height: 20.5px;
         height: 80px;
         overflow: hidden;
     }
 
-    .section.higher-risk-container .higher-risk-wrapper .higher-risk .col h3{
+    .higher-risk-container .higher-risk-wrapper .higher-risk .col-12 h3{
         font-size: 20.5px;
         line-height: 22.5px;
     }
 
-    .section.higher-risk-container .higher-risk-wrapper .higher-risk{
+    .higher-risk-container .higher-risk-wrapper .higher-risk{
         font-size: 13.5px;
         line-height: 22.5px;
         margin-top: 5px;
         padding-bottom: 20px;
     }
 
-    .section.higher-risk-container.move-above-slider .higher-risk{
+    .higher-risk-container.move-above-slider .higher-risk{
         width: 100%;
         flex-direction: column;
     }
 
-    .section.higher-risk-container .bg-holder-lg {
+    .higher-risk-container .bg-holder-lg {
         display: none;
     }
 
-    .section.higher-risk-container .bg-holder-sm {
+    .higher-risk-container .bg-holder-sm {
         top: -15px;
+    }
+
+    .higher-risk-wrapper.container{
+        padding: 0;;
     }
   }

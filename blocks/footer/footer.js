@@ -46,9 +46,9 @@ export default async function decorate(block) {
 
   const filesDiv = document.createElement('div');
   filesDiv.innerHTML = `
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" defer async rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;900&display=swap" defer async rel="stylesheet">
-    <link rel="stylesheet" defer async href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- adding Lato font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"   rel="stylesheet">
+    
    `;
   footer.append(filesDiv);
   block.append(footer);
