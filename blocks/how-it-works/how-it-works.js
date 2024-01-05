@@ -40,5 +40,5 @@ export default function decorate(block) {
     `;
 
     return colItem;
-  });
+  }).join('');
 }
