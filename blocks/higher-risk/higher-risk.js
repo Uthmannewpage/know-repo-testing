@@ -6,37 +6,38 @@ export default function decorate(block) {
   const metaData = parentBlock.dataset;
   const styles = metaDataToStylesArray(metaData);
   parentBlock.style = styles.join('; ');
-  parentBlock.firstElementChild.classList.add('container');
+
+  // Create a new container div
+  const containerDiv = document.createElement('div');
+  containerDiv.classList.add('container', 'p-0');
+
+  // Append the new container div to the parent block
+  parentBlock.children[0].appendChild(containerDiv);
+ 
+  // Move the .row class to the container div
   block.classList.add('row');
+  containerDiv.appendChild(block);
+
   const blockItems = [...block.children];
   const blockLastIndex = blockItems.length - 1;
+
   blockItems.forEach((child, index) => {
     child.classList.add('col-12');
-    child.classList.add('col-sm-12');
-    child.classList.add('col-xs-12');
+
     if (child.firstElementChild.textContent.toLowerCase() === 'or') {
-      child.classList.add('col-lg-1');
-      child.classList.add('or-container');
+      child.classList.add('col-md-1', 'or-container');
     } else if (index === 0) {
-      child.classList.add('col-lg-4');
+      child.classList.add('col-md-4');
+
       const arrow = document.createElement('div');
-      arrow.classList.add('bg-holder-sm');
-      arrow.classList.add('d-lg-none');
-      arrow.classList.add('d-sm-flex');
+      arrow.classList.add('bg-holder-sm', 'd-md-none', 'd-sm-flex');
 
       const arrowRight = document.createElement('div');
-      arrowRight.classList.add('bg-holder-lg');
-      arrowRight.classList.add('d-none');
-      arrowRight.classList.add('d-lg-flex');
-      child.prepend(arrowRight);
-      child.prepend(arrow);
-    } else {
-      if (index === blockLastIndex) {
-        child.classList.add('col-lg-4');
-      } else {
-        child.classList.add('col-lg-3');
-      }
+      arrowRight.classList.add('bg-holder-md', 'd-none', 'd-md-flex');
 
+      child.prepend(arrowRight, arrow);
+    } else {
+      child.classList.add(index === blockLastIndex ? 'col-md-4' : 'col-md-3');
       child.querySelector('.button').classList.add('append-right-arrow');
     }
   });

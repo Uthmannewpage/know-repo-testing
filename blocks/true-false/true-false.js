@@ -12,10 +12,10 @@ export default function decorate(block) {
   // Function to create HTML content for options column
   function createOptionsColumn() {
     return `
-      <div class="col-lg-3 col-xs-12 col-sm-12 mb-lg-0 mb-5 text-lg-left text-center  ">
-        <div class="row font-roboto-slab font-weight-600 align-items-end align-items-end pb-3 h-100">
-          <span class="col-lg-6  opt-true"><span class="true-false-option"></span> True </span>
-          <span class="col-lg-6 opt-false"><span class="true-false-option"></span> False </span>
+      <div class="col-12 col-md-4 mb-4 text-md-left text-center">
+        <div class="row font-roboto-slab font-weight-600 align-items-center h-100 ">
+          <span class="col-md-5  opt-true"><span class="true-false-option"></span> True </span>
+          <span class="col-md-6 opt-false"><span class="true-false-option"></span> False </span>
         </div>
       </div>
     `;
@@ -24,7 +24,7 @@ export default function decorate(block) {
   function createRowContent(child, index, linkBlock) {
     return `
       <div class="row d-flex ${index === 0 ? '' : 'd-none'}"> 
-        <div class="${index === 0 ? 'col-8' : 'col'}">
+        <div class="${index === 0 ? 'col-12 col-md-8' : 'col'}">
           ${Array.from(child.children).map((elem, idx) => `
             ${idx === 0 ? `<strong>${elem.innerHTML}</strong>` : `<p class="${idx === 2 ? 'text-dark' : ''}" >${elem.innerHTML}</p>`}
           `).join('')}
@@ -61,8 +61,8 @@ export default function decorate(block) {
   block.innerHTML = `
     <div class="container" ${getMetadataStyleProps(parentBlock)}>
       <div class="row">
-        <div class="col-lg-1 d-lg-flex d-none left-arrow"></div>
-        <div class="col-lg-11 body-content">
+        <div class="col-md-1 d-md-flex d-none left-arrow"></div>
+        <div class="col-md-11 body-content">
           ${blockItems.map((child, index) => createRowContent(child, index, linkBlock)).join('')}
         </div>
       </div>
