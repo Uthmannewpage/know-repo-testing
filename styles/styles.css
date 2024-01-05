@@ -52,6 +52,10 @@
   /* here's how it works block */
   --how-it-works-last-child-background-color: #e8e4dc;
   --how-it-works-content-color: #363636;
+
+  /* b-mob-arrow block */
+  --b-mob-arrow-button-color: #1e1e1e;
+  --b-mob-arrow-hr-border-color: #e8e4dc;
 }
 
 @font-face {
