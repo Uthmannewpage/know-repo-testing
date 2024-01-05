@@ -12,12 +12,14 @@
 
  :root {
   /* colors */
+  --color-white: #fff;
+  --color-black: #000;
   --link-color: #783384;
   --link-hover-color: #8a4196;
-  --background-color: #fff;
+  --background-color: var(--color-white);
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
-  --text-color: #000;
+  --text-color: var(--color-black);
   --color-primary: #783384;
   --color-warning: #f2c107;
   --color-success: #45b274;
@@ -48,6 +50,13 @@
   /* nav height */
   --nav-height: 64px;
 
+  /* here's how it works block */
+  --how-it-works-last-child-background-color: #e8e4dc;
+  --how-it-works-content-color: #363636;
+
+  /* b-mob-arrow block */
+  --b-mob-arrow-button-color: #1e1e1e;
+  --b-mob-arrow-hr-border-color: #e8e4dc;
 }
 
 @font-face {
