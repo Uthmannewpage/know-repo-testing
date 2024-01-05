@@ -2,7 +2,7 @@ export default function decorate(block) {
   block.classList.add(
     'd-flex',
     'flex-column',
-    'flex-lg-row',
+    'flex-md-row',
     'common-menu',
     'container',
   );
@@ -20,7 +20,7 @@ export default function decorate(block) {
             <a class="button" href="${link.children[0].getAttribute('href')}" title="${link.children[0].getAttribute('title')}">
               ${link.children[0].getAttribute('title')}
             </a>
-            <div class="triangle ms-2 me-1" style="border-left-color: ${colorCode.innerHTML}"></div>
+            <div class="triangle ms-1" style="border-left-color: ${colorCode.innerHTML}"></div>
             <div class="triangle" style="border-left-color: ${colorCode.innerHTML}"></div>
           </div>
         </div>
