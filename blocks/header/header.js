@@ -3,6 +3,13 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import { getMetadataStyleProps } from '../../scripts/utils.js';
 
+const menuSize = {
+  0: 'w-35',
+  1: 'w-28',
+  2: 'w-22',
+  3: 'w-15',
+};
+
 function parseListToJson(ulElement) {
   function parseListItem(li) {
     const item = {
@@ -41,9 +48,9 @@ function parseListToJson(ulElement) {
 }
 function generateTopNavigation(section) {
   return `
-  <div class="col-lg-10 p-0 collapse navbar-collapse" id="" ${getMetadataStyleProps(section)}>
+  <div class="col-md-7 p-0 collapse navbar-collapse" id="" ${getMetadataStyleProps(section)}>
       
-  <ul class="language-dropdown navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+  <ul class="language-dropdown navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-start">
     ${section
     .map(
       (item) => `${
@@ -110,16 +117,16 @@ function generateCollapseMenu(sections) {
   const menu = sections['navbar-main'];
   const topMenu = sections['navbar-top'];
   return `
-  <div class="mobile-view col-lg-12 p-0 collapse navbar-collapse d-none" id="navbarSupportedContent">
+  <div class="mobile-view col-md-12 p-0 collapse navbar-collapse d-none" id="navbarSupportedContent">
   <ul class="navbar-nav me-auto d-flex w-100 gap-1 justify-content-strech">
-  <li class="nav-item border-bottom border-1  p-0 w-100 disabled"><span class="nav-link p-3 mb-1" aria-current="page" href="/">&nbsp;</span></li>
-  <li class="nav-item border-bottom border-1  p-0 w-100 active"><a class="nav-link p-3 mb-1" aria-current="page" href="/">Home</a></li>
+  <li class="nav-item  p-0 w-100 disabled"><span class="nav-link px-3 mb-3" aria-current="page" href="/">&nbsp;</span></li>
+  <li class="nav-item border-bottom border-1  p-0 w-100 active"><a class="nav-link px-3 mb-1" aria-current="page" href="/">Home</a></li>
   ${menu
     .map(
       (item) => `${
         !item.children
           ? `<li class="nav-item border-bottom border-1  p-0 w-100">
-      <a class="nav-link p-3 mb-1" aria-current="page" href="${item.link}">${
+          <a class="nav-link px-3 mb-1" aria-current="page" href="${item.link}">${
   item.text ? item.text : item.picture.innerHTML
 }</a>
       </li>`
@@ -128,7 +135,7 @@ function generateCollapseMenu(sections) {
     ${
   item.children
     ? `<li class="nav-item border-bottom border-1 p-0 dropdown">
-        <a class="nav-link p-3 mb-1 dropdown-toggle" href="#" id="${
+    <a class="nav-link px-3 mb-1 dropdown-toggle" href="#" id="${
   item.children[0].text
 }" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         ${item.text}
@@ -170,14 +177,14 @@ function generateMainMenu(menu) {
     .split(',')
     .map((color) => color.trim());
   return `
-  <div class="col-lg-12 p-0 collapse navbar-collapse" id="" ${getMetadataStyleProps(menu)}>
-  <ul class="bottom-navbar navbar-nav me-auto mb-2 mb-lg-0 d-flex w-100 text-center gap-1 justify-content-strech">
+  <div class="col-md-12 p-0 collapse navbar-collapse" id="" ${getMetadataStyleProps(menu)}>
+  <ul class="bottom-navbar navbar-nav me-auto mb-2 mb-lg-2 d-flex w-100 text-center gap-1 justify-content-strech">
   ${menu
     .map(
       (item, index) => `${
         !item.children
-          ? `<li class="nav-item border-bottom border-4 border-${borderColors[index]} p-0 w-35">
-      <a class="nav-link p-3 mb-1" aria-current="page" href="${item.link}">${
+          ? `<li class="nav-item border-bottom border-4 border-${borderColors[index]} p-0 ${menuSize[index]}">
+      <a class="nav-link py-3 mb-1" aria-current="page" href="${item.link}">${
   item.text ? item.text : item.picture.innerHTML
 }</a>
       </li>`
@@ -185,8 +192,8 @@ function generateMainMenu(menu) {
       }
     ${
   item.children
-    ? `<li class="nav-item border-bottom border-4 border-${borderColors[index]} p-0 dropdown">
-        <a class="nav-link p-3 mb-1 dropdown-toggle" href="#" id="${
+    ? `<li class="nav-item border-bottom border-4 border-${borderColors[index]} p-0 dropdown ${menuSize[index]}">
+        <a class="nav-link py-3 mb-1 dropdown-toggle" href="#" id="${
   item.children[0].text
 }" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         ${item.text}
@@ -211,18 +218,19 @@ function setNavBar(block, sectionList) {
   const header = `
   <div class="section">
   <div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <nav class="navbar navbar-expand-md navbar-light bg-white p-0">
     <div class="container">
       <div class="row w-100 p-0 m-0">
-			<div class="d-flex col-sm-12 col-lg-2 p-0">
+			<div class="d-flex col-sm-12 col-md-5 p-0">
 					<a class="navbar-brand" href="${sectionList['navbar-brand'].url}" ${getMetadataStyleProps(sectionList['navbar-brand'])}>
 						${sectionList['navbar-brand'].picture.innerHTML || ''}
 					</a>
 					<button class="ms-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<div class="navbar-icon"></div>
+            <small class="hamburger-text ">Menu</small>
 					</button>
 			</div>
-			<div class="d-lg-none p-0">
+			<div class="d-md-none p-0">
 			<a class="nav-link p-0 m-0 text-primary fw-bold learn-about-pfizer double-crates-right" href="${sectionList['navbar-top'][0].link}">${sectionList['navbar-top'][0].text} </a>
 			</div>
       ${generateTopNavigation(sectionList['navbar-top'])}
@@ -234,7 +242,6 @@ function setNavBar(block, sectionList) {
     </div>
 		
   </nav>
-	<div class="container border border-2 border-primary w-100 d-lg-none"></div>
   </div>
   </div>`;
   block.innerHTML = header;
@@ -253,7 +260,7 @@ export default async function decorate(block) {
   // decorate nav DOM
   const nav = document.createElement('nav');
   nav.id = 'nav';
-  // nav.classList = 'navbar navbar-expand-lg navbar-light bg-light';
+  // nav.classList = 'navbar navbar-expand-md navbar-light bg-light';
 
   while (fragment?.firstElementChild) nav.append(fragment.firstElementChild);
 

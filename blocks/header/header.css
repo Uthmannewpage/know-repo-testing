@@ -2,6 +2,10 @@ header nav{
   --nav-height: auto
 }
 
+header .section .container{
+  padding-top: 42px;
+}
+
 header .navbar-nav .dropdown-menu {
   width: 100%;
   text-align: center;
@@ -10,6 +14,7 @@ header .navbar-nav .dropdown-menu {
   margin: 0;
   border-radius: 0;
   margin-top: -5px;
+  background-color: transparent;
 }
 
 header button::after{
@@ -19,6 +24,10 @@ header button::after{
 header .bottom-navbar.navbar-nav .nav-link.show{
   background: var(--color-primary) !important;
   color: white !important;
+}
+
+header .dropdown-item:hover{
+  background: transparent;
 }
 
 header .bottom-navbar.navbar-nav .dropdown-menu .dropdown-item{
@@ -37,11 +46,14 @@ header .learn-about-pfizer{
 }
 
 header ul.language-dropdown li.nav-item a.nav-link{
-  font-weight: 600;
   color: var(--color-primary);
   text-align: left;
   min-width: 0;
   font-size: 18px;
+  text-decoration: underline;
+  padding: 0 10px;
+  font-weight: 600;
+  line-height: 100%;
 }
 
 header .nav-link{
@@ -55,7 +67,9 @@ header ul.language-dropdown li.nav-item ul.dropdown-menu {
 header ul.language-dropdown li.nav-item ul.dropdown-menu a.dropdown-item {
   font-weight: 600;
   color: var(--color-primary);
-  text-align: left;
+  margin: 0;
+  text-align: center;
+  font-size: 17.5px;
 }
 
 header .bottom-navbar.navbar-nav .nav-item a.nav-link {
@@ -91,35 +105,79 @@ header .w-35 {
   width: 35% !important;
 }
 
+header .w-28 {
+  width: 28% !important;
+}
+
+header .w-22 {
+  width: 22% !important;
+}
+
+header .w-15 {
+  width: 15% !important;
+}
+
+
 header .navbar-toggler{
   background: var(--color-primary);
   z-index: 100  ;
   transition: 0.2s ease-in-out;
   margin: inherit;
+  height: 44px;
+  padding: 5px;
+  font-size: 1rem;
+  line-height: 0;
+  outline: none;
+  box-shadow: none;
+  border-color: transparent !important;
+  border-radius: 0;
+}
+
+header .navbar-toggler .hamburger-text {
+  position: absolute;
+  left: 7px;
+  bottom: 2px;
+  font-size: 10px;
+  line-height: 1;
+  color: white;
+  font-family: var(--body-font-family);
+}
+
+header .navbar-toggler[aria-expanded="true"] .hamburger-text {
+  display: none;
+}
+
+header .navbar-toggler:focus{
+  box-shadow: none;
 }
 
 header .navbar-toggler[aria-expanded="true"]{
   background: var(--color-dark);
-  
+}
+
+header .navbar-toggler[aria-expanded="true"] .navbar-nav .nav-item a.nav-link{
+  font-size: 18.5px;;
 }
 
 header .navbar-toggler .navbar-icon{
   background: transparent;
-  height: 0.3rem;
+  height: 3px;
   width: 30px;
   position: relative;
   transition: all .3s ease-in-out;
   border-radius: 0.6rem;
+  top: -3px;
 }
 
 header .navbar-toggler[aria-expanded="false"] .navbar-icon{
   background: white;
 }
 
+
 header .navbar-toggler .navbar-icon::before{
   content: '';
   top: 0  ;
-  height: 0.3rem;
+  height: 3px;
   background: white;
   width: 30px;
   left: 0 ;
@@ -132,7 +190,7 @@ header .navbar-toggler .navbar-icon::before{
 header .navbar-toggler[aria-expanded="false"] .navbar-icon::before{
   content: '';
   background: white;
-  height: 0.3rem;
+  height: 3px;
   width: 30px;
   position: absolute;
   top: 0  ;
@@ -145,7 +203,7 @@ header .navbar-toggler[aria-expanded="false"] .navbar-icon::before{
 header .navbar-toggler .navbar-icon::after{
   content: '';
   background: white;
-  height: 0.3rem;
+  height: 3px;
   width: 30px;
   position: absolute;
   top: 0  ;
@@ -158,7 +216,7 @@ header .navbar-toggler .navbar-icon::after{
 header .navbar-toggler[aria-expanded="false"] .navbar-icon::after{
   content: '';
   background: white;
-  height: 0.3rem;
+  height: 3px;
   width: 30px;
   position: absolute;
   top: 10px  ;
@@ -198,6 +256,10 @@ header .mobile-view.navbar-collapse.show .nav-item a.nav-link:hover
 
 
 
+header .dropdown-toggle{
+  text-decoration: none !important;
+}
+
 header .bottom-navbar.navbar-nav .dropdown-item:hover
 {
   background: var(--color-primary);
@@ -234,5 +296,19 @@ header .mobile-view .nav-bottom{
 
   header .section{
     min-height: 106.6px;
+  }
+ 
+  header .mobile-view.navbar-collapse.show .nav-item .nav-link{
+    font-size: 18.5px;
+  }
+}
+
+@media (width <= 768px) {
+  header .section .container{
+    padding-top: 14px;
+  }
+
+  header .section{
+    border-bottom: 5px solid var(--color-primary);
   }
 }

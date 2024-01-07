@@ -74,3 +74,15 @@
     top: 4px;
     left:-20px;
 }
+
+@media (width <= 768px) {
+    .true-false-block strong, .true-false-block .body-content p{
+        font-size: 18.5px;
+        line-height: 100%;
+    }
+
+    .true-false-block .body-content {
+        padding: 72px;
+        margin: 0;
+    }
+}
