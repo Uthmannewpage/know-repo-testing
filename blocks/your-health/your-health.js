@@ -45,7 +45,7 @@ export default function decorate(block) {
 
   // Style h2 elements
   block.querySelectorAll('h2').forEach((it) => {
-    it.style.color = '#783384';
+    it.style.color = 'var(--color-primary)';
     it.style.fontSize = '28px';
   });
 }
