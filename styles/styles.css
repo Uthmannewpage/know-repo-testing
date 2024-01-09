@@ -14,6 +14,8 @@
   /* colors */
   --color-white: #fff;
   --color-black: #000;
+  --color-orange: #fbbd19;
+  --color-green: #228143;
   --link-color: #783384;
   --link-hover-color: #8a4196;
   --background-color: var(--color-white);
@@ -28,6 +30,12 @@
   --color-dark: #444b50;
   --color-light: #f3f1ed;
   --color-light-gray: #e8e4dc;
+  --color-light-brown: #363636;
+  --color-light-yellow: #FBFAF9;
+  --color-light-orange: #9d9890;
+  --color-light-orange2: #928F85;
+  --color-light-purple: #E6D7E8;
+  --color-light-green: #208d48;
 
   /* fonts */
   --body-font-family: lato, sans-serif;
@@ -178,10 +186,14 @@ a:hover {
 }
 
 .section[data-type = 'purple'] .default-content-wrapper {
-  background: #783384;
+  background: var(--color-primary);
   color: #fff;
   text-align: center;
   padding: 30px 0 35px;
+}
+
+.section[data-type = 'gray'] .default-content-wrapper {
+  background-color: #f3f1ed;
 }
 
 .section[data-type = 'purple'] .default-content-wrapper a {
@@ -190,8 +202,9 @@ a:hover {
   display: inline-block;
 }
 
-.section[data-type = 'gray'] .default-content-wrapper {
-  background-color: #f3f1ed;
+.section[data-tile = 'purple'] .default-content-wrapper h3 {
+  color: var(--color-primary);
+  font-weight: 500;
 }
 
 .section.py-4 .default-content-wrapper {
@@ -214,7 +227,6 @@ a.button:any-link, button {
   padding: 5px 17px;
   text-align: center;
   font-style: normal;
-  font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--link-color);
@@ -234,9 +246,27 @@ a.button:hover:any-link::after, button:hover::after {
   border-left: 9px solid var(--link-hover-color);
 }
 
-button:disabled, button:disabled:hover {
-  background-color: var(--overlay-background-color);
+button:disabled, button:disabled:hover, button.disabled, button.disabled:hover {
+  background-color: #B1B0B0;
   cursor: unset;
+  cursor: not-allowed;
+}
+
+a.button.append-right-arrow::after, button.append-right-arrow::after {
+  content: '';
+  width: 20px;
+  height: calc(100% + 4px);
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid var(--link-color);
+  position: absolute;
+  right: -22px;
+  top: -2px;
+  background-color: transparent;
+}
+
+button.append-right-arrow:disabled::after , button.append-right-arrow.disabled::after {
+  border-left: 10px solid #B1B0B0;
 }
 
 a.button.secondary, button.secondary {
@@ -304,22 +334,22 @@ main .section {
 .grey-gradient {
   background: url('../images/video-bg.png') no-repeat center bottom transparent;
   background-size: 100% auto;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 p, ul li, table {
   font-size: var(--paragraph-font-size-s);
 }
 
-a.button.append-right-arrow::after {
+a.button.append-left-arrow::before, button.append-left-arrow::before {
   content: '';
   width: 20px;
   height: calc(100% + 4px);
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  border-left: 10px solid var(--link-color);
+  border-right: 10px solid var(--link-color);
   position: absolute;
-  right: -22px;
+  left: -20px;
   top: -2px;
   background-color: transparent;
 }
@@ -383,7 +413,7 @@ a.button.append-right-arrow::after {
   border-left: 5px solid var(--color-primary);
 }
 
-.double-crates-right::before{
+.double-crates-right::before {
   content: '';
   position: absolute;
   width: 10px;

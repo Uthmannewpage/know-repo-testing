@@ -1,5 +1,4 @@
 export default function decorate(block) {
-  const allPossibleTables = ['or-options'];
   const tables = block.querySelectorAll('table');
   const parentBlock = block.closest('.section');
   const metaData = parentBlock.dataset;
@@ -41,23 +40,20 @@ export default function decorate(block) {
   ${bottomAnchor.innerHTML}
   `;
   } else {
-    const [contentLeft, contentRight, contentImage, outsideOfContent] = bannerItems;
-    if (imageCover === 'background') {
-      block.style.background = `url(${contentImage.querySelector('img').getAttribute('src').split('?')[0]}) no-repeat top / cover transparent`;
+    const [contentLeft, contentRight, contentImage, contentImageMobile, outsideOfContent] = bannerItems;
+
+    let leftContentClasses = 'col-12 col-sm-5 col-lg-5';
+    if (type && type === 'half') {
+      leftContentClasses = 'col-12 col-sm-6 col-lg-6';
+    } else if (type && type === 'bigger') {
+      leftContentClasses = 'col-12 col-sm-7 col-lg-7';
     }
 
-    let leftContentClasses = ' col-sm-5 col-lg-5';
+    let rightContentClasses = 'col-12 col-sm-7 col-lg-7';
     if (type && type === 'half') {
-      leftContentClasses = ' col-sm-6 col-lg-6';
+      rightContentClasses = 'col-12 col-sm-6 col-lg-6';
     } else if (type && type === 'bigger') {
-      leftContentClasses = ' col-sm-7 col-lg-7';
-    }
-
-    let rightContentClasses = ' col-sm-7 col-lg-7';
-    if (type && type === 'half') {
-      rightContentClasses = ' col-sm-6 col-lg-6';
-    } else if (type && type === 'bigger') {
-      rightContentClasses = ' col-sm-5 col-lg-5';
+      rightContentClasses = 'col-12 col-sm-5 col-lg-5';
     }
 
     // searchng for tables:
@@ -80,23 +76,22 @@ export default function decorate(block) {
         table.appendChild(dropDownBox);
       }
 
-      if (allPossibleTables.includes(aliasRowText)) {
-        table.classList.add(aliasRowText);
-      }
+      block.closest('.block').classList.add(`${aliasRowText}-box`);
+      table.classList.add(aliasRowText);
     });
 
     block.innerHTML = `
     <div class="container-fluid">
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-xs-12 col-sm-11${leftContentClasses} text-left p-0">
+        <div class="d-block d-md-flex justify-content-center align-items-center">
+          <div class="${leftContentClasses} text-left">
             ${contentLeft.innerHTML}
           </div>
 
-          <div class="col-xs-12 col-sm-11${rightContentClasses} text-right img-box p-0">
-            ${video ? `<video controls autoplay>
+          <div class="${rightContentClasses} text-right img-box">
+            ${video ? `<div class="col-12 col-sm-10 float-right"><video controls autoplay>
               <source src="${video}" type="application/x-mpegURL">
               Your browser does not support the video tag.
-            </video>` : ''}
+            </video></div>` : ''}
 
             <div class="content-right">
               ${functionality && functionality === 'tabs' ? `<div class="trigger-points">
@@ -107,10 +102,27 @@ export default function decorate(block) {
               ${contentRight && contentRight.innerHTML !== '' && contentRight.innerHTML}
             </div>
           </div>
-
-          ${outsideOfContent ? `<div class="col-12">${outsideOfContent.innerHTML}</div>` : ''}
         </div>
+        ${outsideOfContent ? `<div class="col-12">${outsideOfContent.innerHTML}</div>` : ''}
+        <div class="col-12 content-below">${contentLeft.innerHTML}</div>
     </div>`;
+
+    // adding cover images
+    if (imageCover === 'background') {
+      const setBackgroundImage = () => {
+        const imageCoverBox = block.querySelector('.d-md-flex');
+        imageCoverBox.style.background = `url(${contentImage.querySelector('img').getAttribute('src')}) no-repeat top / cover transparent`;
+
+        if (window.innerWidth <= 768 && contentImageMobile) {
+          imageCoverBox.style.background = `url(${contentImageMobile.querySelector('img').getAttribute('src')}) no-repeat right top  / cover transparent`;
+        }
+      };
+
+      setBackgroundImage();
+
+      // Add event listener for resize events
+      window.addEventListener('resize', setBackgroundImage);
+    }
 
     // only for dropdown
     if (block.querySelector('.trigger-text')) {

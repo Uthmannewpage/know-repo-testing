@@ -1,0 +1,20 @@
+.section.custom-block-container h2 {
+    font-size: 34px;
+    font-family: var(--body-font-family);
+    font-weight: bold;
+}
+
+.section.custom-block-container p {
+    font-size: 17px;
+    font-family: var(--body-font-family);
+}
+
+@media (width >= 768px) {
+    .section.custom-block-container h2 {
+        font-size: 40px;
+    }
+    
+    .section.custom-block-container p {
+        font-size: 20px;
+    }
+}

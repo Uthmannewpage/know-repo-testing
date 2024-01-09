@@ -1,5 +1,114 @@
 .section.take-the-risk-container .block {
-  background-color: #FBFAF9;
+  background-color: var(--color-light-yellow)
+}
+
+.section.take-the-risk-container .block hr {
+  border: none; 
+  height: 2px;
+  background-color: var(--color-light-orange);
+  margin: 10px 0; 
+}
+
+.section.take-the-risk-container .block .bottom-buttons {
+  margin-bottom: -1.3rem;
+  margin-top: 5rem;
+}
+
+.section.take-the-risk-container .block #step1 .bottom-buttons {
+  margin-bottom: -3.3rem;
+  margin-top: 4rem;
+}
+
+.section.take-the-risk-container .block .bottom-buttons button {
+  min-width: 250px;
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+.section.take-the-risk-container .block .bottom-buttons button.back-btn {
+  background-color: var(--color-light-purple);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-left: 0 none;
+}
+
+.section.take-the-risk-container .block .bottom-buttons button.back-btn::before {
+  border-right: 10px solid var(--color-light-purple);
+}
+
+.section.take-the-risk-container .block .step-box p:nth-of-type(1), .section.take-the-risk-container .block .step-box p:nth-of-type(2), .section.take-the-risk-container .block .step-box p:nth-of-type(3) {
+  margin-bottom: 0;
+}
+
+.section.take-the-risk-container .block #step2, .section.take-the-risk-container .block #step3, .section.take-the-risk-container .block #step4 {
+  background-color: var(--color-light);
+  padding: 25px 55px 0;
+}
+
+.section.take-the-risk-container .block #step2 .row, .section.take-the-risk-container .block #step3 .row, .section.take-the-risk-container .block #step4 .row {
+  width: 76%;
+  margin: 0 auto;
+}
+
+.section.take-the-risk-container .block #step4 #pdf-button {
+  color: var(--link-color);
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.section.take-the-risk-container .block #step4 table:nth-of-type(2), .section.take-the-risk-container .block #step4 table:last-of-type {
+  display: none;
+}
+
+.section.take-the-risk-container .block #step4 p:nth-of-type(4) strong {
+  font-family: roboto-slab,Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 1.364;
+  color: var(--color-light-green);
+}
+
+.section.take-the-risk-container .steps-bullets div span {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  background: white;
+  border-radius: 50px;
+}
+
+.section.take-the-risk-container .steps-bullets div.inactive, .section.take-the-risk-container .steps-bullets div.inactive span {
+  background: var(--color-light-orange2);
+}
+
+.section.take-the-risk-container .steps-bullets div.active span {
+  background: var(--color-orange)
+}
+
+.section.take-the-risk-container .block #step4 #email-form-box span {
+  font-size: 20px;
+  line-height: 2.1;
+  text-align: left;
+  display: block;
+}
+
+.section.take-the-risk-container .block input {
+  width: 25px;
+  height: 25px;
+  visibility: hidden;
+  margin: 0 10px 0 0;
+}
+
+.section.take-the-risk-container .block #step4 #email-form-box input {
+  width: 350px;
+  background-color: #fff;
+  font-size: 22px;
+  visibility: visible;
+  padding: 25px;
+  line-height: 1.955;
 }
 
 .section.take-the-risk-container .block .content-left {
@@ -16,21 +125,32 @@
   display: none;
 }
 
-.section.take-the-risk-container .block .content-left h3 {
-  font-family: roboto-slab, serif;
-  font-size: 36px;
-  font-weight: 700;
+.section.take-the-risk-container .block h3 {
+  font-size: 28px;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.36px;
+  line-height: 1.07;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--color-light-brown);
+  margin-bottom: 27px;
+}
+
+.section.take-the-risk-container .block .content-left h3 {
   text-align: left;
-  color: #363636;
-  margin-bottom: 2rem;
+}
+
+.section.take-the-risk-container .block h4 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.364;
+  text-align: center;
+  padding-bottom: 11px;
 }
 
 .section.take-the-risk-container .block .content-right {
-  background: url('../../images/icons/arrow-right.png') 0 0 no-repeat #f3f1ed;
+  background: url('../../images/icons/arrow-right.png') 0 0 no-repeat var(--color-light);
   background-size: auto 100%;
   padding: 2rem 1rem 2rem 6rem;
 }
@@ -50,22 +170,9 @@
   font-size: 12px;
   line-height: 1.4286;
   border-radius: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--highlight-background-color);
   background-color: white;
   box-shadow: 10px 10px 10px #c4c3c3;
-}
-
-.section.take-the-risk-container .steps-bullets div span {
-  width: 20px;
-  height: 20px;
-  display: block;
-  margin: 0 auto;
-  background: white;
-  border-radius: 50px;
-}
-
-.section.take-the-risk-container .steps-bullets div.active span {
-  background: #fbbd19;
 }
 
 .section.take-the-risk-container .steps-bullets::before {
@@ -75,11 +182,88 @@
   bottom: 0;
   width: 100%;
   height: 1px;
-  background-color: #ccc;
+  background-color: var(--highlight-background-color);
   border: 0;
   left: 0;
 }
 
 .section.take-the-risk-container .main-content {
   text-align: center;
+}
+
+.section.take-the-risk-container .block #step1 ul {
+  max-width: 215px;
+  margin: 1rem auto;
+}
+
+.section.take-the-risk-container .block #step2 ul:nth-of-type(2) {
+  width: 365px;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+.section.take-the-risk-container .block .step-box {
+  display: none;
+}
+
+.section.take-the-risk-container .block #step2 ul:last-of-type, .section.take-the-risk-container .block #step3 ul:last-of-type {
+  width: 100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.section.take-the-risk-container .block ul label {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.section.take-the-risk-container .block input[type='checkbox'] {
+  width: 33px;
+  height: 33px;
+}
+
+.section.take-the-risk-container .block input[type='radio']::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  width: 25px;
+  height: 25px;
+  visibility: visible;
+  outline: 0;
+  border-radius: 15px;
+  border: 2px solid var(--color-green);
+  background-color: #fff;
+}
+
+.section.take-the-risk-container .block input[type='radio']:checked::after {
+  background-color: var(--color-green);
+  border: 2px solid var(--color-green);
+}
+
+.section.take-the-risk-container .block input[type='checkbox']::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 33px;
+  height: 33px;
+  visibility: visible;
+  outline: 0;
+  border-radius: 0;
+  border: 2px solid var(--color-green);
+  background-color: #fff;
+}
+
+.section.take-the-risk-container .block input[type='checkbox']:checked::after {
+  background: url('../../images/icons/checkbox.svg') no-repeat 0 0 var(--color-green);
+  border: 2px solid var(--color-green);
+}
+
+.section.take-the-risk-container .block #step2 ul:first-of-type {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

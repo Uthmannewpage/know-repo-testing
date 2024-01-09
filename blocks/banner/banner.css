@@ -3,30 +3,73 @@
   padding: 0;
 }
 
-.section.banner-container .banner.block {
-  /* padding: 1rem 2rem 2rem; */
+.section.banner-container .banner .content-below {
+  display: none;
+}
+
+.section.banner-container.text-outside-mobile .banner .content-below {
+  display: block;
+}
+
+.section.banner-container.text-outside-mobile .banner .text-left * {
+  visibility: hidden;
+}
+
+.section.banner-container .banner h1,
+.section.banner-container .banner h2 {
+  font-size: 20px!important;
+  line-height: 23px;
+  margin-top: 0;
+  font-weight: normal;
+  color: #783384;
+}
+
+.section.banner-container.text-outside-mobile .content-below h1 {
+  display: none;
+}
+
+.section.banner-container .banner .carousel-caption  h1, .section .banner-container .banner .carousel-caption h2 {
+  font-size: 17px!important;
+  line-height: 18.5px;
+  letter-spacing: -0.17px;
+}
+
+.section.banner-container.half-mobile .banner h1 {
+  font-size: 18px!important;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.section.banner-container.text-outside-mobile .banner .text-left h1 {
+  visibility: visible;
 }
 
 .section.banner-container .banner img {
   width: 100%;
 }
 
-.section.banner-container .banner h1, .section.banner-container .banner h2 {
-  line-height: 1;
-  margin-bottom: 2rem;
-  color: #783384;
-}
-
 .section.banner-container .banner ul {
   padding: 1rem 0;
 }
 
-.section.banner-container .banner p, .section.banner-container .banner li {
-  font-size: 20px;
-  font-weight: 400;
+.section.banner-container .banner p,
+.section.banner-container .banner li {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.2px;
+  margin-top: 5px;
   color: #363636;
   list-style-position: inside;
-  list-style-type: none;;
+  list-style-type: none;
+}
+
+.section.banner-container .banner .text-left > div {
+  padding: 0
+}
+
+
+.section.banner-container .banner .carousel-caption p.button-container {
+  display: none;
 }
 
 .section.banner-container .banner ul li::before {
@@ -48,34 +91,26 @@
 
 .section.banner-container .banner .carousel-indicators {
   padding: 0;
-  margin-right: 0;
-  margin-bottom: 5rem;
-  margin-left: 0;
+  margin-bottom: 1rem;
 }
 
 .section.banner-container .banner .carousel-caption {
   position: absolute;
-  inset: 4rem 4rem 0 0;
+  inset: 1rem 1rem 0 0;
+  padding-top: 0;
   text-align: unset;
 }
 
-.section.banner-container .banner .carousel-caption a.button::after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-top: 22px solid transparent;
-  border-bottom: 22px solid transparent;
-  border-left: 9px solid var(--link-color);
-  display: inline-block;
-  position: absolute;
-  right: -11px;
-  top: -1px;
+.section.banner-container .banner .carousel-caption p {
+  font-size: 14px;
+  line-height: 18.5px;
+  letter-spacing: -0.35px;
 }
 
 .section.banner-container .banner .carousel-indicators li {
   cursor: pointer;
-  height: 20px;
-  width: 20px;
+  height: 10px;
+  width: 10px;
   margin: 0 2px;
   background-color: #fff;
   border: solid 1px #000;
@@ -90,24 +125,40 @@
 }
 
 .section.banner-container .banner video {
-  width: 90%;
-  float: right;
-}
-
-.section.banner-container .banner table.or-options {
-  font-weight: 400;
-  margin: 3rem 0;
-}
-
-.section.banner-container .banner table.or-options tr td {
   width: 100%;
-  display: block;
+  float: unset;
+}
+
+.section.banner-container .banner table.or-options p {
+  text-align: center;
+}
+
+/* or-option */
+.section.banner-container .or-options-box .content-below p:last-of-type {
   text-align: center;
 }
 
 .section.banner-container .banner table.or-options a {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.section.banner-container .or-options-box .content-below p:last-of-type a {
+  display: block;
+}
+
+.section.banner-container .banner table.or-options {
+  font-weight: 400;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.section.banner-container .banner table.or-options tr td {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  margin: 1rem 0;
 }
 
 .section.banner-container .banner table.or-options a:hover {
@@ -119,23 +170,30 @@
 }
 
 .section.banner-container .banner table.or-options tr:nth-of-type(2) td:nth-of-type(2){
+  width: 35px;
+  height: 35px;
   text-align: center;
   background-color: #d6d2ca;
   border-radius: 50%;
-  font-size: 16.5px;
+  font-size: 14px;
   font-weight: 700;
-  width: 46px;
-  letter-spacing: 0;
-  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
+  letter-spacing: 0;
   line-height: 18.5px;
   margin: 0 auto;
 }
 
-
 /* dropdown */
+.section.banner-container .banner div.dropdown-table .content-text p {
+  width: 100%;
+}
+
+.section.banner-container.half-mobile .banner div.text-left p {
+  width: 135px;
+}
+
 .section.banner-container .banner div.dropdown-table .trigger-text p:nth-of-type(2), .section.banner-container .banner div.dropdown-table.open .trigger-text p:nth-of-type(1), .section.banner-container .banner div.dropdown-table .content-text {
   display: none;
 }
@@ -153,15 +211,16 @@
 
 .section.banner-container .banner div.dropdown-table .trigger-text *, .section.banner-container .banner div.dropdown-table .close-text {
   text-align: right;
-  font-size: var(--paragraph-font-size-l);
+  font-size: 14px;
   color: var( --color-primary);
   cursor: pointer;
   margin: 0;
+  width: 100%;
 }
 
 .section.banner-container .banner div.dropdown-table .trigger-text {
-  width: 50%;
-  margin-left: 50%;
+  width: 100%;
+  margin-left: 0;
   border: 1px solid transparent;
   border-bottom: 0;
   padding: 15px;
@@ -176,8 +235,9 @@
   background: #fff;
 }
 
+/* banner with tabs */
 .section.banner-container .banner.banner-with-tabs .text-left ul {
-  padding: 1rem 0 1rem 4rem;
+  padding: 0 0 0 3rem;
 }
 
 .section.banner-container .banner.banner-with-tabs .text-left ul.greyed {
@@ -188,6 +248,7 @@
 .section.banner-container .banner.banner-with-tabs .content-right {
   position: relative;
   width: 394px;
+  margin: 0 auto;
 }
 
 .section.banner-container .banner.banner-with-tabs .content-right picture:not(:first-child) {
@@ -228,130 +289,151 @@
   bottom: 127px;
 }
 
-.section.banner-container[data-type='carousel'] .button-under-carousel {
-  margin: 1rem auto;
+.section.banner-container .banner.banner-with-tabs .text-right {
   display: none;
 }
 
+.section.banner-container.half-mobile .banner div.text-left {
+  width: 250px;
+  padding: 1em 0 1rem 1rem;
+}
+
 @media (width >= 768px) {
-  .section.banner-container .banner h1 {
-    font-size: 30px;
-  }
-
-  .section.banner-container .banner table.or-options tr td {
-    width: auto;
-    display: table-cell;
-    text-align: left;
-  }
-
-  .section.banner-container .banner table.or-options tr:nth-of-type(2) td:nth-of-type(2){
-    margin: 0 3rem;
-  }
-}
-
-@media screen and (width >= 991px) {
-  .section.banner-container .banner h1 {
-    font-size: var(--heading-font-size-xl);
-    line-height: var(--heading-font-size-xl);
-    text-align: left;
-  }
-
-  .section.banner-container .banner.button-container {
-    display: block;
-  }
-
-  .section.banner-container .banner img {
-    width: 100%;
-  }
-}
-
-@media screen and (width <= 990px) {
-  .section.banner-container .banner.banner-with-tabs .text-right {
-    display: none;
-  }
-
-  .section.banner-container .banner.banner-with-tabs .text-left ul {
-    padding: 1rem 0 0 4rem;
-  }
-}
-
-@media screen and (width <= 768px) {
-  .section.banner-container[data-type='carousel'] .block {
+  .section.banner-container .banner .text-left > div {
     padding: 0;
   }
 
-  .section.banner-container[data-type='carousel'] .button-under-carousel {
-    display: block;
-  }
-
-  .section.banner-container .banner h1 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 20px;
-    line-height: 23px;
-  }
-
-  .section.banner-container #my-carousel {
-    padding: 0
-  }
-
-  .section.banner-container .banner video {
-    width: 100%;
-    float: unset;
-  }
-
-  .section.banner-container .banner div.dropdown-table .trigger-text {
-    width: 100%;
-    margin-left: 0;
-   }
-
-  .section.banner-container .banner div.dropdown-table .trigger-text *, .section.banner-container .banner div.dropdown-table .close-text {
-    font-size: 14px;
-  }
-
-  .section.banner-container .banner .carousel-caption {
-    inset: 0 0 0 1rem;
-    padding: 1rem 0;
-  }
-
-  .section.banner-container .banner .carousel-caption h1, .section.banner-container .banner .carousel-caption h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 17px!important;
-    line-height: 18.5px;
-    letter-spacing: -0.17px;
-    font-weight: bold;
-  }
-
-  .section.banner-container .banner p {
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  .section.banner-container .banner .carousel-caption p {
-    font-size: 14px!important;
-    line-height: 18.5px!important;
-  }
-
-  .section.banner-container .banner .carousel-caption p.button-container {
+  .section.banner-container.text-outside-mobile .banner .content-below {
     display: none;
   }
 
-  .section.banner-container .banner .carousel-caption a {
-    margin: 0;
+  .section.banner-container.half-mobile .banner div.text-left {
+    width: 50%;
   }
 
-  .section.banner-container .banner .carousel-indicators {
-    margin-bottom: 1rem;
+  .section.banner-container .banner p, .section.banner-container .banner ul {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .section.banner-container .banner .carousel-caption p {
+    font-size: 20px;
+    font-weight: 400;
+    width: 345px;
+    line-height: 30px;
+  }
+
+  .section.banner-container.half-mobile .banner div.text-left p {
+    width: 100%;
+  }
+
+  .section.banner-container.text-outside-mobile .banner .text-left * {
+    visibility: visible;
   }
 
   .section.banner-container .banner li {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .section.banner-container .banner h1, .section.banner-container .banner h2, .section.banner-container.half-mobile .banner h1 {
+    font-size: 40px!important;
+    line-height: 45px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .section.banner-container .banner .carousel-caption  h1, .section .banner-container .banner .carousel-caption h2 {
+    font-size: 50px!important;
+    line-height: 1;
+  }
+
+  .section.banner-container.text-outside-mobile .banner .text-left h1 {
+    font-size: 40px!important;
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: 44px;
+  }
+
+  .section.banner-container .banner table.or-options {
+    margin: 1rem 0;
+  }
+
+  .section.banner-container .banner table.or-options tr td {
+    display: table-cell;
+    text-align: left;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .section.banner-container .banner table.or-options tr:nth-of-type(2) td a {
+    font-family: roboto-slab, serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    margin-top: 7px;
+  }
+
+  .section.banner-container .banner table.or-options tr:nth-of-type(2) td:nth-of-type(1) {
+    width: 165px;
+  }
+
+  .section.banner-container .banner table.or-options tr:nth-of-type(2) td:nth-of-type(2) {
+    font-size: 16.5px;
+    width: 46px;
+    letter-spacing: 0;
+    height: 46px;
+    margin: 0 2rem;
+  }
+
+  .section.banner-container .banner table.or-options tr:nth-of-type(2) td:nth-of-type(3) {
+    width: 211px;
+  }
+
+  .section.banner-container .banner p.button-container {
+    display: none;
+  }
+
+  .section.banner-container .banner .carousel-caption {
+    inset: 5rem 1rem 0 5rem;
+  }
+
+  .section.banner-container .banner .carousel-caption p.button-container {
+    display: block;
+  }
+
+  .section.banner-container .banner .carousel-indicators {
+    margin-bottom: 5rem;
   }
 
   .section.banner-container .banner .carousel-indicators li {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .section.banner-container .banner .float-right {
+    float: right;
+  }
+
+  /* dropdown table */
+  .section.banner-container .banner div.dropdown-table .trigger-text {
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  .section.banner-container .banner div.dropdown-table .trigger-text *, .section.banner-container .banner div.dropdown-table .close-text {
+    font-size: var(--paragraph-font-size-l);
+  }
+
+  /* banner with tabs */
+  .section.banner-container .banner.banner-with-tabs .text-right {
+    display: block;
+  }
+
+  .section.banner-container .banner.banner-with-tabs .text-left ul {
+    padding: 1rem 0 1rem 4rem
   }
 }
