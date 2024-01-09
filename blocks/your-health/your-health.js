@@ -29,7 +29,7 @@ export default function decorate(block) {
 
     if (contentRight) {
       rightColumn.innerHTML = `
-        <div class='row' style='height: 100%'>
+        <div class='row h-100'>
           <div class='col-md-4 col-sm-0 p-0'> 
             <img style='height: ${isMobile ? 'auto' : '100%'}' src='${imgLink}' />
           </div>
