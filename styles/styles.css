@@ -492,3 +492,11 @@ a.button.append-left-arrow::before, button.append-left-arrow::before {
 main .section.highlight {
   background-color: var(--highlight-background-color);
 }
+
+.w-60 {
+  width: 60% !important;
+}
+
+.w-62 {
+  width: 62%
+}
