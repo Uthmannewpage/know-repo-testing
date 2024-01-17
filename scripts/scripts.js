@@ -12,6 +12,7 @@ import {
   loadBlocks,
   loadCSS,
 } from './aem.js';
+import { generateMultiColumnLayout } from './utils.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -79,6 +80,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    generateMultiColumnLayout(main);
     document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
   }

@@ -1,3 +1,5 @@
+import { getMetadata } from './aem.js';
+
 export const allLanguages = {
   english: 'en',
   spanish: 'es',
@@ -57,4 +59,38 @@ export function metaDataToStylesArray(metaData) {
   delete metaData.sectionStatus;
   const styles = Object.keys(metaData).map((key) => `${camelToSnake(key)}: ${metaData[key]}`);
   return styles;
+}
+function renderBlocks(elements, classList) {
+  if (elements.length) {
+    return `<div class="${classList} ${elements.map((item) => item.classList).join(' ')}">${elements.map((item) => item.innerHTML).join('')}</div>`;
+  }
+  return '';
+}
+export function generateMultiColumnLayout(main) {
+  const layoutId = getMetadata('page-layout');
+
+  if (layoutId === 'main-sidebar-right') {
+    main.classList.add('section', 'multi-column-layout');
+    const allSections = main.querySelectorAll('.section');
+    const groupedSections = Array.from(allSections).reduce((groups, section) => {
+      const position = section.dataset.position || 'full-page';
+      groups[position] = groups[position] || [];
+      groups[position].push(section);
+      return groups;
+    }, {});
+
+    document.getElementsByTagName('main')[0].innerHTML = `
+      <div>
+        <div class="container">
+          <div class="row">
+            ${renderBlocks(groupedSections['full-page'], 'col-12')}
+          </div>
+          <div class="row">
+            ${renderBlocks(groupedSections.main, 'col-12 col-lg-7')}
+            ${renderBlocks(groupedSections['sidebar-right'], 'col-12 col-lg-5')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
 }

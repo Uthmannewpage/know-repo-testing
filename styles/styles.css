@@ -36,6 +36,7 @@
   --color-light-orange2: #928F85;
   --color-light-purple: #E6D7E8;
   --color-light-green: #208d48;
+  --color-body: #363636;
 
   /* fonts */
   --body-font-family: lato, sans-serif;
@@ -60,7 +61,7 @@
 
   /* here's how it works block */
   --how-it-works-last-child-background-color: #e8e4dc;
-  --how-it-works-content-color: #363636;
+  --how-it-works-content-color: var(--color-body);
 
   /* b-mob-arrow block */
   --b-mob-arrow-button-color: #1e1e1e;
@@ -424,6 +425,11 @@ a.button.append-left-arrow::before, button.append-left-arrow::before {
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 5px solid var(--color-primary);
+}
+
+.multi-column-layout .container .row{
+  margin-right: 0;
+  margin-left: 0;
 }
 
 @media (width >= 600px) {

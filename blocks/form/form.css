@@ -1,0 +1,104 @@
+main {
+  padding: 20px;
+}
+
+main .form-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 20px;
+  
+}
+
+main h2 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #1e1e1e;
+  margin-top: 0;
+}
+
+main p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #363636;
+}
+
+.form-wrapper,
+.form {
+  width: 100%;
+  font-size: 20px;
+  color: #363636;
+}
+
+main .form-text-wrapper,
+main .form-email-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+main .form-text-wrapper input,
+main .form-email-wrapper input {
+  height: 45px;
+  border: 1px solid #22874e;
+  font-size: 20px;
+  padding-left: 15px;
+}
+
+main .form-checkbox-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+main .form-checkbox-wrapper input[type="checkbox" i] {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.form .form-submit-wrapper button {
+  background-color: #fff;
+  height: 50px;
+  width: 165px;
+  border: 0;
+  border-radius: 0;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding: 0;
+  background-image: url("./btn-background.png");
+  background-repeat: no-repeat;
+}
+
+.form label.required::after {
+  content: " (required)";
+}
+
+@media screen and (width <= 768px) {
+  main h2 {
+    font-size: 20px;
+  }
+
+  main p {
+    font-size: 18px;
+  }
+
+  .form-wrapper,
+  .form {
+    font-size: 18px;
+  }
+
+  main .form-checkbox-wrapper input[type="checkbox" i] {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+
+  main .form-text-wrapper input,
+  main .form-email-wrapper input {
+    font-size: 18px;
+  }
+}
