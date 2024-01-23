@@ -1,0 +1,20 @@
+{
+  "linkIcon":{
+    "LearnMoreAboutPneumococcalPneumonia":"Learn more about pneumococcal pneumonia",
+    "understandTheSymptomsSndImpact":"Understand the symptoms and impact",
+    "talkToYourDoctorOrPharmacist":"Talk to your doctor or pharmacist",
+    "findOutAboutAVaccineOption":"Find out about a vaccine option",
+    "helpProtectYourself":"Help protect yourself",
+    "readyToShareYourStory":"Ready to share your story?",
+    "seeWhyYouCouldBeAtHigherRisk":"See why you could be at higher risk"
+  },
+  "link":{
+    "privacyPolicy":"Privacy Policy",
+    "termsOfUse":"Terms of Use",
+    "siteMap":"Site Map"
+  },
+  "ui":{
+    "youAreLeavingTheWebsite":"You are leaving the website",
+    "youAreLeavingKnowPneumonia" : "You are now leaving KnowPneumonia.com"
+  }
+}

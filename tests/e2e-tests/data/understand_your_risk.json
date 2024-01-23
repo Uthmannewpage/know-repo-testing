@@ -1,0 +1,14 @@
+{
+  "asthma":"Asthma",
+  "chronicLungDisease":"Chronic Lung Disease",
+  "chronicHeartDisease":"Chronic Heart Disease",
+  "diabetes":"Diabetes",
+  "certainMedications":"Certain Medications",
+  "certainCancers":"Certain Cancers",
+  "chronicRenalFailure":"Chronic Renal Failure",
+  "nonFunctioningSpleen":"Non-functioning Spleen (aspleenia)",
+  "hiv":"HIV",
+  "content":"People living with {0} are at higher risk for pneumococcal pneumonia, compared to healthy adults in the same age range.",
+  "certainMedicationsContent":"People taking immunosuppressive medicines are at higher risk for pneumococcal pneumonia, compared to healthy adults in the same age range. This includes some medicines that treat psoriatic arthritis, rheumatoid arthritis, Crohn’s disease, or ulcerative colitis, among others.",
+  "certainCancersContent" : "People living with certain malignant cancers are at greater risk for pneumococcal pneumonia, compared to healthy adults in the same age range."
+}

@@ -1,0 +1,25 @@
+{
+  "menuMain":{
+    "aboutPneumonicoccalneumonia": "About Pneumonicoccal Pneumonia",
+    "whatPneumococcalPneumonia": "is Pneumococcal Pneumonia?",
+    "symptomsAndImpact":"Symptoms and impact",
+    "understandYourRisk": "Understand your risk",
+    "helpProtectYourself": "Help protect yourself",
+    "takeAction": "Take action",
+    "talkToYourDoctor":"Talk to your doctor",
+    "shareYourStory": "Share your story",
+    "helpfulResources": "Helpful Resources"
+  },
+  "footer":{
+    "home":"Home",
+    "aboutPneumonicoccalneumonia": "About Pneumonicoccal Pneumonia",
+    "whatPneumococcalPneumonia": "Is Pneumococcal Pneumonia?",
+    "symptomsAndImpact":"Symptoms and Impact",
+    "understandYourRisk": "Understand Your Risk",
+    "helpProtectYourself": "Help Protect Yourself",
+    "takeAction": "Take Action",
+    "talkToYourDoctor":"Talk to Your Doctor",
+    "shareYourStory": "Share Your Story",
+    "helpfulResources": "Helpful Resources"
+  }
+}
